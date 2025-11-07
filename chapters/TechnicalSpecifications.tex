@@ -1,13 +1,21 @@
-\chapter{Technical specifications}\label{ch:technical-specs}
+\chapter{Technical specifications}\label{ch:technical-specifications}
 
-The \ReplicaGenOne{} dashboard consumes no standby current when powered down. \ReplicaNextShort{} draws approximately 13~mA from the +12~V supply while the ignition is off, which should be considered when the vehicle is stored for extended periods. Both generations operate reliably from the vehicle electrical system between 9~V and 16~V~DC.
+\begin{table}[htbp]
+    \centering
+    \caption{Sensor characteristics}
+    \label{tab:sensor-characteristics}
+    \begin{tabular}{@{} l l l l @{}}
+        \toprule
+        Indicator & Sensor & Supply voltage & Notes \\
+        \midrule
+        Voltmeter & Vehicle harness & 12~V system & Factory-calibrated for visual voltage match. \\
+        Barometer & VAG \texttt{03C906051A} & 5~V & 10~bar range, 0.4--0.5~V nominal output, M10\,\texttimes\,1.0 thread. \\
+        Thermometer & Ossca \texttt{01176} (NTC) & Passive & See \autoref{app:temperature-table} for resistance values. \\
+        Lambda & Narrowband O$_2$ sensor & Passive & 0.1--0.9~V swing, calibrate via presets. \\
+        Lambda (with controller) & Bosch LSU~4.9 + wideband controller & 12~V + controller spec & Use analogue controller output (0--5~V typical). \\
+        Boost & Dacia \texttt{223657266R} & 5~V & 20--250~kPa, 1.8~V nominal output, 3-pin connector. \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
-\section{Measurement capabilities}
-\begin{itemize}
-    \item \textbf{Vehicle speed:} measured through the factory cable or electronic speed sensor. The systematic error is 10~km/h, the relative error is 3~km/h, and the indication saturates at 999~km/h (or mph for imperial units).
-    \item \textbf{Engine speed:} derived from the ignition signal via an optocoupler stage with a 430~nF/1.2~k\ensuremath{\Omega} RC network and a diode limiter. The absolute and relative errors are within 200~rpm.
-    \item \textbf{Fuel level:} read from the resistive tank sender with an uncertainty of approximately 10~litres.
-    \item \textbf{Coolant temperature:} indicated qualitatively using the standard thermistor connected through the vehicle harness; quantitative values are not displayed.
-    \item \textbf{Timekeeping:} maintained to within one minute.
-    \item \textbf{Indicator lamps:} direction indicators, high beam, oil pressure warnings, generator status, handbrake, rear window heating or diesel glow-plug, and front and rear fog lights.
-\end{itemize}
+All indicators rely on the supplied programmer for configuration. USB-C connectivity is required; use OTG adapters for devices with different ports. The firmware accepts colour, gradient, and backlight adjustments, along with numeric calibration ranges for each sensor input.

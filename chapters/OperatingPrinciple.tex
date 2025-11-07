@@ -1,9 +1,17 @@
-\chapter{Operating Principle} \label{ch:operating-principle}
+\chapter{Operating principle}\label{ch:operating-principle}
 
-\ReplicaGenOne{} dashboards reuse the original Volkswagen enclosure, the factory CE~1 or CE~2 connectors, and either the mechanical speedometer cable or an electronic speed sensor.
-\ReplicaGenOneShort{} main boards are based on a fiberglass PCB populated with discrete components controlled by an ATmega~2560 microcontroller and MAX~7219 indicator drivers.
+All IV-Indicators Nano variants share a common architecture. The indicator body houses the display, colour-controllable backlight, and an embedded controller that exposes a four-pin programming port. The supplied programmer bridges this port to USB for Android phones or computers, allowing the firmware to receive configuration updates, presets, and firmware images.
 
-\ReplicaNextLong{} builds on an ESP32-S3 system-on-chip and introduces a newly manufactured SLA-printed enclosure, a redesigned front panel and cover, and a connector adapter board.
-The \ReplicaNextShort{} display is illuminated by WS2812 addressable LEDs mounted behind the front frame, and the accompanying harness includes the electronic speed sensor by default.
+Each indicator ships with a default preset for its intended sensor:
 
-Both generations share the same display layout and MFA pages, ensuring that installation procedures and day-to-day operation remain familiar between hardware revisions.
+\begin{itemize}
+    \item \textbf{Voltmeter} --- measures system voltage directly from the vehicle harness.
+    \item \textbf{Barometer} --- expects a VAG pressure sensor (\texttt{03C906051A}) powered at 5~V with a 0.4--0.5~V nominal output.
+    \item \textbf{Thermometer} --- reads NTC thermistors compatible with Ossca \texttt{01176}; resistance values are listed in \autoref{app:temperature-table}.
+    \item \textbf{Lambda} --- supports narrowband oxygen sensors out of the box and accepts 0--5~V analogue signals from wideband controllers.
+    \item \textbf{Boost} --- interfaces with the Dacia \texttt{223657266R} boost pressure sensor powered at 5~V.
+\end{itemize}
+
+The lambda indicator can be paired with dedicated wideband controllers (for example SLC Free, DIY-EFI TinyWB, or Sigma Lambda Controller Free~2) that translate the Bosch LSU~4.9 sensor output to an analogue voltage. Connect the controller to the LSU~4.9 according to its manual and route the linear analogue output (typically 0--5~V or 0.5--4.5~V) to the IV-Indicators Lambda input.
+
+Sockets differ across sensors. The barometer uses the VAG \texttt{8K0973703} connector, while the recommended boost sensor requires a generic three-pin connector such as Bosch \texttt{1928403966}. When an official connector is unavailable, use sealed automotive-grade plugs and ensure strain relief on the harness.
