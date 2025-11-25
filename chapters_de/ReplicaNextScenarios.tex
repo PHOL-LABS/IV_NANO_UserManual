@@ -1,2 +1,90 @@
 \chapter{Configuring with the IV-Conf web pack}\label{ch:web-config}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Das IV-Conf Webpack ist das Hauptwerkzeug zur Konfiguration der IV-Indicators Nano. Öffnen Sie \url{https://phol-labs.com/iv} in einem Chromium-basierten Browser mit Web-Serial-Unterstützung und verbinden Sie den mitgelieferten Programmer per USB.
+
+\section{Verbindung zur Anzeige}
+\begin{enumerate}
+    \item Klicken Sie auf das Serielle-Port-Symbol und wählen Sie den Eintrag aus, der dem Programmer entspricht.
+    \item Öffnen Sie das Panel \texttt{Settings} und stellen Sie die Baudrate auf 115200 ein.
+    \item Drücken Sie \texttt{Connect MODBUS}. Das Statusbanner sollte die Verbindung ohne rote Fehlermeldung bestätigen.
+\end{enumerate}
+
+\section{Preset-Katalog}
+Für jeden Anzeigetyp existieren mehrere Presets. Das Voltmeter enthält zum Beispiel Varianten mit Multi-Bar-Grafiken oder gelben Akzenten. Wählen Sie ein Preset, das der verbauten Anzeige entspricht, bevor Sie Einstellungen hochladen.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Beispielhafte Voltmeter-Presets}
+    \label{tab:voltmeter-presets}
+    \begin{tabular}{@{} l l @{}}
+        \toprule
+        Presetname & Beschreibung \\
+        \midrule
+        IV-Volts-Bar-Multi & Voltmeter mit Multi-Bar-Anzeige.\\
+        IV-Volts-Bar-Multi4 & Vierstufige Multi-Bar-Variante.\\
+        IV-Volts-BarYellow & Balkenanzeige mit gelbem Farbschema.\\
+        IV-Volts-Bar & Standard-Balkenanzeige.\\
+        IV-Volts & Minimales Preset ohne zusätzliche Grafiken.\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Daten hoch- und herunterladen}
+\begin{itemize}
+    \item Verwenden Sie \texttt{Send data}, um das aktuelle Preset oder manuelle Anpassungen auf die Anzeige zu übertragen. Die Übertragung schließt automatisch innerhalb von 10--15~Sekunden ab.
+    \item Klicken Sie auf \texttt{Get data}, um die bestehende Konfiguration auszulesen, bevor Sie Bereiche oder Farben anpassen.
+    \item Die Funktion \texttt{Stop Send Data} bricht eine laufende Übertragung ab, falls das falsche Preset gewählt wurde oder Parameter geändert werden müssen.
+\end{itemize}
+
+Manuelle Feineinstellungen erlauben, Start- und Endfarbton des Gradienten, die Helligkeit der Hintergrundbeleuchtung und die numerischen Sensorbereiche an eigene Hardware anzupassen. Stellen Sie sicher, dass jede Änderung zur verbauten Anzeige passt, um irreführende Messwerte zu vermeiden.
+
+\section{Oberflächenübersicht}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image15.png}
+        \caption{Start des Webpacks}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image11.png}
+        \caption{Auswahl des seriellen Ports}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image1.png}
+        \caption{Freigabe des Ports}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image8.png}
+        \caption{Baudrate einstellen}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image22.png}
+        \caption{MODBUS-Verbindung herstellen}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image5.png}
+        \caption{Preset-Auswahl}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image3.png}
+        \caption{Manuelle Einstellmöglichkeiten}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image2.png}
+        \caption{Bestätigung des Sendens}
+    \end{subfigure}
+    \caption{Wichtige Panels des IV-Conf Webpacks für die tägliche Konfiguration.}
+\end{figure}
+
+\section{Hinweise zur Nutzung}
+In den meisten Fällen werden nur die Konfigurationspanels benötigt. Firmware-Updates werden separat in \autoref{ch:appendix} behandelt. Wenn eine Einstellung nicht angewendet wird, trennen und erneuern Sie die MODBUS-Verbindung und stellen Sie sicher, dass der richtige serielle Port und die korrekte Baudrate gewählt sind.

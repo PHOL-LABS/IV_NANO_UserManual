@@ -1,2 +1,70 @@
 \chapter{Sensor connections}\label{ch:connections}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Die folgenden Hinweise fassen die Verdrahtungsangaben aus der HTML-Referenz zusammen. Überprüfen Sie vor dem Anlegen der Versorgung stets die Polarität und die Steckerorientierung.
+
+\section{Spannungsüberwachung}
+Schließen Sie die Voltmeter-Anzeige an eine geschaltete 12~V-Leitung und die Fahrzeugmasse an. Teilen Sie die Masse mit der übrigen Instrumentierung und sichern Sie die Leitung mit einer vorgeschalteten Sicherung.
+
+\section{Barometer}
+\begin{itemize}
+    \item Sensor: VAG \texttt{03C906051A}, versorgt mit 5~V.
+    \item Stecker: \texttt{8K0973703} (Buchse) am Kabelbaum.
+    \item Signal: einzelner Analogausgang, der zum Eingang der Anzeige geführt wird.
+\end{itemize}
+
+\section{Thermometer}
+Verwenden Sie einen NTC-Thermistor Ossca\,01176 oder ein gleichwertiges Bauteil. Führen Sie beide Leitungen in den Kabelbaum der Anzeige und prüfen Sie den Widerstand vor der Kalibrierung anhand der Werte in \autoref{app:temperature-table}.
+
+\section{Lambda}
+IV-Indicators Lambda ist für den Einsatz mit zwei Sonden vorgesehen: der serienmäßigen Schmalband-Sonde und einer zusätzlichen Bosch LSU~4.9, die an einen Breitband-Controller angeschlossen ist.
+\begin{itemize}
+    \item Schmalband-Sonden liefern 0{,}1--0{,}9~V und können nach der Kalibrierung direkt mit der Anzeige verbunden werden.
+    \item Breitband-Controller (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 und ähnliche) stellen einen linearen 0--5~V-Ausgang bereit, den die Anzeige darstellen kann.
+    \item Belassen Sie die Serienverkabelung des Motorsteuergeräts und führen Sie den analogen Ausgang des Controllers in den IV-Indicators-Kabelbaum.
+\end{itemize}
+
+\section{Boost}
+\begin{itemize}
+    \item Sensor: Dacia \texttt{223657266R} (\texttt{161B0004}/\texttt{8200225971}).
+    \item Versorgung: geregelte 5~V mit gemeinsamer Masse zur Anzeige.
+    \item Stecker: abgedichteter dreipoliger Stecker wie Bosch \texttt{1928403966}, falls der OEM-Stecker nicht verfügbar ist.
+\end{itemize}
+
+\section{Verbindungsdiagramme}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image43.jpg}
+    \caption{Übersicht der Lambda-Verdrahtung}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image10.png}
+    \caption{Beispielanschluss für Breitband}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image44.jpg}
+    \caption{Pinbelegung Controller zu LSU~4.9}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image45.jpg}
+    \caption{Detail des IV-Indicator-Anschlusses}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image16.png}
+    \caption{Beispiel einer fertigen Installation}
+\end{figure}
+\clearpage
+
+\section{Support}
+PHOL-LABS Kft kann bei der Erstinbetriebnahme der Anzeigen kostenlos unterstützen und bietet für komplexe Setups verlängerte, kostenpflichtige Beratung an. Kontaktieren Sie den Support, wenn kundenspezifische Sensoren oder zusätzliche Controller eingebunden werden.

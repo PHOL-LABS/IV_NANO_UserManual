@@ -1,2 +1,20 @@
 \chapter{Safety notices}\label{ch:safety}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Die Hardware der IV-Indicators Nano ist empfindlich gegenüber Kurzschlüssen und falsch verdrahteten Sensoren. Lesen Sie vor dem Einschalten des Programmers stets die Verbote in \autoref{ch:precautions} und beachten Sie die folgenden Hinweise während der Installation.
+
+\section{Handhabung des Programmers}
+\begin{itemize}
+    \item Behandeln Sie den Programmer wie einen Teil der Anzeige. Versorgen Sie ihn niemals mit Strom, bevor der Pogo-Stecker vollständig sitzt und auf einer nicht leitenden Oberfläche abgestützt ist.
+    \item Verbinden oder trennen Sie den Programmer nicht, während Daten übertragen werden. Ziehen Sie zuerst das USB-Kabel ab und halten Sie das Gerät ruhig, um ein Verbiegen der Pins zu vermeiden.
+    \item Meiden Sie leitfähige Arbeitsflächen wie Laptopgehäuse, blanke Metallwerkbänke oder Karosserieteile. Selbst kurzer Kontakt kann die Pogo-Pins kurzschließen und die Elektronik dauerhaft beschädigen.
+\end{itemize}
+
+\section{Sensorsicherheit}
+\begin{itemize}
+    \item Verwenden Sie die empfohlenen Stecker für jedes Preset und sorgen Sie für Zugentlastung der Kabelbäume. Das Barometer setzt auf den VAG-Stecker \texttt{8K0973703}, während das Boost-Preset mit einem abgedichteten dreipoligen Stecker kombiniert werden sollte.
+    \item Kombinieren Sie die Lambda-Anzeige bei getunten Motoren mit einem unterstützten Breitbandsteuergerät. Controller wie SLC Free, DIY-EFI TinyWB oder Sigma Lambda Controller Free~2 wandeln die Bosch LSU~4.9-Sonde in eine sichere analoge Spannung für die Anzeige um.
+    \item Prüfen Sie vor der Fahrt, ob die Kalibrierungsbereiche zum verbauten Sensor passen. Falsche Grenzwerte führen zu irreführenden Anzeigen und Fehlinterpretationen.
+\end{itemize}
+
+\section{Hinweis zur Garantie}
+PHOL-LABS Kft bietet keine Garantie für Geräte, die auf leitenden Oberflächen betrieben, mit vertauschter Polarität angeschlossen oder anderweitig entgegen den oben genannten Regeln genutzt wurden. Ersatzhardware ist verfügbar, wird bei Fehlbedienung jedoch nur kostenpflichtig geliefert.

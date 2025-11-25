@@ -1,2 +1,19 @@
 \chapter{Operating principle}\label{ch:operating-principle}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Jeder IV-Indicators Nano integriert eine segmentierte Anzeige, eine RGB-Hintergrundbeleuchtung und einen Mikrocontroller, der Messpresets speichert. Auf der Rückseite verbindet sich ein vierpoliger Pogo-Stecker mit dem mitgelieferten Programmer, sodass die Anzeige Firmware-Updates und Konfigurationsprofile von einem Android-Telefon oder einem Desktop-Browser empfangen kann.
+
+\section{Mess-Presets}
+Jede Anzeige wird mit einem auf ihre Aufgabe abgestimmten Preset ausgeliefert:
+\begin{itemize}
+    \item \textbf{Voltmeter} --- überwacht die Bordspannung direkt über den Kabelbaum des Fahrzeugs.
+    \item \textbf{Barometer} --- richtet sich auf den VAG 03C906051A-Drucksensor aus, der von einer geregelten 5~V-Versorgung gespeist wird.
+    \item \textbf{Thermometer} --- liest NTC-Thermistoren, die der in \autoref{app:temperature-table} genannten Ossca\,01176-Sonde entsprechen.
+    \item \textbf{Lambda} --- interpretiert Schmalband-Lambdasignale und akzeptiert lineare 0--5~V-Ausgänge von Breitbandsteuergeräten.
+    \item \textbf{Boost} --- arbeitet mit dem Dacia 223657266R-Sensor\\ (auch bekannt als 161B0004/8200225971) zusammen.
+\end{itemize}
+
+\section{Konfigurationsablauf}
+Konfigurationsdaten werden über USB von den IV-Conf-Anwendungen übertragen. Sowohl die Android-Beta als auch das Webpack bieten Steuerungen für Farben, Verläufe und Modi, sodass dieselbe Hardware Punkte oder Balken darstellen kann. Sie können bis zu vier Farbsegmente definieren, die Helligkeit der Hintergrundbeleuchtung anpassen und den Minimal-/Maximalbereich an Ihre Sensoren angleichen. Kalibrierte Werte bleiben auch nach dem Abziehen des Instruments erhalten, was Experimente erleichtert, ohne eine bevorzugte Einstellung zu verlieren.
+
+\section{Sensorintegration}
+Das Barometer-Preset erwartet den OEM-VAG-Stecker \texttt{8K0973703}. Die Boost-Anzeige wird ohne eigenen Kabelsatz geliefert; ein abgedichteter dreipoliger Automobilstecker wie der Bosch \texttt{1928403966} wird empfohlen. Für Lambdamessungen rät PHOL-LABS, die Anzeige mit einem externen Breitbandsteuergerät (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 oder ähnlich) zu kombinieren, das eine Bosch LSU~4.9-Sonde in eine stabile analoge Spannung aufbereitet. Führen Sie den linearen Ausgang des Controllers zum Anzeigeeingang und befolgen Sie für Heizung und Kalibrierung das Controller-Handbuch.

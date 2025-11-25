@@ -1,2 +1,103 @@
 \chapter{Appendix}\label{ch:appendix}
-\textit{Translation in progress. Please refer to the English edition.}
+
+\section{IV-Conf web pack reflashing}\label{app:reflashing}
+Verwenden Sie das Webpack für Firmware-Updates. Führen Sie die folgenden Schritte durch, ohne die Stromversorgung zu unterbrechen, sobald die Übertragung gestartet wurde.
+\begin{enumerate}
+    \item Öffnen Sie \url{https://phol-labs.com/iv} und verbinden Sie sich mit dem Programmer wie in \autoref{ch:web-config} beschrieben.
+    \item Stellen Sie sicher, dass die Baudrate auf 115200 gesetzt ist, und klicken Sie auf \texttt{Connect MODBUS}. Warten Sie auf eine grüne Statusmeldung.
+    \item Drücken Sie \texttt{Stop Send Data}, um eventuelle automatische Preset-Uploads zu stoppen.
+    \item Klicken Sie auf das Firmware-Symbol, wählen Sie die mit Ihrer Anzeige gelieferte Update-Datei aus und bestätigen Sie die Eingabeaufforderung.
+    \item Lassen Sie die Anzeige unberührt, bis der Fortschrittsbalken abgeschlossen ist und das Gerät neu startet.
+\end{enumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image15.png}
+        \caption{Webpack öffnen}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image11.png}
+        \caption{Seriellen Port auswählen}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image1.png}
+        \caption{Zugriff freigeben}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image8.png}
+        \caption{115200 Baud setzen}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image25.png}
+        \caption{Aktive Übertragungen stoppen}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image14.png}
+        \caption{MODBUS verbinden}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image6.png}
+        \caption{Firmware-Dialog öffnen}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image46.png}
+        \caption{Update-Paket auswählen}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image7.png}
+        \caption{Upload bestätigen}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image12.png}
+        \caption{Auf Abschluss warten}
+    \end{subfigure}
+    \caption{Ablauf der IV-Conf-Webpack-Bildschirme während des Firmware-Flashens.}
+\end{figure}
+
+\section{Referenz für Temperatursensoren}\label{app:temperature-table}
+Die folgende Tabelle zeigt die Nennwiderstände des NTC-Sensors Ossca \texttt{01176}, der mit dem Thermometer-Preset verwendet wird.
+
+\begin{table}[htbp]
+    \centering
+    \caption{NTC-Widerstandsreferenz}
+    \label{tab:ntc-reference}
+    \begin{tabular}{@{} rr @{}}
+        \toprule
+        Widerstand (\si{\ohm}) & Temperatur (\si{\celsius}) \\
+        \midrule
+        270.0 & 58 \\
+        220.0 & 63 \\
+        199.8 & 66 \\
+        111.0 & 83 \\
+        73.8 & 98 \\
+        55.0 & 108 \\
+        48.8 & 113 \\
+        44.0 & 117 \\
+        37.2 & 124 \\
+        32.1 & 130 \\
+        28.2 & 136 \\
+        25.1 & 141 \\
+        22.7 & 146 \\
+        20.4 & 151 \\
+        19.0 & 155 \\
+        18.8 & 155 \\
+        15.9 & 160 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Künftige Versionen dieses Anhangs werden zusätzliche Sensordaten und Verdrahtungsdiagramme enthalten.
