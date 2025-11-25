@@ -1,2 +1,71 @@
 \chapter{Technical specifications}\label{ch:technical-specifications}
-\textit{Translation in progress. Please refer to the English edition.}
+
+\section{Unterstützte Sensoren}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Werkspresets und kompatible Sensoren}
+    \label{tab:sensor-characteristics}
+
+    \begin{tabularx}{\textwidth}{@{} l l l X @{}}
+        \toprule
+        Anzeige & Sensor & Versorgung & Hinweise \\
+        \midrule
+        Voltmeter & Fahrzeugkabelbaum & 12~V-System & Direkte Messung der Ladespannung. \\
+        Barometer & VAG \texttt{03C906051A} & 5~V &
+            10~bar Bereich, 0{,}4--0{,}5~V Nenn-Ausgang, Gewinde M10\,\texttimes\,1{,}0. \\
+        Thermometer & Ossca \texttt{01176} NTC & Passiv &
+            Referenzwerte in \autoref{app:temperature-table}. \\
+        Lambda & Schmalband-O$_2$-Sensor & Passiv &
+            0{,}1--0{,}9~V Hub, akzeptiert 0--5~V von Breitband-Controllern. \\
+        Boost & Dacia \texttt{223657266R} & 5~V &
+            20--250~kPa Bereich, 1{,}8~V Nennausgang, Einzel-Befestigungsbohrung. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Barometer-Preset}
+Die Barometer-Anzeige ist für den Drucksensor \texttt{03C906051A} des Volkswagen-Konzerns ausgelegt.
+\begin{itemize}
+    \item Spannungsversorgung: 5~V geregelt.
+    \item Messbereich: 10~bar absolut.
+    \item Nenn-Ausgangsspannung: 0{,}4--0{,}5~V im Ruhezustand.
+    \item Mechanisches Gewinde: M10\,\texttimes\,1{,}0.
+    \item Stecker: VAG \texttt{8K0973703}.
+\end{itemize}
+
+\section{Thermometer-Preset}
+Thermometer-Presets werden für den NTC-Thermistor Ossca\,01176 kalibriert ausgeliefert, der häufig in Golf~II-Kühlsystemen verbaut ist. Verwenden Sie die Widerstandstabelle in \autoref{app:temperature-table}, um alternative Sonden zu überprüfen. Für kundenspezifische NTC-Sensoren passen Sie den Beta-Koeffizienten und den Nennwiderstand über die IV-Conf-Werkzeuge an.
+
+\section{Boost-Preset}
+Die Boost-Anzeige erwartet den Sensor Dacia \texttt{223657266R} (\texttt{161B0004}/\texttt{8200225971}).
+\begin{itemize}
+    \item Dreipoliger Stecker (verwenden Sie einen abgedichteten Bosch \texttt{1928403966} oder ein Äquivalent).
+    \item Versorgungsspannung: +5~V.
+    \item Arbeitsbereich: 20--250~kPa.
+    \item Analoger Ausgang: etwa +1{,}8~V bei nominalem Ladedruck.
+\end{itemize}
+
+\section{Lambda-Integration}
+IV-Indicators Lambda liest Schmalband-Sonden direkt aus, ist bei getunten Motoren jedoch für den Betrieb mit einem Breitband-Controller gedacht. Empfohlene Controller sind SLC Free, DIY-EFI TinyWB und Sigma Lambda Controller Free~2. Jedes Gerät wandelt eine Bosch LSU~4.9-Sonde in ein lineares 0--5~V-Signal um, das die Anzeige darstellen kann.
+
+\section{Sensorreferenzen}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image41.jpg}
+        \caption{VAG 03C906051A Drucksensor}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image9.png}
+        \caption{Pinbelegung für den Barometer-Kabelbaum}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image42.jpg}
+        \caption{Beispielanschluss des Boost-Sensors}
+    \end{subfigure}
+    \caption{Referenzhardware für die Barometer- und Boost-Presets.}
+\end{figure}

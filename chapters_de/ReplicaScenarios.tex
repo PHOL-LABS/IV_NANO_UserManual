@@ -1,2 +1,60 @@
 \chapter{Typical setup cases}\label{ch:setup-cases}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Stellen Sie immer eine stabile MODBUS-Sitzung sicher (keine roten Fehlermeldungen), bevor Sie die folgenden Anpassungen vornehmen. Die Screenshots stammen aus dem IV-Conf Webpack, die Android-Beta bietet jedoch gleichwertige Bedienelemente.
+
+\section{Farbanpassungen}
+\begin{enumerate}
+    \item Klicken Sie auf \texttt{Get data}, um das aktuelle Preset auszulesen.
+    \item Ändern Sie die Farbregler, bis die gewünschte Displayfarbe erreicht ist. Der Vorschauteil spiegelt die Anzeigeausgabe wider.
+    \item Passen Sie den Hintergrundbeleuchtungsregler \texttt{Bl} an, um die Hintergrundhelligkeit zu justieren.
+    \item Drücken Sie \texttt{Send data} und warten Sie, bis die Übertragung abgeschlossen ist.
+\end{enumerate}
+
+\section{Bereichskalibrierung}
+\begin{enumerate}
+    \item Laden Sie die Konfiguration mit \texttt{Get data}.
+    \item Aktualisieren Sie \texttt{Range min} und \texttt{Range max}, damit die Anzeige den tatsächlichen Sensorbereich widerspiegelt (Voltmeter, Barometer, Lambda oder Boost).
+    \item Senden Sie die Daten und vergleichen Sie den Live-Wert mit einem verlässlichen Messgerät.
+\end{enumerate}
+
+\section{Feinabstimmung des Thermometers}
+\begin{enumerate}
+    \item Messen Sie den Sensorwiderstand mit einem Multimeter und vergleichen Sie ihn mit den Werten in \autoref{app:temperature-table}. Ersetzen Sie die Sonde, wenn sie außerhalb der Toleranz liegt.
+    \item Nutzen Sie \texttt{Get data}, um die aktuellen Parameter zu laden.
+    \item Tragen Sie den passenden Beta-Koeffizienten und den Nennwiderstand für den kundenspezifischen NTC-Sensor ein.
+    \item Laden Sie die Änderungen mit \texttt{Send data} hoch.
+\end{enumerate}
+
+\section{Wechsel zwischen Balken- und Punktmodus}
+\begin{enumerate}
+    \item Lesen Sie die Konfiguration über \texttt{Get data} ein.
+    \item Setzen Sie \texttt{Bar mode} auf 1 für eine Balkendarstellung oder lassen Sie das Feld leer für die Punktanzeige.
+    \item Drücken Sie \texttt{Send data}, um die Änderung zu übernehmen.
+\end{enumerate}
+
+\section{Oberflächen-Highlights}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image29.png}
+        \caption{Gradienten- und Farb-Editor}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image26.png}
+        \caption{Felder zur Bereichskalibrierung}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image24.png}
+        \caption{Konfiguration eines eigenen NTC}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image4.png}
+        \caption{Schalter für den Balkenmodus}
+    \end{subfigure}
+    \caption{Häufig genutzte IV-Conf-Bedienelemente, auf die in den Beispielkonfigurationen verwiesen wird.}
+\end{figure}

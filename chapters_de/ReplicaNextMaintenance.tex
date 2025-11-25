@@ -1,2 +1,52 @@
 \chapter{Configuring with the IV-Conf Android beta}\label{ch:android-config}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Eine experimentelle IV-Conf-Android-App wird mit dem Instrumentensatz ausgeliefert. Die Beta funktioniert zum Flashen von Presets und zum Bearbeiten von Farbschemata, doch PHOL-LABS empfiehlt für mission-kritische Anpassungen das Webpack.
+
+\section{Den Programmer verbinden}
+\begin{enumerate}
+    \item Stecken Sie den externen Programmer in die Anzeige, bevor Sie Kabel anschließen.
+    \item Verbinden Sie den Programmer mit dem Android-Telefon über ein USB-C-OTG-Kabel. Falls das Handy einen anderen Anschluss nutzt, platzieren Sie einen USB-Hub oder USB-A-Adapter zwischen Telefon und Programmer.
+    \item Starten Sie die IV-Conf-Beta, bestätigen Sie die USB-Berechtigung und tippen Sie auf \texttt{USB Connect}. Warten Sie, bis der Status \texttt{Connected} meldet.
+\end{enumerate}
+
+\section{Presets und Modi laden}
+\begin{enumerate}
+    \item Öffnen Sie den Navigation Drawer (Symbol mit drei Balken) und wählen Sie \texttt{Settings}.
+    \item Wählen Sie ein Preset, das zur physischen Anzeige passt --- Volts, Baro, Thermo, Lambda oder Boost.
+    \item Tippen Sie auf \texttt{Set parameters} und warten Sie, bis die Übertragung abgeschlossen ist. Die Anzeige muss während des Sendens ruhig liegen.
+    \item Nutzen Sie die Schalter auf dem Bildschirm, um zwischen Punkt- und Balkenmodus zu wechseln, und passen Sie den Schieberegler für die Hintergrundbeleuchtung an.
+\end{enumerate}
+
+\section{Verläufe bearbeiten}
+\begin{enumerate}
+    \item Wählen Sie den Verlaufstyp (Standard: \texttt{Gradient}).
+    \item Wählen Sie die Anzahl der Segmente (bis zu vier) und ordnen Sie jedem Segment Farben und Übergangspositionen zu.
+    \item Drücken Sie erneut \texttt{Set parameters}, damit der aktualisierte Verlauf auf die Anzeige geschrieben wird.
+\end{enumerate}
+
+\section{Oberflächenübersicht}
+\begin{table}[htbp]
+    \centering
+    \caption{Wichtige Verbindungs- und Startbildschirme der IV-Conf-Android-Beta.}
+    \label{tab:android-connection}
+    \begin{tabular}{@{} c c c @{}}
+        \subcaptionbox{Programmierung verkabeln}{\includegraphics[width=0.3\textwidth]{image47.png}} &
+        \subcaptionbox{App-Startbildschirm}{\includegraphics[width=0.3\textwidth]{image17.png}} &
+        \subcaptionbox{Erfolgreiche USB-Verbindung}{\includegraphics[width=0.3\textwidth]{image18.png}} \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Preset-, Modus- und Verlaufssteuerungen in der IV-Conf-Android-Beta.}
+    \label{tab:android-presets}
+    \begin{tabular}{@{} c c c @{}}
+        \subcaptionbox{Preset-Auswahl}{\includegraphics[width=0.3\textwidth]{image19.png}} &
+        \subcaptionbox{Modus-Konfiguration}{\includegraphics[width=0.3\textwidth]{image20.png}} &
+        \subcaptionbox{Steuerung der Hintergrundbeleuchtung}{\includegraphics[width=0.3\textwidth]{image21.png}} \\
+        \multicolumn{3}{c}{\subcaptionbox{Gradienten-Editor}{\includegraphics[width=0.3\textwidth]{image23.png}}}
+    \end{tabular}
+\end{table}
+
+\section{Einschränkungen der Beta}
+Die Beta-Anwendung befindet sich in aktiver Entwicklung. Erwarten Sie Änderungen an der Oberfläche und gelegentliche Stabilitätsprobleme; greifen Sie auf das Webpack zurück, falls eine Einstellung nicht korrekt angewendet wird. Melden Sie reproduzierbare Fehler direkt an PHOL-LABS, damit Firmware- und App-Updates abgestimmt werden können.
