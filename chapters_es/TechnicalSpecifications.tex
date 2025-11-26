@@ -1,2 +1,71 @@
-\chapter{Technical specifications}\label{ch:technical-specifications}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Especificaciones t\'ecnicas}\label{ch:technical-specifications}
+
+\section{Sensores compatibles}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Preajustes de f\'abrica y sensores compatibles}
+    \label{tab:sensor-characteristics}
+
+    \begin{tabularx}{\textwidth}{@{} l l l X @{}}
+        \toprule
+        Indicador & Sensor & Alimentaci\'on & Notas \\
+        \midrule
+        Voltmeter & Arn\'es del veh\'iculo & Sistema de 12~V & Medici\'on directa del voltaje de carga. \\
+        Barometer & VAG \texttt{03C906051A} & 5~V &
+            Rango de 10~bar, salida nominal de 0.4--0.5~V, rosca M10\,\texttimes\,1.0. \\
+        Thermometer & NTC Ossca \texttt{01176} & Pasivo &
+            Valores de referencia indicados en la \autoref{app:temperature-table}. \\
+        Lambda & Sensor de O$_2$ de banda estrecha & Pasivo &
+            Recorrido de 0.1--0.9~V, acepta 0--5~V de controladores de banda ancha. \\
+        Boost & Dacia \texttt{223657266R} & 5~V &
+            Intervalo de 20--250~kPa, salida nominal de 1.8~V, orificio \'unico de montaje. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Preajuste barom\'etrico}
+El indicador barom\'etrico est\'a dise\~nado para el sensor de presi\'on \texttt{03C906051A} del Grupo Volkswagen.
+\begin{itemize}
+    \item Alimentaci\'on: 5~V regulados.
+    \item Rango de medici\'on: 10~bar absolutos.
+    \item Salida anal\'ogica nominal: 0.4--0.5~V en reposo.
+    \item Rosca mec\'anica: M10\,\texttimes\,1.0.
+    \item Conector: VAG \texttt{8K0973703}.
+\end{itemize}
+
+\section{Preajuste de term\'ometro}
+Los preajustes de term\'ometro se env\'ian calibrados para el termistor NTC Ossca\,01176, habitual en los sistemas de refrigeraci\'on del Golf~II. Utilice la tabla de resistencias de la \autoref{app:temperature-table} al validar sondas alternativas. Para sensores NTC personalizados, actualice el coeficiente beta y la resistencia nominal mediante las herramientas IV-Conf.
+
+\section{Preajuste de turbo}
+El indicador de turbo requiere el sensor Dacia \texttt{223657266R} (\texttt{161B0004}/\texttt{8200225971}).
+\begin{itemize}
+    \item Conector de tres pines (use un Bosch sellado \texttt{1928403966} o equivalente).
+    \item Voltaje de alimentaci\'on: +5~V.
+    \item Ventana de funcionamiento: 20--250~kPa.
+    \item Salida anal\'ogica: aproximadamente +1.8~V en el punto nominal de sobrealimentaci\'on.
+\end{itemize}
+
+\section{Integraci\'on lambda}
+IV-Indicators Lambda lee sensores de banda estrecha directamente, pero est\'a pensado para funcionar junto con un controlador de banda ancha en motores ajustados. Los controladores recomendados incluyen SLC Free, DIY-EFI TinyWB y Sigma Lambda Controller Free~2. Cada dispositivo convierte una sonda Bosch LSU~4.9 en una se\~nal lineal de 0--5~V que el indicador puede mostrar.
+
+\section{Im\'agenes de referencia de los sensores}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image41.jpg}
+        \caption{Sensor de presi\'on VAG 03C906051A}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image9.png}
+        \caption{Asignaci\'on de pines del mazo barom\'etrico}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image42.jpg}
+        \caption{Ejemplo de conexi\'on del sensor de turbo}
+    \end{subfigure}
+    \caption{Hardware de referencia suministrado o recomendado para los preajustes barom\'etrico y de turbo.}
+\end{figure}

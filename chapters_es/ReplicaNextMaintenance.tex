@@ -1,2 +1,52 @@
-\chapter{Configuring with the IV-Conf Android beta}\label{ch:android-config}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Configuraci\'on con la beta de Android IV-Conf}\label{ch:android-config}
+
+Una aplicaci\'on experimental IV-Conf para Android se suministra con el juego de indicadores. La beta permite cargar preajustes y editar esquemas de color, pero PHOL-LABS recomienda el paquete web para ajustes cr\'iticos.
+
+\section{Conexi\'on del programador}
+\begin{enumerate}
+    \item Inserte el programador externo en el indicador antes de conectar cualquier cable.
+    \item Conecte el programador al tel\'efono Android con un cable OTG USB-C. Si el tel\'efono usa otro conector, coloque un hub USB o un adaptador USB-A entre el tel\'efono y el programador.
+    \item Inicie la beta de IV-Conf, confirme el mensaje de permiso USB y pulse \texttt{USB Connect}. Espere hasta que el estado indique \texttt{Connected}.
+\end{enumerate}
+
+\section{Cargar preajustes y modos}
+\begin{enumerate}
+    \item Abra el men\'u lateral (icono de tres barras) y seleccione \texttt{Settings}.
+    \item Elija un preajuste que coincida con el indicador f\'isico: Volts, Baro, Thermo, Lambda o Boost.
+    \item Pulse \texttt{Set parameters} y permita que finalice la transmisi\'on. El indicador debe permanecer inm\'ovil mientras se env\'ian datos.
+    \item Utilice los interruptores en pantalla para alternar entre los modos de puntos y barras y ajuste el control deslizante de intensidad de la retroiluminaci\'on.
+\end{enumerate}
+
+\section{Edici\'on de degradados}
+\begin{enumerate}
+    \item Seleccione el estilo de degradado (por defecto: \texttt{Gradient}).
+    \item Elija el n\'umero de segmentos (hasta cuatro) y asigne colores y posiciones de transici\'on a cada segmento.
+    \item Pulse de nuevo \texttt{Set parameters} para que el degradado actualizado se escriba en el indicador.
+\end{enumerate}
+
+\section{Resumen de la interfaz}
+\begin{table}[htbp]
+    \centering
+    \caption{Pantallas clave de conexi\'on y arranque de la beta IV-Conf para Android.}
+    \label{tab:android-connection}
+    \begin{tabular}{@{} c c c @{}}
+        \subcaptionbox{Cableado del programador}{\includegraphics[width=0.3\textwidth]{image47.png}} &
+        \subcaptionbox{Pantalla inicial de la aplicaci\'on}{\includegraphics[width=0.3\textwidth]{image17.png}} &
+        \subcaptionbox{Conexi\'on USB correcta}{\includegraphics[width=0.3\textwidth]{image18.png}} \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Controles de preajustes, modo y degradado en la beta IV-Conf para Android.}
+    \label{tab:android-presets}
+    \begin{tabular}{@{} c c c @{}}
+        \subcaptionbox{Selecci\'on de preajuste}{\includegraphics[width=0.3\textwidth]{image19.png}} &
+        \subcaptionbox{Configuraci\'on de modo}{\includegraphics[width=0.3\textwidth]{image20.png}} &
+        \subcaptionbox{Control de retroiluminaci\'on}{\includegraphics[width=0.3\textwidth]{image21.png}} \\
+        \multicolumn{3}{c}{\subcaptionbox{Editor de degradado}{\includegraphics[width=0.3\textwidth]{image23.png}}}
+    \end{tabular}
+\end{table}
+
+\section{Limitaciones de la beta}
+La aplicaci\'on beta est\'a en desarrollo activo. Espere cambios en la interfaz y problemas de estabilidad ocasionales; vuelva al paquete web si alg\'un ajuste no se aplica correctamente. Informe directamente a PHOL-LABS de los errores reproducibles para coordinar las actualizaciones de firmware y de la aplicaci\'on.

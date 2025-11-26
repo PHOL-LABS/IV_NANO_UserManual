@@ -1,2 +1,60 @@
-\chapter{Typical setup cases}\label{ch:setup-cases}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Casos t\'ipicos de configuraci\'on}\label{ch:setup-cases}
+
+Establezca siempre una sesi\'on MODBUS estable (sin banners rojos de error) antes de aplicar cualquiera de los siguientes ajustes. Las capturas provienen del paquete web IV-Conf, pero la beta de Android ofrece controles equivalentes.
+
+\section{Ajustes de color}
+\begin{enumerate}
+    \item Haga clic en \texttt{Get data} para leer el preajuste actual.
+    \item Cambie los controles de tono hasta que coincidan con el color de visualizaci\'on deseado. El texto de vista previa refleja la salida del indicador.
+    \item Ajuste el control deslizante de retroiluminaci\'on \texttt{Bl} para regular la intensidad del fondo.
+    \item Pulse \texttt{Send data} y espere a que finalice la transferencia.
+\end{enumerate}
+
+\section{Calibraci\'on de rangos}
+\begin{enumerate}
+    \item Obtenga la configuraci\'on con \texttt{Get data}.
+    \item Actualice \texttt{Range min} y \texttt{Range max} para que el indicador refleje el rango real del sensor (volt\'imetro, bar\'ometro, lambda o turbo).
+    \item Env\'ie los datos y verifique la lectura en vivo contra un medidor fiable.
+\end{enumerate}
+
+\section{Ajuste del term\'ometro}
+\begin{enumerate}
+    \item Mida la resistencia del sensor con un mult\'imetro y comp\'arela con los valores de la \autoref{app:temperature-table}. Sustituya la sonda si est\'a fuera de tolerancia.
+    \item Use \texttt{Get data} para cargar los par\'ametros actuales.
+    \item Introduzca el coeficiente beta y la resistencia nominal adecuados para el sensor NTC personalizado.
+    \item Cargue los cambios con \texttt{Send data}.
+\end{enumerate}
+
+\section{Cambio entre modos de barras y puntos}
+\begin{enumerate}
+    \item Obtenga la configuraci\'on mediante \texttt{Get data}.
+    \item Ajuste \texttt{Bar mode} a 1 para una visualizaci\'on de barras o desm\'arquelo para indicaci\'on por puntos.
+    \item Pulse \texttt{Send data} para aplicar el cambio.
+\end{enumerate}
+
+\section{Aspectos destacados de la interfaz}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image29.png}
+        \caption{Editor de degradado y tono}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image26.png}
+        \caption{Campos de calibraci\'on de rango}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image24.png}
+        \caption{Configuraci\'on de NTC personalizada}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image4.png}
+        \caption{Conmutaci\'on del modo de barras}
+    \end{subfigure}
+    \caption{Controles habituales de IV-Conf mencionados en los casos de configuraci\'on.}
+\end{figure}

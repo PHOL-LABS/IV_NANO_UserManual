@@ -1,2 +1,70 @@
-\chapter{Sensor connections}\label{ch:connections}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Conexiones de sensores}\label{ch:connections}
+
+La orientaci\'on siguiente consolida las notas de cableado incluidas en la referencia HTML. Verifique siempre la polaridad y la orientaci\'on de los conectores antes de aplicar tensi\'on.
+
+\section{Monitorizaci\'on de voltaje}
+Conecte el indicador de voltaje a una alimentaci\'on de 12~V conmutada y a la masa del veh\'iculo. Comparta la referencia de masa con el resto de la instrumentaci\'on y proteja la l\'inea de alimentaci\'on con un fusible en serie.
+
+\section{Bar\'ometro}
+\begin{itemize}
+    \item Sensor: VAG \texttt{03C906051A} alimentado con 5~V.
+    \item Conector: \texttt{8K0973703} (hembra) en el mazo.
+    \item Se\~nal: salida anal\'ogica \'unica conducida a la entrada del indicador.
+\end{itemize}
+
+\section{Term\'ometro}
+Utilice un termistor NTC Ossca\,01176 o una pieza equivalente. Conduzca ambos cables hacia el mazo del indicador y confirme la resistencia con los valores indicados en la \autoref{app:temperature-table} antes de calibrar.
+
+\section{Lambda}
+IV-Indicators Lambda est\'a pensado para trabajar con dos sondas: la de banda estrecha de f\'abrica y una Bosch LSU~4.9 adicional conectada a un controlador de banda ancha.
+\begin{itemize}
+    \item Los sensores de banda estrecha entregan 0.1--0.9~V y pueden cablearse directamente al indicador tras la calibraci\'on.
+    \item Los controladores de banda ancha (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 y similares) proporcionan una salida lineal de 0--5~V que el indicador puede mostrar.
+    \item Mantenga el cableado original de la ECU y conduzca la salida anal\'ogica del controlador hacia el mazo IV-Indicators.
+\end{itemize}
+
+\section{Turbo}
+\begin{itemize}
+    \item Sensor: Dacia \texttt{223657266R} (\texttt{161B0004}/\texttt{8200225971}).
+    \item Alimentaci\'on: 5~V regulados con una masa com\'un para el indicador.
+    \item Conector: enchufe sellado de tres pines, como el Bosch \texttt{1928403966}, cuando no se disponga del conector OEM.
+\end{itemize}
+
+\section{Esquemas de conexi\'on}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image43.jpg}
+    \caption{Resumen de cableado lambda}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image10.png}
+    \caption{Ejemplo de conexi\'on de banda ancha}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image44.jpg}
+    \caption{Asignaci\'on de pines del controlador a la LSU~4.9}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image45.jpg}
+    \caption{Detalle de conexi\'on del indicador IV}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image16.png}
+    \caption{Ejemplo de instalaci\'on terminada}
+\end{figure}
+\clearpage
+
+\section{Soporte}
+PHOL-LABS Kft puede ayudar con la conexi\'on inicial de los indicadores sin coste y ofrece consultor\'ia ampliada para configuraciones complejas. P\'ongase en contacto con soporte si se integran sensores personalizados o controladores adicionales.
