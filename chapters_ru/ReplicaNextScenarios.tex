@@ -1,2 +1,90 @@
-\chapter{Configuring with the IV-Conf web pack}\label{ch:web-config}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Конфигурирование через веб-пакет IV-Conf}\label{ch:web-config}
+
+Веб-пакет IV-Conf — основной инструмент настройки оборудования IV-Indicators Nano. Откройте \url{https://phol-labs.com/iv} в браузере на базе Chromium с поддержкой Web Serial и подключите комплектный программатор по USB.
+
+\section{Подключение к индикатору}
+\begin{enumerate}
+    \item Нажмите на значок последовательного порта и выберите запись, соответствующую программатору.
+    \item Откройте панель \texttt{Settings} и установите скорость 115200 бод.
+    \item Нажмите \texttt{Connect MODBUS}. В статусной строке должно появиться подтверждение соединения без красных ошибок.
+\end{enumerate}
+
+\section{Каталог пресетов}
+Для каждого типа индикатора доступно несколько пресетов. Например, у вольтметра есть варианты с многосегментной графикой или жёлтой подсветкой. Перед загрузкой выберите пресет, соответствующий установленному прибору.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Примеры пресетов вольтметра}
+    \label{tab:voltmeter-presets}
+    \begin{tabular}{@{} l l @{}}
+        \toprule
+        Название пресета & Описание \\
+        \midrule
+        IV-Volts-Bar-Multi & Вольтметр с многосегментной индикацией.\\
+        IV-Volts-Bar-Multi4 & Вариант с четырьмя уровнями многосегментного отображения.\\
+        IV-Volts-BarYellow & Столбиковая индикация с жёлтой цветовой схемой.\\
+        IV-Volts-Bar & Стандартное отображение столбиками.\\
+        IV-Volts & Минимальный пресет без дополнительной графики.\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Загрузка и чтение данных}
+\begin{itemize}
+    \item Кнопка \texttt{Send data} отправляет текущий пресет или ручные изменения в индикатор. Передача завершается автоматически за 10--15~секунд.
+    \item Нажмите \texttt{Get data}, чтобы считать текущую конфигурацию прибора перед изменением диапазонов или цветов.
+    \item Кнопка \texttt{Stop Send Data} прерывает передачу, если выбран неверный пресет или нужно изменить параметры.
+\end{itemize}
+
+Ручная настройка позволяет подбирать начальный и конечный цвет градиента, яркость подсветки и числовые диапазоны датчиков под нестандартное оборудование. Убедитесь, что каждое изменение соответствует установленному индикатору, чтобы избежать неверных показаний.
+
+\section{Обзор интерфейса}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image15.png}
+        \caption{Запуск веб-пакета}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image11.png}
+        \caption{Выбор последовательного порта}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image1.png}
+        \caption{Предоставление доступа к порту}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image8.png}
+        \caption{Настройка скорости 115200}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image22.png}
+        \caption{Соединение по MODBUS}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image5.png}
+        \caption{Выбор пресета}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image3.png}
+        \caption{Ручные настройки}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image2.png}
+        \caption{Подтверждение отправки данных}
+    \end{subfigure}
+    \caption{Основные панели веб-пакета IV-Conf для повседневной настройки.}
+\end{figure}
+
+\section{Примечания по использованию}
+В большинстве случаев достаточно панелей конфигурации. Обновление прошивки выполняется отдельно в \autoref{ch:appendix}. Если параметр не применился, разорвите соединение MODBUS, подключитесь снова и убедитесь в правильности выбранного порта и скорости.

@@ -1,2 +1,60 @@
-\chapter{Typical setup cases}\label{ch:setup-cases}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Типовые сценарии настройки}\label{ch:setup-cases}
+
+Перед любыми изменениями установите стабильное соединение по MODBUS (без красных предупреждений). Скриншоты взяты из веб-пакета IV-Conf, но в Android-бете доступны аналогичные органы управления.
+
+\section{Настройка цветов}
+\begin{enumerate}
+    \item Нажмите \texttt{Get data}, чтобы считать текущий пресет.
+    \item Измените параметры hue, чтобы задать нужный цвет индикации. Текст предпросмотра соответствует выходу индикатора.
+    \item Отрегулируйте бегунок \texttt{Bl} для настройки яркости подсветки.
+    \item Нажмите \texttt{Send data} и дождитесь завершения передачи.
+\end{enumerate}
+
+\section{Калибровка диапазона}
+\begin{enumerate}
+    \item Считайте конфигурацию через \texttt{Get data}.
+    \item Установите \texttt{Range min} и \texttt{Range max} так, чтобы индикатор отражал реальный диапазон датчика (вольтметр, барометр, лямбда или наддув).
+    \item Отправьте данные и сравните текущее показание с эталонным прибором.
+\end{enumerate}
+
+\section{Настройка термометра}
+\begin{enumerate}
+    \item Измерьте сопротивление датчика мультиметром и сравните его со значениями в \autoref{app:temperature-table}. При выходе за допуски замените датчик.
+    \item Нажмите \texttt{Get data}, чтобы загрузить текущие параметры.
+    \item Введите соответствующий коэффициент бета и номинальное сопротивление для пользовательского NTC-датчика.
+    \item Запишите изменения через \texttt{Send data}.
+\end{enumerate}
+
+\section{Переключение режимов столбиков и точек}
+\begin{enumerate}
+    \item Получите конфигурацию с помощью \texttt{Get data}.
+    \item Установите \texttt{Bar mode} в 1 для столбикового отображения или сбросьте для индикации точками.
+    \item Нажмите \texttt{Send data}, чтобы применить изменение.
+\end{enumerate}
+
+\section{Ключевые элементы интерфейса}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image29.png}
+        \caption{Редактор градиента и оттенка}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image26.png}
+        \caption{Поля калибровки диапазона}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image24.png}
+        \caption{Настройка пользовательского NTC}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image4.png}
+        \caption{Переключатель столбикового режима}
+    \end{subfigure}
+    \caption{Основные элементы IV-Conf, на которые ссылаются типовые сценарии.}
+\end{figure}
