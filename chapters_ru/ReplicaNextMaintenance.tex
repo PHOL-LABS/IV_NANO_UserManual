@@ -1,2 +1,52 @@
-\chapter{Configuring with the IV-Conf Android beta}\label{ch:android-config}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Конфигурирование через Android-бету IV-Conf}\label{ch:android-config}
+
+В комплекте с индикаторами поставляется экспериментальное Android-приложение IV-Conf. Бета-версия позволяет прошивать пресеты и менять цветовые схемы, но для критически важных настроек PHOL-LABS рекомендует использовать веб-пакет.
+
+\section{Подключение программатора}
+\begin{enumerate}
+    \item Вставьте внешний программатор в индикатор до подключения любых кабелей.
+    \item Соедините программатор со смартфоном Android через кабель USB-C OTG. Если у телефона другой разъём, подключите USB-хаб или переходник USB-A между телефоном и программатором.
+    \item Запустите бета-версию IV-Conf, подтвердите запрос на доступ к USB и нажмите \texttt{USB Connect}. Дождитесь статуса \texttt{Connected}.
+\end{enumerate}
+
+\section{Загрузка пресетов и режимов}
+\begin{enumerate}
+    \item Откройте боковое меню (значок из трёх полос) и выберите \texttt{Settings}.
+    \item Выберите пресет, соответствующий установленному индикатору: Volts, Baro, Thermo, Lambda или Boost.
+    \item Нажмите \texttt{Set parameters} и дождитесь завершения передачи. Индикатор должен оставаться неподвижным во время отправки данных.
+    \item Используйте переключатели на экране, чтобы менять режимы точек или столбиков, а также слайдер яркости подсветки.
+\end{enumerate}
+
+\section{Редактирование градиентов}
+\begin{enumerate}
+    \item Выберите стиль градиента (по умолчанию: \texttt{Gradient}).
+    \item Укажите количество сегментов (до четырёх) и задайте цвета и точки перехода для каждого сегмента.
+    \item Нажмите \texttt{Set parameters}, чтобы записать обновлённый градиент в индикатор.
+\end{enumerate}
+
+\section{Обзор интерфейса}
+\begin{table}[htbp]
+    \centering
+    \caption{Основные экраны подключения и запуска в Android-бете IV-Conf.}
+    \label{tab:android-connection}
+    \begin{tabular}{@{} c c c @{}}
+        \subcaptionbox{Подключение программатора}{\includegraphics[width=0.3\textwidth]{image47.png}} &
+        \subcaptionbox{Стартовый экран}{\includegraphics[width=0.3\textwidth]{image17.png}} &
+        \subcaptionbox{Успешное USB-подключение}{\includegraphics[width=0.3\textwidth]{image18.png}} \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Настройки пресетов, режимов и градиентов в Android-бете IV-Conf.}
+    \label{tab:android-presets}
+    \begin{tabular}{@{} c c c @{}}
+        \subcaptionbox{Выбор пресета}{\includegraphics[width=0.3\textwidth]{image19.png}} &
+        \subcaptionbox{Настройка режима}{\includegraphics[width=0.3\textwidth]{image20.png}} &
+        \subcaptionbox{Регулировка подсветки}{\includegraphics[width=0.3\textwidth]{image21.png}} \\
+        \multicolumn{3}{c}{\subcaptionbox{Редактор градиента}{\includegraphics[width=0.3\textwidth]{image23.png}}}
+    \end{tabular}
+\end{table}
+
+\section{Ограничения беты}
+Бета-приложение активно дорабатывается. Возможны изменения интерфейса и эпизодические проблемы со стабильностью; при некорректном применении параметров вернитесь к веб-пакету. Сообщайте о воспроизводимых ошибках напрямую PHOL-LABS, чтобы обновления прошивки и приложения выходили синхронно.

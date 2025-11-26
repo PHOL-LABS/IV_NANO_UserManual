@@ -1,2 +1,103 @@
-\chapter{Appendix}\label{ch:appendix}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Приложение}\label{ch:appendix}
+
+\section{Перепрошивка через веб-пакет IV-Conf}\label{app:reflashing}
+Для обновления прошивки используйте веб-пакет. Выполните шаги ниже и не отключайте питание после начала передачи.
+\begin{enumerate}
+    \item Откройте \url{https://phol-labs.com/iv} и подключитесь к программатору по инструкции в \autoref{ch:web-config}.
+    \item Убедитесь, что скорость установлена 115200 бод, и нажмите \texttt{Connect MODBUS}. Дождитесь зелёного статуса.
+    \item Нажмите \texttt{Stop Send Data}, чтобы остановить автоматическую загрузку пресетов.
+    \item Кликните на значок прошивки, выберите файл обновления, полученный с индикатором, и подтвердите действие.
+    \item Не трогайте индикатор, пока полоса прогресса не завершится и устройство не перезапустится.
+\end{enumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image15.png}
+        \caption{Открытие веб-пакета}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image11.png}
+        \caption{Выбор последовательного порта}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image1.png}
+        \caption{Подтверждение доступа}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image8.png}
+        \caption{Установка скорости 115200}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image25.png}
+        \caption{Остановка активных передач}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image14.png}
+        \caption{Соединение по MODBUS}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image6.png}
+        \caption{Открытие диалога прошивки}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image46.png}
+        \caption{Выбор пакета обновления}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image7.png}
+        \caption{Подтверждение загрузки}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image12.png}
+        \caption{Ожидание завершения}
+    \end{subfigure}
+    \caption{Последовательность экранов веб-пакета IV-Conf при перепрошивке.}
+\end{figure}
+
+\section{Справочные данные по датчику температуры}\label{app:temperature-table}
+Ниже приведена таблица номинальных сопротивлений терморезистора Ossca \texttt{01176}, используемого в пресете термометра.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Эталонные сопротивления NTC}
+    \label{tab:ntc-reference}
+    \begin{tabular}{@{} rr @{}}
+        \toprule
+        Сопротивление (\si{\ohm}) & Температура (\si{\celsius}) \\
+        \midrule
+        270.0 & 58 \\
+        220.0 & 63 \\
+        199.8 & 66 \\
+        111.0 & 83 \\
+        73.8 & 98 \\
+        55.0 & 108 \\
+        48.8 & 113 \\
+        44.0 & 117 \\
+        37.2 & 124 \\
+        32.1 & 130 \\
+        28.2 & 136 \\
+        25.1 & 141 \\
+        22.7 & 146 \\
+        20.4 & 151 \\
+        19.0 & 155 \\
+        18.8 & 155 \\
+        15.9 & 160 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+В будущих версиях приложения будут добавлены дополнительные данные по датчикам и схемам проводки.

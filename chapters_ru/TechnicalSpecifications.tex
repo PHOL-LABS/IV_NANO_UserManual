@@ -1,2 +1,71 @@
-\chapter{Technical specifications}\label{ch:technical-specifications}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Технические характеристики}\label{ch:technical-specifications}
+
+\section{Поддерживаемые датчики}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Заводские пресеты и совместимые датчики}
+    \label{tab:sensor-characteristics}
+
+    \begin{tabularx}{\textwidth}{@{} l l l X @{}}
+        \toprule
+        Индикатор & Датчик & Питание & Примечания \\
+        \midrule
+        Voltmeter & Бортовая сеть & 12~В & Прямое измерение напряжения зарядки. \\
+        Barometer & VAG \texttt{03C906051A} & 5~В &
+            Диапазон 10~бар, номинальный выход 0.4--0.5~В, резьба M10\,\texttimes\,1.0. \\
+        Thermometer & NTC Ossca \texttt{01176} & Пассивный &
+            Опорные значения приведены в \autoref{app:temperature-table}. \\
+        Lambda & Узкополосный O$_2$ датчик & Пассивный &
+            Размах 0.1--0.9~В, принимает 0--5~В от широкополосных контроллеров. \\
+        Boost & Dacia \texttt{223657266R} & 5~В &
+            Диапазон 20--250~кПа, номинальный выход 1.8~В, одно крепёжное отверстие. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Пресет барометра}
+Индикатор барометра рассчитан на датчик давления \texttt{03C906051A} группы Volkswagen.
+\begin{itemize}
+    \item Питание: стабилизированные 5~В.
+    \item Диапазон измерений: 10~бар абсолютного давления.
+    \item Номинальный аналоговый выход: 0.4--0.5~В в покое.
+    \item Механическая резьба: M10\,\texttimes\,1.0.
+    \item Разъём: VAG \texttt{8K0973703}.
+\end{itemize}
+
+\section{Пресет термометра}
+Пресеты термометра откалиброваны под терморезистор Ossca\,01176, применяемый в системах охлаждения Golf~II. При проверке альтернативных датчиков сверяйте сопротивление с таблицей в \autoref{app:temperature-table}. Для пользовательских NTC укажите коэффициент бета и номинальное сопротивление через утилиты IV-Conf.
+
+\section{Пресет наддува}
+Индикатор наддува рассчитан на датчик Dacia \texttt{223657266R} (\texttt{161B0004}/\texttt{8200225971}).
+\begin{itemize}
+    \item Трёхконтактный разъём (используйте герметичный Bosch \texttt{1928403966} или эквивалент).\!
+    \item Напряжение питания: +5~В.
+    \item Рабочий диапазон: 20--250~кПа.
+    \item Аналоговый выход: примерно +1.8~В при номинальном давлении.
+\end{itemize}
+
+\section{Интеграция лямбда-зонда}
+IV-Indicators Lambda может считывать узкополосные датчики напрямую, но предназначен для работы совместно с широкополосным контроллером на доработанных моторах. Рекомендуемые контроллеры: SLC Free, DIY-EFI TinyWB и Sigma Lambda Controller Free~2. Каждый из них преобразует сигнал датчика Bosch LSU~4.9 в линейное напряжение 0--5~В, которое отображает индикатор.
+
+\section{Справочные изображения датчиков}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image41.jpg}
+        \caption{Датчик давления VAG 03C906051A}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image9.png}
+        \caption{Распиновка жгута барометра}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image42.jpg}
+        \caption{Пример подключения датчика наддува}
+    \end{subfigure}
+    \caption{Рекомендованное оборудование для пресетов барометра и наддува.}
+\end{figure}

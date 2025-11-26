@@ -1,2 +1,70 @@
-\chapter{Sensor connections}\label{ch:connections}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Подключение датчиков}\label{ch:connections}
+
+Ниже собраны рекомендации по проводке из HTML-справки. Перед подачей питания всегда проверяйте полярность и ориентацию разъёмов.
+
+\section{Контроль напряжения}
+Подключите индикатор-вольтметр к цепи 12~В после замка зажигания и к «массе» автомобиля. Общий провод используйте с остальной системой индикации и защитите питание предохранителем в разрыв цепи.
+
+\section{Барометр}
+\begin{itemize}
+    \item Датчик: VAG \texttt{03C906051A} с питанием 5~В.
+    \item Разъём: \texttt{8K0973703} (мама) на жгуте.
+    \item Сигнал: одиночный аналоговый выход, подключённый ко входу индикатора.
+\end{itemize}
+
+\section{Термометр}
+Используйте терморезистор Ossca\,01176 или эквивалент. Подведите оба вывода к жгуту индикатора и сравните сопротивление со значениями из \autoref{app:temperature-table} перед калибровкой.
+
+\section{Lambda}
+Индикатор IV-Indicators Lambda рассчитан на два датчика: штатный узкополосный и дополнительный Bosch LSU~4.9, подключённый к широкополосному контроллеру.
+\begin{itemize}
+    \item Узкополосные датчики выдают 0.1--0.9~В и могут подключаться напрямую после калибровки.
+    \item Широкополосные контроллеры (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 и аналогичные) формируют линейный выход 0--5~В, который отображает индикатор.
+    \item Сохраните штатную проводку ЭБУ и подайте аналоговый выход контроллера в жгут IV-Indicators.
+\end{itemize}
+
+\section{Наддув}
+\begin{itemize}
+    \item Датчик: Dacia \texttt{223657266R} (\texttt{161B0004}/\texttt{8200225971}).
+    \item Питание: стабилизированные 5~В с общим «минусом» с индикатором.
+    \item Разъём: герметичный трёхконтактный, например Bosch \texttt{1928403966}, если штатный недоступен.
+\end{itemize}
+
+\section{Схемы подключений}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image43.jpg}
+    \caption{Обзор проводки лямбда}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image10.png}
+    \caption{Пример подключения широкополосного датчика}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image44.jpg}
+    \caption{Распиновка контроллера к LSU~4.9}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image45.jpg}
+    \caption{Детали подключения IV-Indicator}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image16.png}
+    \caption{Пример готовой установки}
+\end{figure}
+\clearpage
+
+\section{Поддержка}
+PHOL-LABS Kft бесплатно помогает с первоначальным подключением индикаторов и предлагает расширенные консультации для сложных схем. Обратитесь в поддержку, если требуются нестандартные датчики или дополнительные контроллеры.
