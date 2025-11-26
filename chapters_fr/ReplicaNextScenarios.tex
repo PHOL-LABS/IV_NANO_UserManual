@@ -1,2 +1,90 @@
 \chapter{Configuring with the IV-Conf web pack}\label{ch:web-config}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Le pack Web IV-Conf est l'outil principal pour configurer le matériel IV-Indicators Nano. Ouvrez \url{https://phol-labs.com/iv} dans un navigateur basé sur Chromium avec prise en charge Web Serial et connectez le programmateur fourni via USB.
+
+\section{Connexion à l'indicateur}
+\begin{enumerate}
+    \item Cliquez sur l'icône de port série et sélectionnez l'entrée correspondant au programmateur.
+    \item Ouvrez le panneau \texttt{Settings} et réglez le débit sur 115200.
+    \item Appuyez sur \texttt{Connect MODBUS}. La bannière d'état doit confirmer la connexion sans indicateur d'erreur rouge.
+\end{enumerate}
+
+\section{Catalogue de préréglages}
+Plusieurs préréglages existent pour chaque type d'indicateur. Le voltmètre, par exemple, comprend des variantes avec graphiques multi-barres ou des accents jaunes. Sélectionnez un préréglage qui correspond à l'indicateur physique avant de téléverser les réglages.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Exemples de préréglages voltmètre}
+    \label{tab:voltmeter-presets}
+    \begin{tabular}{@{} l l @{}}
+        \toprule
+        Nom du préréglage & Description \\
+        \midrule
+        IV-Volts-Bar-Multi & Voltmètre avec affichage multi-barres.\\
+        IV-Volts-Bar-Multi4 & Variante multi-barres à quatre niveaux.\\
+        IV-Volts-BarYellow & Affichage à barres avec un thème jaune.\\
+        IV-Volts-Bar & Affichage à barres standard.\\
+        IV-Volts & Préréglage minimal sans graphiques supplémentaires.\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Téléversement et téléchargement de données}
+\begin{itemize}
+    \item Utilisez le bouton \texttt{Send data} pour envoyer le préréglage en cours ou les ajustements manuels à l'indicateur. Le transfert se termine automatiquement en 10--15~secondes.
+    \item Cliquez sur \texttt{Get data} pour lire la configuration existante de l'indicateur avant de modifier les plages ou les couleurs.
+    \item Le contrôle \texttt{Stop Send Data} annule un téléversement en cours si vous avez sélectionné le mauvais préréglage ou devez modifier des paramètres.
+\end{itemize}
+
+Le réglage manuel permet d'adapter la teinte de début/fin du dégradé, l'intensité du rétroéclairage et les plages de capteurs numériques pour du matériel personnalisé. Vérifiez que chaque changement correspond à l'indicateur installé afin d'éviter des mesures trompeuses.
+
+\section{Aperçu de l'interface}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image15.png}
+        \caption{Lancement du pack Web}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image11.png}
+        \caption{Sélection du port série}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image1.png}
+        \caption{Autorisation d'accès au port}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image8.png}
+        \caption{Réglage du débit}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image22.png}
+        \caption{Connexion via MODBUS}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image5.png}
+        \caption{Sélecteur de préréglage}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image3.png}
+        \caption{Commandes de réglage manuel}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image2.png}
+        \caption{Confirmation d'envoi de données}
+    \end{subfigure}
+    \caption{Panneaux clés du pack Web IV-Conf utilisés pour la configuration quotidienne.}
+\end{figure}
+
+\section{Notes d'utilisation}
+Dans la plupart des cas, seuls les panneaux de configuration sont nécessaires. Les mises à jour du micrologiciel sont gérées séparément dans \autoref{ch:appendix}. Si un réglage ne s'applique pas, déconnectez puis reconnectez la session MODBUS et assurez-vous que le port série et le débit corrects sont sélectionnés.

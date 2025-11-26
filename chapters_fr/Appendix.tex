@@ -1,2 +1,103 @@
 \chapter{Appendix}\label{ch:appendix}
-\textit{Translation in progress. Please refer to the English edition.}
+
+\section{Reprogrammation IV-Conf web pack}\label{app:reflashing}
+Utilisez le pack Web pour les mises à jour du micrologiciel. Réalisez les étapes ci-dessous sans couper l'alimentation une fois le transfert lancé.
+\begin{enumerate}
+    \item Ouvrez \url{https://phol-labs.com/iv} et connectez-vous au programmateur comme décrit dans \autoref{ch:web-config}.
+    \item Assurez-vous que le débit est réglé sur 115200 et cliquez sur \texttt{Connect MODBUS}. Attendez l'affichage du statut en vert.
+    \item Appuyez sur \texttt{Stop Send Data} pour interrompre toute transmission automatique de préréglage.
+    \item Cliquez sur l'icône du micrologiciel, choisissez le fichier de mise à jour fourni avec votre indicateur et confirmez l'invite.
+    \item Laissez l'indicateur immobile jusqu'à ce que la barre de progression se termine et que l'appareil redémarre.
+\end{enumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image15.png}
+        \caption{Ouvrir le pack Web}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image11.png}
+        \caption{Choisir le port série}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image1.png}
+        \caption{Autoriser l'accès}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image8.png}
+        \caption{Régler 115200 bauds}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image25.png}
+        \caption{Arrêter les transferts actifs}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image14.png}
+        \caption{Connecter MODBUS}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image6.png}
+        \caption{Ouvrir la boîte de dialogue firmware}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image46.png}
+        \caption{Choisir le paquet de mise à jour}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image7.png}
+        \caption{Confirmer le téléversement}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image12.png}
+        \caption{Attendre la fin}
+    \end{subfigure}
+    \caption{Suite d'écrans du pack Web IV-Conf utilisés lors de la reprogrammation du micrologiciel.}
+\end{figure}
+
+\section{Référence du capteur de température}\label{app:temperature-table}
+Le tableau suivant liste les valeurs nominales de résistance pour le capteur NTC Ossca \texttt{01176} utilisé avec le préréglage thermomètre.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Référence de résistance NTC}
+    \label{tab:ntc-reference}
+    \begin{tabular}{@{} rr @{}}
+        \toprule
+        Résistance (\si{\ohm}) & Température (\si{\celsius}) \\
+        \midrule
+        270.0 & 58 \\
+        220.0 & 63 \\
+        199.8 & 66 \\
+        111.0 & 83 \\
+        73.8 & 98 \\
+        55.0 & 108 \\
+        48.8 & 113 \\
+        44.0 & 117 \\
+        37.2 & 124 \\
+        32.1 & 130 \\
+        28.2 & 136 \\
+        25.1 & 141 \\
+        22.7 & 146 \\
+        20.4 & 151 \\
+        19.0 & 155 \\
+        18.8 & 155 \\
+        15.9 & 160 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Les révisions futures de cette annexe incluront des données supplémentaires sur les capteurs et des schémas de câblage.

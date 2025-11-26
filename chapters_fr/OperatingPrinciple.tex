@@ -1,2 +1,19 @@
 \chapter{Operating principle}\label{ch:operating-principle}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Chaque indicateur IV-Indicators Nano intègre un afficheur segmenté, un rétroéclairage RVB et un microcontrôleur qui stocke des préréglages de mesure. Un connecteur pogo à quatre broches à l'arrière s'emboîte avec le programmateur fourni afin que l'indicateur puisse recevoir les mises à jour de micrologiciel et les profils de configuration depuis un téléphone Android ou un navigateur de bureau.
+
+\section{Préréglages de mesure}
+Chaque indicateur est livré avec un préréglage adapté à son rôle prévu :
+\begin{itemize}
+    \item \textbf{Voltmètre} --- surveille la tension du système directement à partir du faisceau du véhicule.
+    \item \textbf{Baromètre} --- cible le capteur de pression VAG 03C906051A alimenté par une source régulée de 5~V.
+    \item \textbf{Thermomètre} --- lit les thermistances NTC équivalentes à la sonde Ossca\,01176 répertoriée dans \autoref{app:temperature-table}.
+    \item \textbf{Lambda} --- interprète les signaux des sondes à oxygène étroites et accepte les sorties linéaires 0--5~V des contrôleurs large bande.
+    \item \textbf{Boost} --- s'interface avec le capteur Dacia 223657266R\\ (également connu sous les références 161B0004/8200225971).
+\end{itemize}
+
+\section{Flux de configuration}
+Les données de configuration sont envoyées via USB par les applications IV-Conf. La bêta Android et le pack Web exposent les contrôles de couleur, de dégradé et de mode afin que le même matériel puisse afficher en points ou en barres. Vous pouvez définir jusqu'à quatre segments de couleur, régler l'intensité du rétroéclairage et ajuster les plages de mesure minimales et maximales pour correspondre à vos capteurs. Les valeurs calibrées sont conservées même après débranchement de l'indicateur, ce qui facilite les essais sans perdre un réglage préféré.
+
+\section{Intégration des capteurs}
+Le préréglage baromètre attend le connecteur OEM VAG \texttt{8K0973703}. L'indicateur boost est fourni sans faisceau dédié ; un connecteur automobile étanche à trois broches comme le Bosch \texttt{1928403966} est recommandé. Pour la surveillance lambda, PHOL-LABS conseille d'associer l'indicateur à un contrôleur large bande externe (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 ou similaire) qui conditionne une sonde Bosch LSU~4.9 en une tension analogique stable. Acheminiez la sortie linéaire du contrôleur vers l'entrée de l'indicateur tout en suivant le manuel du contrôleur pour l'alimentation du chauffage et l'étalonnage.

@@ -1,2 +1,72 @@
 \chapter{Technical specifications}\label{ch:technical-specifications}
-\textit{Translation in progress. Please refer to the English edition.}
+
+\section{Capteurs pris en charge}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Préréglages d'usine et capteurs compatibles}
+    \label{tab:sensor-characteristics}
+
+    \begin{tabularx}{\textwidth}{@{} l l l X @{}}
+        \toprule
+        Indicateur & Capteur & Alimentation & Remarques \\
+        \midrule
+        Voltmètre & Faisceau du véhicule & Système 12~V & Mesure directe de la tension de charge. \\
+        Baromètre & VAG \texttt{03C906051A} & 5~V &
+            Plage 10~bar, sortie nominale 0.4--0.5~V, filetage M10\,\texttimes\,1.0. \\
+        Thermomètre & NTC Ossca \texttt{01176} & Passif &
+            Valeurs de référence listées dans \autoref{app:temperature-table}. \\
+        Lambda & Sonde O$_2$ étroite & Passif &
+            Variation 0.1--0.9~V, accepte 0--5~V depuis les contrôleurs large bande. \\
+        Boost & Dacia \texttt{223657266R} & 5~V &
+            Étendue 20--250~kPa, sortie nominale 1.8~V, seul perçage de montage. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+\section{Préréglage baromètre}
+L'indicateur baromètre est conçu pour le capteur de pression du groupe Volkswagen \texttt{03C906051A}.
+\begin{itemize}
+    \item Alimentation : 5~V régulés.
+    \item Plage de mesure : 10~bar absolus.
+    \item Sortie analogique nominale : 0.4--0.5~V au repos.
+    \item Filetage mécanique : M10\,\texttimes\,1.0.
+    \item Connecteur : VAG \texttt{8K0973703}.
+\end{itemize}
+
+\section{Préréglage thermomètre}
+Les préréglages thermomètre sont livrés étalonnés pour le thermistor NTC Ossca\,01176 couramment monté sur les systèmes de refroidissement de Golf~II. Utilisez le tableau de résistances de \autoref{app:temperature-table} pour valider des sondes alternatives. Pour des capteurs NTC personnalisés, mettez à jour le coefficient beta et la résistance nominale via les outils IV-Conf.
+
+\section{Préréglage boost}
+L'indicateur boost attend le capteur Dacia \texttt{223657266R} (\texttt{161B0004}/\texttt{8200225971}).
+\begin{itemize}
+    \item Connecteur à trois broches (utilisez un modèle étanche Bosch \texttt{1928403966} ou équivalent).
+    \item Tension d'alimentation : +5~V.
+    \item Fenêtre de fonctionnement : 20--250~kPa.
+    \item Sortie analogique : environ +1.8~V à la suralimentation nominale.
+\end{itemize}
+
+\section{Intégration lambda}
+IV-Indicators Lambda lit directement les sondes étroites mais est conçu pour fonctionner avec un contrôleur large bande sur les moteurs préparés. Les contrôleurs recommandés incluent SLC Free, DIY-EFI TinyWB et Sigma Lambda Controller Free~2. Chaque appareil convertit une sonde Bosch LSU~4.9 en un signal linéaire 0--5~V que l'indicateur peut afficher.
+
+\section{Images de référence des capteurs}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image41.jpg}
+        \caption{Capteur de pression VAG 03C906051A}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image9.png}
+        \caption{Affectation des broches pour le faisceau baromètre}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image42.jpg}
+        \caption{Exemple de connexion capteur de boost}
+    \end{subfigure}
+    \caption{Matériel de référence fourni ou recommandé pour les préréglages baromètre et boost.}
+\end{figure}
