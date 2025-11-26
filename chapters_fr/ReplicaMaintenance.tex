@@ -1,2 +1,70 @@
 \chapter{Sensor connections}\label{ch:connections}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Les conseils suivants rassemblent les notes de câblage fournies dans la référence HTML. Vérifiez toujours la polarité et l'orientation des connecteurs avant d'appliquer l'alimentation.
+
+\section{Surveillance de tension}
+Connectez l'indicateur voltmètre à une alimentation 12~V commutée et à la masse du véhicule. Partagez la référence de masse avec le reste de l'instrumentation et protégez l'alimentation avec un fusible en ligne.
+
+\section{Baromètre}
+\begin{itemize}
+    \item Capteur : VAG \texttt{03C906051A} alimenté en 5~V.
+    \item Connecteur : \texttt{8K0973703} (femelle) sur le faisceau.
+    \item Signal : sortie analogique unique acheminée vers l'entrée de l'indicateur.
+\end{itemize}
+
+\section{Thermomètre}
+Utilisez un thermistor NTC Ossca\,01176 ou une pièce équivalente. Acheminiez les deux fils vers le faisceau de l'indicateur et vérifiez la résistance par rapport aux valeurs indiquées dans \autoref{app:temperature-table} avant l'étalonnage.
+
+\section{Lambda}
+IV-Indicators Lambda est conçu pour fonctionner avec deux sondes : la sonde étroite d'origine et une Bosch LSU~4.9 supplémentaire connectée à un contrôleur large bande.
+\begin{itemize}
+    \item Les sondes étroites délivrent 0.1--0.9~V et peuvent être câblées directement à l'indicateur après étalonnage.
+    \item Les contrôleurs large bande (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 et similaires) fournissent une sortie linéaire 0--5~V que l'indicateur peut afficher.
+    \item Conservez le câblage ECU d'origine et injectez la sortie analogique du contrôleur dans le faisceau IV-Indicators.
+\end{itemize}
+
+\section{Boost}
+\begin{itemize}
+    \item Capteur : Dacia \texttt{223657266R} (\texttt{161B0004}/\texttt{8200225971}).
+    \item Alimentation : 5~V régulés avec une masse commune à l'indicateur.
+    \item Connecteur : fiche étanche à trois broches telle que Bosch \texttt{1928403966} si le connecteur OEM n'est pas disponible.
+\end{itemize}
+
+\section{Schémas de connexion}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image43.jpg}
+    \caption{Vue d'ensemble du câblage lambda}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image10.png}
+    \caption{Exemple de connexion large bande}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image44.jpg}
+    \caption{Affectation des broches du contrôleur vers la LSU~4.9}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image45.jpg}
+    \caption{Détail de connexion IV-Indicator}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image16.png}
+    \caption{Exemple d'installation terminée}
+\end{figure}
+\clearpage
+
+\section{Assistance}
+PHOL-LABS Kft peut aider gratuitement lors de la première connexion des indicateurs et propose des consultations prolongées pour les configurations complexes. Contactez le support si des capteurs personnalisés ou des contrôleurs supplémentaires sont intégrés.

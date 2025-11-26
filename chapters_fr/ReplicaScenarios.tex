@@ -1,2 +1,60 @@
 \chapter{Typical setup cases}\label{ch:setup-cases}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Établissez toujours une session MODBUS stable (aucune bannière d'erreur rouge) avant d'appliquer l'un des réglages suivants. Les captures d'écran proviennent du pack Web IV-Conf, mais la bêta Android offre des commandes équivalentes.
+
+\section{Ajustements de couleur}
+\begin{enumerate}
+    \item Cliquez sur \texttt{Get data} pour lire le préréglage actuel.
+    \item Modifiez les contrôles de teinte pour obtenir la couleur d'affichage souhaitée. Le texte de prévisualisation reflète la sortie de l'indicateur.
+    \item Ajustez le curseur de rétroéclairage \texttt{Bl} pour régler l'intensité de fond.
+    \item Appuyez sur \texttt{Send data} et attendez la fin du transfert.
+\end{enumerate}
+
+\section{Étalonnage de plage}
+\begin{enumerate}
+    \item Récupérez la configuration avec \texttt{Get data}.
+    \item Mettez à jour \texttt{Range min} et \texttt{Range max} pour que l'indicateur reflète réellement la plage du capteur (voltmètre, baromètre, lambda ou boost).
+    \item Envoyez les données et vérifiez la lecture en direct à l'aide d'un appareil de mesure fiable.
+\end{enumerate}
+
+\section{Réglage du thermomètre}
+\begin{enumerate}
+    \item Mesurez la résistance du capteur avec un multimètre et comparez-la aux valeurs de \autoref{app:temperature-table}. Remplacez la sonde si elle dépasse la tolérance.
+    \item Utilisez \texttt{Get data} pour charger les paramètres actuels.
+    \item Saisissez le coefficient beta approprié et la résistance nominale pour le capteur NTC personnalisé.
+    \item Téléversez les modifications avec \texttt{Send data}.
+\end{enumerate}
+
+\section{Passage entre les modes barre et point}
+\begin{enumerate}
+    \item Récupérez la configuration via \texttt{Get data}.
+    \item Réglez \texttt{Bar mode} sur 1 pour un affichage en barres ou désactivez-le pour l'indication par points.
+    \item Appuyez sur \texttt{Send data} pour valider le changement.
+\end{enumerate}
+
+\section{Points clés de l'interface}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image29.png}
+        \caption{Éditeur de dégradé et de teinte}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image26.png}
+        \caption{Champs d'étalonnage de plage}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image24.png}
+        \caption{Configuration NTC personnalisée}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image4.png}
+        \caption{Bascule du mode barre}
+    \end{subfigure}
+    \caption{Commandes IV-Conf courantes citées dans les cas de configuration.}
+\end{figure}

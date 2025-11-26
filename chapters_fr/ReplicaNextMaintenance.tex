@@ -1,2 +1,52 @@
 \chapter{Configuring with the IV-Conf Android beta}\label{ch:android-config}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Une application Android IV-Conf expérimentale est fournie avec le jeu d'indicateurs. La bêta est fonctionnelle pour flasher des préréglages et modifier les jeux de couleurs, mais PHOL-LABS recommande le pack Web pour les réglages critiques.
+
+\section{Connexion du programmateur}
+\begin{enumerate}
+    \item Insérez le programmateur externe dans l'indicateur avant de connecter tout câble.
+    \item Reliez le programmateur au téléphone Android avec un câble USB-C OTG. Si le téléphone utilise un connecteur différent, placez un hub USB ou un adaptateur USB-A entre le téléphone et le programmateur.
+    \item Lancez la bêta IV-Conf, confirmez la demande d'autorisation USB et appuyez sur \texttt{USB Connect}. Attendez que le statut affiche \texttt{Connected}.
+\end{enumerate}
+
+\section{Chargement des préréglages et des modes}
+\begin{enumerate}
+    \item Ouvrez le menu latéral (icône trois barres) et sélectionnez \texttt{Settings}.
+    \item Choisissez un préréglage correspondant à l'indicateur physique — Volts, Baro, Thermo, Lambda ou Boost.
+    \item Touchez \texttt{Set parameters} et laissez la transmission se terminer. L'indicateur doit rester immobile pendant l'envoi des données.
+    \item Utilisez les commutateurs à l'écran pour passer entre les modes d'affichage point ou barre et ajuster le curseur d'intensité du rétroéclairage.
+\end{enumerate}
+
+\section{Édition des dégradés}
+\begin{enumerate}
+    \item Sélectionnez le style de dégradé (par défaut : \texttt{Gradient}).
+    \item Choisissez le nombre de segments (jusqu'à quatre) et attribuez des couleurs et positions de transition à chaque segment.
+    \item Appuyez à nouveau sur \texttt{Set parameters} pour écrire le dégradé mis à jour dans l'indicateur.
+\end{enumerate}
+
+\section{Aperçu de l'interface}
+\begin{table}[htbp]
+    \centering
+    \caption{Écrans clés de connexion et de démarrage de la bêta IV-Conf Android.}
+    \label{tab:android-connection}
+    \begin{tabular}{@{} c c c @{}}
+        \subcaptionbox{Câblage du programmateur}{\includegraphics[width=0.3\textwidth]{image47.png}} &
+        \subcaptionbox{Écran de démarrage de l'application}{\includegraphics[width=0.3\textwidth]{image17.png}} &
+        \subcaptionbox{Connexion USB réussie}{\includegraphics[width=0.3\textwidth]{image18.png}} \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Commandes de préréglage, de mode et de dégradé dans la bêta IV-Conf Android.}
+    \label{tab:android-presets}
+    \begin{tabular}{@{} c c c @{}}
+        \subcaptionbox{Sélection du préréglage}{\includegraphics[width=0.3\textwidth]{image19.png}} &
+        \subcaptionbox{Configuration du mode}{\includegraphics[width=0.3\textwidth]{image20.png}} &
+        \subcaptionbox{Contrôle du rétroéclairage}{\includegraphics[width=0.3\textwidth]{image21.png}} \\
+        \multicolumn{3}{c}{\subcaptionbox{Éditeur de dégradé}{\includegraphics[width=0.3\textwidth]{image23.png}}}
+    \end{tabular}
+\end{table}
+
+\section{Limitations de la bêta}
+L'application bêta est en cours de développement actif. Attendez-vous à des changements d'interface et à des problèmes de stabilité occasionnels ; revenez au pack Web si un réglage n'est pas appliqué correctement. Signalez tout bug reproductible directement à PHOL-LABS afin que les mises à jour du micrologiciel et de l'application puissent être alignées.

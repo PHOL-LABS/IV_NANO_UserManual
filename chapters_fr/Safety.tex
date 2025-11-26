@@ -1,2 +1,20 @@
 \chapter{Safety notices}\label{ch:safety}
-\textit{Translation in progress. Please refer to the English edition.}
+
+Le matériel IV-Indicators Nano est sensible aux courts-circuits et à un câblage capteur incorrect. Relisez toujours les interdictions de \autoref{ch:precautions} avant d'alimenter le programmateur et gardez à l'esprit les consignes suivantes pendant l'installation.
+
+\section{Manipulation du programmateur}
+\begin{itemize}
+    \item Considérez le programmateur comme faisant partie de l'indicateur. Ne l'alimentez jamais tant que le connecteur pogo n'est pas complètement inséré et posé sur une surface non conductrice.
+    \item Ne connectez ni ne déconnectez le programmateur pendant la transmission de données. Débranchez d'abord le câble USB et maintenez l'appareil immobile pour éviter de plier les broches.
+    \item Évitez les plans de travail conducteurs comme les coques d'ordinateur portable, les établis métalliques nus ou la carrosserie du véhicule. Un contact même bref peut court-circuiter les broches pogo et endommager définitivement l'électronique.
+\end{itemize}
+
+\section{Sécurité des capteurs}
+\begin{itemize}
+    \item Utilisez les connecteurs recommandés pour chaque préréglage et prévoyez un soulagement de traction sur les faisceaux. Le baromètre dépend de la fiche VAG \texttt{8K0973703}, tandis que le préréglage boost doit être associé à un connecteur étanche à trois broches.
+    \item Associez l'indicateur lambda à un contrôleur large bande pris en charge lors du suivi de moteurs modifiés. Des contrôleurs tels que SLC Free, DIY-EFI TinyWB ou Sigma Lambda Controller Free~2 convertissent la sonde Bosch LSU~4.9 en une tension analogique sûre pour l'indicateur.
+    \item Vérifiez que les plages d'étalonnage correspondent au capteur installé avant de prendre la route. Des limites incorrectes peuvent entraîner des lectures trompeuses et de mauvais diagnostics.
+\end{itemize}
+
+\section{Note de garantie}
+PHOL-LABS Kft n'offre pas de couverture de garantie pour les appareils alimentés sur des surfaces conductrices, connectés avec polarité inversée ou utilisés en contradiction avec les règles ci-dessus. Des remplacements sont disponibles, mais ils sont fournis contre paiement lorsqu'un mauvais usage est constaté.
