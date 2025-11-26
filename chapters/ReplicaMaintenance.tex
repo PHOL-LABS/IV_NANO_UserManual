@@ -30,6 +30,30 @@ IV-Indicators Lambda is intended to work with two probes: the factory narrowband
     \item Connector: sealed three-pin plug such as Bosch \texttt{1928403966} when the OEM connector is unavailable.
 \end{itemize}
 
+\clearpage
+\begin{figure}[p]
+    \centering
+    \begin{tikzpicture}[
+        node distance=4.8cm and 2.8cm,
+        block/.style={draw, rounded corners=5pt, fill=black!5, minimum width=4.3cm, minimum height=1.7cm, align=center, font=\small\sffamily},
+        wire/.style={very thick, -{Stealth[length=3mm]}, rounded corners},
+        callout/.style={midway, font=\footnotesize\sffamily, inner sep=2pt, fill=white}
+    ]
+        \node[block] (supply) {5~V regulator\\Vehicle harness feed};
+        \node[block, right=of supply] (indicator) {IV-Indicators Boost harness\\Pin~1: 5~V\\Pin~2: Signal\\Pin~3: Ground};
+        \node[block, right=of indicator] (sensor) {Boost sensor\\Dacia~223657266R\\(A: 5~V, B: Signal, C: Ground)};
+        \node[block, below=of indicator] (ground) {Chassis star ground\\Bond to body and ECU};
+
+        \draw[wire, red] (supply.east) -- node[callout]{5~V feed\\Pin~1/A} (indicator.west) -- node[callout]{Sensor supply} (sensor.west);
+        \draw[wire, blue] (indicator.east) .. controls +(1.3,1.2) and +(-1.3,1.2) .. node[callout]{0--5~V signal\\Pin~2/B} (sensor.north);
+        \draw[wire] (ground.north) -- node[callout]{Ground return\\Pin~3/C} (indicator.south) -- (sensor.south);
+        \draw[wire] (ground.west) -- node[callout]{Reference ground} (supply.south);
+    \end{tikzpicture}
+    \caption{Boost sensor wiring diagram showing the dedicated 5~V supply, shared reference ground, and analogue signal lead between the IV-Indicators harness and the Dacia sensor.}
+    \label{fig:boost-connection-diagram}
+\end{figure}
+\clearpage
+
 \section{Connection diagrams}
 \begin{figure}[p]
     \centering
