@@ -1,2 +1,71 @@
-\chapter{Technical specifications}\label{ch:technical-specifications}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Műszaki specifikációk}\label{ch:technical-specifications}
+
+\section{Támogatott érzékelők}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Gyári előbeállítások és kompatibilis érzékelők}
+    \label{tab:sensor-characteristics}
+
+    \begin{tabularx}{\textwidth}{@{} l l l X @{}}
+        \toprule
+        Indikátor & Érzékelő & Tápellátás & Megjegyzések \\
+        \midrule
+        Voltmeter & Jármű kábelkorbács & 12~V rendszer & A töltőfeszültség közvetlen mérése. \\
+        Barometer & VAG \texttt{03C906051A} & 5~V &
+            10~bar tartomány, 0{,}4--0{,}5~V névleges kimenet, M10\,\texttimes\,1.0 menet. \\
+        Thermometer & Ossca \texttt{01176} NTC & Passzív &
+            Referenciaértékek az \autoref{app:temperature-table} táblázatban. \\
+        Lambda & Keskenysávú O$_2$ érzékelő & Passzív &
+            0{,}1--0{,}9~V tartomány, 0--5~V-ot fogad szélessávú vezérlőktől. \\
+        Boost & Dacia \texttt{223657266R} & 5~V &
+            20--250~kPa tartomány, 1{,}8~V névleges kimenet, egyetlen rögzítőfurat. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Barométer előbeállítás}
+A barométer indikátort a Volkswagen-csoport \texttt{03C906051A} nyomásérzékelőjéhez tervezték.
+\begin{itemize}
+    \item Tápellátás: szabályozott 5~V.
+    \item Mérési tartomány: 10~bar abszolút.
+    \item Névleges analóg kimenet: 0{,}4--0{,}5~V nyugalomban.
+    \item Mechanikus menet: M10\,\texttimes\,1.0.
+    \item Csatlakozó: VAG \texttt{8K0973703}.
+\end{itemize}
+
+\section{Hőmérő előbeállítás}
+A hőmérő előbeállítások gyárilag az Ossca\,01176 NTC termisztorra vannak kalibrálva, amelyet gyakran használnak a Golf~II hűtőrendszerében. Az alternatív szondák ellenőrzéséhez használja az \autoref{app:temperature-table} ellenállás-táblázatot. Egyedi NTC érzékelő esetén az IV-Conf eszközökben frissítse a béta együtthatót és a névleges ellenállást.
+
+\section{Turbónyomás előbeállítás}
+A turbónyomás indikátor a Dacia \texttt{223657266R} (\texttt{161B0004}/\texttt{8200225971}) érzékelőt várja.
+\begin{itemize}
+    \item Hárompólusú csatlakozó (használjon tömített Bosch \texttt{1928403966} vagy azzal egyenértékűt).
+    \item Tápfeszültség: +5~V.
+    \item Működési tartomány: 20--250~kPa.
+    \item Analóg kimenet: körülbelül +1{,}8~V névleges töltőnyomásnál.
+\end{itemize}
+
+\section{Lambda integráció}
+Az IV-Indicators Lambda közvetlenül olvassa a keskenysávú érzékelőket, de hangolt motoroknál szélessávú vezérlővel együtt használható. Ajánlott vezérlők: SLC Free, DIY-EFI TinyWB és Sigma Lambda Controller Free~2. Ezek a Bosch LSU~4.9 szondát lineáris 0--5~V jellé alakítják, amelyet az indikátor meg tud jeleníteni.
+
+\section{Érzékelő referencia képek}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image41.jpg}
+        \caption{VAG 03C906051A nyomásérzékelő}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image9.png}
+        \caption{Barométer kábelkorbács kiosztása}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image42.jpg}
+        \caption{Turbónyomás érzékelő bekötési példa}
+    \end{subfigure}
+    \caption{Referencia hardver a barométer és a turbónyomás előbeállításokhoz.}
+\end{figure}

@@ -1,2 +1,19 @@
-\chapter{Operating principle}\label{ch:operating-principle}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Működési elv}\label{ch:operating-principle}
+
+Minden IV-Indicators Nano műszer szegmentált kijelzőt, RGB háttérvilágítást és előre beállított méréseket tároló mikrokontrollert tartalmaz. A hátoldali négypólusú pogo csatlakozó illeszkedik a mellékelt programozóhoz, így az indikátor firmware-frissítéseket és konfigurációs profilokat kaphat Android telefonról vagy asztali böngészőből.
+
+\section{Mérési előbeállítások}
+Minden indikátor az adott feladatához igazított előbeállítással érkezik:
+\begin{itemize}
+    \item \textbf{Voltmérő} — közvetlenül a jármű kábelkorbácsáról figyeli a rendszerfeszültséget.
+    \item \textbf{Barométer} — a VAG 03C906051A nyomásérzékelőt célozza, szabályozott 5~V tápfeszültséggel.
+    \item \textbf{Hőmérő} — az \autoref{app:temperature-table} táblázatban szereplő Ossca\,01176 NTC termisztorhoz kalibrált.
+    \item \textbf{Lambda} — keskenysávú lambdaszondák jelét értelmezi, és elfogadja a szélessávú vezérlők lineáris 0--5~V kimenetét.
+    \item \textbf{Boost} — a Dacia 223657266R (más néven 161B0004/8200225971) érzékelővel működik.
+\end{itemize}
+
+\section{Konfigurációs folyamat}
+A konfigurációs adatokat az IV-Conf alkalmazások küldik USB-n. Az Android béta és a webes csomag egyaránt kínál szín-, gradiens- és módbeállításokat, így ugyanaz a hardver pontszerű vagy vonalas kijelzést is megjeleníthet. Legfeljebb négy színátmenet definiálható, szabályozható a háttérfény erőssége, valamint beállítható a minimális és maximális mérési tartomány, hogy illeszkedjen a használni kívánt érzékelőkhöz. A kalibrált értékek a készüléken tárolódnak, így kihúzás után sem vesznek el.
+
+\section{Érzékelők integrálása}
+A barométer előbeállítás a gyári VAG \texttt{8K0973703} csatlakozót várja. A turbónyomás indikátor saját kábelkorbács nélkül érkezik; ajánlott egy tömített, hárompólusú autóipari csatlakozó, például a Bosch \texttt{1928403966}. Lambda méréshez a PHOL-LABS javasolja, hogy a műszert külső szélessávú vezérlővel (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 vagy hasonló) párosítsa, amely a Bosch LSU~4.9 szondát stabil analóg feszültséggé alakítja. A vezérlő lineáris kimenetét vezesse az indikátor bemenetére, miközben a fűtés és a kalibrálás tekintetében kövesse a vezérlő kézikönyvét.

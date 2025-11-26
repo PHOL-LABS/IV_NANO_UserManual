@@ -1,2 +1,60 @@
-\chapter{Typical setup cases}\label{ch:setup-cases}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Jellemző beállítási példák}\label{ch:setup-cases}
+
+Mindig hozzon létre stabil MODBUS kapcsolatot (ne jelenjen meg piros hibaszalag), mielőtt az alábbi beállításokat végrehajtaná. A képernyőképek az IV-Conf webes csomagból származnak, de az Android béta is ugyanazokat a vezérlőket kínálja.
+
+\section{Színbeállítások}
+\begin{enumerate}
+    \item Kattintson a \texttt{Get data} gombra a jelenlegi előbeállítás beolvasásához.
+    \item Módosítsa az árnyalat csúszkákat a kívánt kijelzési színhez. Az előnézet a műszer kijelzését tükrözi.
+    \item Állítsa a \texttt{Bl} háttérvilágítás csúszkát a háttér intenzitásának beállításához.
+    \item Nyomja meg a \texttt{Send data} gombot, és várja meg az átvitel végét.
+\end{enumerate}
+
+\section{Tartomány kalibrálása}
+\begin{enumerate}
+    \item Olvassa be a konfigurációt a \texttt{Get data} gombbal.
+    \item Frissítse a \texttt{Range min} és \texttt{Range max} értékeket, hogy az indikátor a tényleges érzékelő-tartományt jelenítse meg (voltmérő, barométer, lambda vagy turbónyomás esetén).
+    \item Küldje el az adatokat, majd ellenőrizze az élő kijelzést egy megbízható mérőeszközön.
+\end{enumerate}
+
+\section{Hőmérő hangolása}
+\begin{enumerate}
+    \item Mérje meg az érzékelő ellenállását multiméterrel, és hasonlítsa össze az \autoref{app:temperature-table} értékeivel. Ha kívül esik a tűrésen, cserélje a szondát.
+    \item A \texttt{Get data} paranccsal töltse be az aktuális paramétereket.
+    \item Adja meg az egyedi NTC érzékelő béta együtthatóját és névleges ellenállását.
+    \item A \texttt{Send data} gombbal töltse fel a módosításokat.
+\end{enumerate}
+
+\section{Váltás bar és pont mód között}
+\begin{enumerate}
+    \item Olvassa be a konfigurációt a \texttt{Get data} gombbal.
+    \item Állítsa a \texttt{Bar mode} értékét 1-re a vonalas kijelzéshez, vagy hagyja üresen a pontszerű megjelenítéshez.
+    \item A \texttt{Send data} paranccsal rögzítse a módosítást.
+\end{enumerate}
+
+\section{Felület kiemelt elemei}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image29.png}
+        \caption{Gradiens és árnyalat szerkesztő}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image26.png}
+        \caption{Tartomány kalibrációs mezők}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image24.png}
+        \caption{Egyedi NTC konfiguráció}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image4.png}
+        \caption{Bar mód kapcsoló}
+    \end{subfigure}
+    \caption{Gyakori IV-Conf vezérlők, amelyekre a beállítási példák hivatkoznak.}
+\end{figure}

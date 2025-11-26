@@ -1,2 +1,52 @@
-\chapter{Configuring with the IV-Conf Android beta}\label{ch:android-config}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Konfigurálás az IV-Conf Android bétával}\label{ch:android-config}
+
+A készlet részeként elérhető az IV-Conf Android alkalmazás kísérleti változata. A béta alkalmas előbeállítások felírására és színsémák módosítására, de kritikus beállításokhoz a PHOL-LABS a webes csomagot javasolja.
+
+\section{A programozó csatlakoztatása}
+\begin{enumerate}
+    \item Helyezze be a külső programozót az indikátorba, mielőtt bármilyen kábelt csatlakoztatna.
+    \item USB-C OTG kábellel csatlakoztassa a programozót az Android telefonhoz. Ha a készülék más csatlakozót használ, iktasson be USB hubot vagy USB-A átalakítót a telefon és a programozó közé.
+    \item Indítsa el az IV-Conf bétát, erősítse meg az USB-engedélykérést, majd érintse meg a \texttt{USB Connect} gombot. Várjon, amíg az állapot \texttt{Connected} lesz.
+\end{enumerate}
+
+\section{Előbeállítások és módok betöltése}
+\begin{enumerate}
+    \item Nyissa meg a menüt (három vonal ikon), és válassza a \texttt{Settings} pontot.
+    \item Válasszon a fizikai indikátornak megfelelő előbeállítást — Volts, Baro, Thermo, Lambda vagy Boost.
+    \item Érintse meg a \texttt{Set parameters} gombot, és várja meg az átvitel befejezését. Az indikátort stabilan kell tartani az adatküldés alatt.
+    \item A képernyőn lévő kapcsolókkal válthat pont- és vonalas kijelzés között, illetve állíthatja a háttérvilágítás csúszkát.
+\end{enumerate}
+
+\section{Gradiens szerkesztése}
+\begin{enumerate}
+    \item Válassza ki a gradiens stílust (alapértelmezés: \texttt{Gradient}).
+    \item Adja meg a szegmensek számát (legfeljebb négy), és rendeljen színt és töréspontot mindegyikhez.
+    \item Újra nyomja meg a \texttt{Set parameters} gombot, hogy az indikátor megkapja a frissített gradienset.
+\end{enumerate}
+
+\section{Felület áttekintése}
+\begin{table}[htbp]
+    \centering
+    \caption{Az IV-Conf Android béta fő csatlakozási és indítóképernyői.}
+    \label{tab:android-connection}
+    \begin{tabular}{@{} c c c @{}}
+        \subcaptionbox{Programozó bekötése}{\includegraphics[width=0.3\textwidth]{image47.png}} &
+        \subcaptionbox{Alkalmazás indítóképernyő}{\includegraphics[width=0.3\textwidth]{image17.png}} &
+        \subcaptionbox{Sikeres USB kapcsolat}{\includegraphics[width=0.3\textwidth]{image18.png}} \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Előbeállítás-, mód- és gradiensvezérlők az IV-Conf Android bétában.}
+    \label{tab:android-presets}
+    \begin{tabular}{@{} c c c @{}}
+        \subcaptionbox{Előbeállítás választás}{\includegraphics[width=0.3\textwidth]{image19.png}} &
+        \subcaptionbox{Mód konfiguráció}{\includegraphics[width=0.3\textwidth]{image20.png}} &
+        \subcaptionbox{Háttérfény szabályzás}{\includegraphics[width=0.3\textwidth]{image21.png}} \\
+        \multicolumn{3}{c}{\subcaptionbox{Gradiens szerkesztő}{\includegraphics[width=0.3\textwidth]{image23.png}}}
+    \end{tabular}
+\end{table}
+
+\section{Béta korlátai}
+A béta alkalmazás fejlesztés alatt áll. Számítson felületváltozásokra és esetenkénti stabilitási problémákra; ha egy beállítás nem érvényesül, térjen vissza a webes csomaghoz. A reprodukálható hibákat közvetlenül a PHOL-LABS-nak jelezze, hogy a firmware és az alkalmazás frissítései összehangolhatók legyenek.

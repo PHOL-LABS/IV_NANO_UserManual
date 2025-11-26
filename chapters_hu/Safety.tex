@@ -1,2 +1,20 @@
-\chapter{Safety notices}\label{ch:safety}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Biztonsági tudnivalók}\label{ch:safety}
+
+Az IV-Indicators Nano hardvere érzékeny a rövidzárra és a hibás érzékelő-bekötésre. A programozó áram alá helyezése előtt mindig olvassa el a tiltásokat a \autoref{ch:precautions} fejezetben, és tartsa szem előtt az alábbi irányelveket a telepítés során.
+
+\section{A programozó kezelése}
+\begin{itemize}
+    \item Úgy kezelje a programozót, mint az indikátor részét. Soha ne helyezze feszültség alá, amíg a pogo csatlakozó nincs teljesen a helyén és nem egy szigetelő felületre támaszkodik.
+    \item Ne csatlakoztassa vagy válassza le a programozót adatátvitel közben. Először húzza ki az USB-kábelt, és tartsa stabilan az eszközt, hogy elkerülje a pinek elhajlását.
+    \item Kerülje a vezető munkafelületeket, például a fém laptopházakat, nyers fém asztalokat vagy a karosszériát. Már rövid érintkezés is rövidre zárhatja a pogo pineket és véglegesen károsíthatja az elektronikát.
+\end{itemize}
+
+\section{Érzékelők védelme}
+\begin{itemize}
+    \item Mindig az adott előbeállításhoz ajánlott csatlakozót használja, és gondoskodjon a kábelkorbács tehermentesítéséről. A barométer a VAG \texttt{8K0973703} dugót igényli, míg a turbónyomás előbeállítást tömített, hárompólusú csatlakozóval érdemes párosítani.
+    \item Lambda indikátort módosított motorokhoz támogatott szélessávú vezérlővel használjon. Az SLC Free, a DIY-EFI TinyWB vagy a Sigma Lambda Controller Free~2 a Bosch LSU~4.9 szondát a műszer számára biztonságos analóg feszültséggé alakítja.
+    \item Indulás előtt ellenőrizze, hogy a kalibrációs tartomány megegyezik-e a beépített érzékelőével. A hibás határok félrevezető kijelzést és téves diagnózist okozhatnak.
+\end{itemize}
+
+\section{Garanciális megjegyzés}
+A PHOL-LABS Kft nem vállal garanciát olyan eszközökre, amelyeket vezető felületen helyeztek feszültség alá, fordított polaritással kötöttek be, vagy egyéb módon a fenti szabályok megszegésével üzemeltettek. Pótló hardver rendelhető, de visszaélés esetén az ellenértékét meg kell téríteni.
