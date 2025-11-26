@@ -1,2 +1,20 @@
-\chapter{Safety notices}\label{ch:safety}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Avisos de seguridad}\label{ch:safety}
+
+El hardware de IV-Indicators Nano es sensible a los cortocircuitos y a los errores de cableado de los sensores. Revise siempre las prohibiciones de la \autoref{ch:precautions} antes de alimentar el programador y tenga presentes las siguientes directrices durante la instalaci\'on.
+
+\section{Manipulaci\'on del programador}
+\begin{itemize}
+    \item Trate el programador como parte del indicador. No lo energice hasta que el conector pogo est\'e completamente asentado y apoyado sobre una superficie no conductora.
+    \item No conecte ni desconecte el programador mientras se est\'an transmitiendo datos. Desconecte primero el cable USB y mantenga el dispositivo estable para evitar doblar los pines.
+    \item Evite superficies de trabajo conductoras como carcasas de port\'atiles, bancos de metal desnudo o la carrocer\'ia del veh\'iculo. Incluso un contacto breve puede cortocircuitar los pines pogo y da\~nar permanentemente la electr\'onica.
+\end{itemize}
+
+\section{Seguridad de los sensores}
+\begin{itemize}
+    \item Utilice los conectores recomendados para cada preajuste y proporcione alivio de tensi\'on en los arneses. El bar\'ometro depende del conector VAG \texttt{8K0973703}, mientras que el preajuste de turbo debe combinarse con un conector sellado de tres pines.
+    \item Empareje el indicador lambda con un controlador de banda ancha compatible al monitorizar motores modificados. Controladores como SLC Free, DIY-EFI TinyWB o Sigma Lambda Controller Free~2 traducen la sonda Bosch LSU~4.9 en un voltaje anal\'ogico seguro para el indicador.
+    \item Confirme que los rangos de calibraci\'on coinciden con el sensor instalado antes de conducir. L\'imites incorrectos pueden provocar lecturas enga\~nosas y diagn\'osticos err\'oneos.
+\end{itemize}
+
+\section{Nota sobre garant\'ia}
+PHOL-LABS Kft no ofrece cobertura de garant\'ia para dispositivos que se alimentaron sobre superficies conductoras, se conectaron con polaridad invertida o se operaron de otro modo en contra de las reglas indicadas arriba. Hay hardware de sustituci\'on disponible, pero se suministra de pago cuando se detecta un mal uso.

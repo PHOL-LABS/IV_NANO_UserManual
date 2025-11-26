@@ -1,2 +1,19 @@
-\chapter{Operating principle}\label{ch:operating-principle}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Principio de funcionamiento}\label{ch:operating-principle}
+
+Cada indicador IV-Indicators Nano integra una pantalla segmentada, retroiluminaci\'on RGB y un microcontrolador que almacena los preajustes de medici\'on. Un conector pogo de cuatro pines en la parte posterior se acopla al programador suministrado para que el indicador pueda recibir actualizaciones de firmware y perfiles de configuraci\'on desde un tel\'efono Android o un navegador de escritorio.
+
+\section{Preajustes de medici\'on}
+Cada indicador se env\'ia con un preajuste alineado con su funci\'on prevista:
+\begin{itemize}
+    \item \textbf{Voltmeter} --- supervisa directamente el voltaje del sistema desde el mazo de cables del veh\'iculo.
+    \item \textbf{Barometer} --- se dirige al sensor de presi\'on VAG 03C906051A que funciona con una alimentaci\'on regulada de 5~V.
+    \item \textbf{Thermometer} --- lee termistores NTC equivalentes a la sonda Ossca\,01176 que se indica en la \autoref{app:temperature-table}.
+    \item \textbf{Lambda} --- interpreta se\~nales de sensores de ox\'igeno de banda estrecha y acepta salidas lineales de 0--5~V de controladores de banda ancha.
+    \item \textbf{Boost} --- se integra con el sensor Dacia 223657266R\\ (tamb\'ien conocido como 161B0004/8200225971).
+\end{itemize}
+
+\section{Flujo de configuraci\'on}
+Los datos de configuraci\'on se env\'ian por USB mediante las aplicaciones IV-Conf. La beta de Android y el paquete web ofrecen controles para color, degradado y modo, de modo que el mismo hardware pueda mostrar indicadores en puntos o barras. Puede definir hasta cuatro segmentos de color, ajustar la intensidad de la retroiluminaci\'on y modificar los rangos de medici\'on m\'inimos y m\'aximos para adaptarlos a sus sensores. Los valores calibrados se conservan incluso despu\'es de desconectar el indicador, lo que facilita la experimentaci\'on sin perder la configuraci\'on preferida.
+
+\section{Integraci\'on con los sensores}
+El preajuste barom\'etrico espera el conector OEM VAG \texttt{8K0973703}. El indicador de turbo se suministra sin un mazo dedicado; se recomienda un conector automotriz sellado de tres pines como el Bosch \texttt{1928403966}. Para la monitorizaci\'on lambda, PHOL-LABS recomienda emparejar el indicador con un controlador de banda ancha externo (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 o similar) que condicione una sonda Bosch LSU~4.9 para generar una se\~nal anal\'ogica estable. Dirija la salida lineal del controlador a la entrada del indicador y siga el manual del controlador para la alimentaci\'on del calentador y la calibraci\'on.

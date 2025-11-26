@@ -1,2 +1,103 @@
-\chapter{Appendix}\label{ch:appendix}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Ap\'endice}\label{ch:appendix}
+
+\section{Reflasheo con el paquete web IV-Conf}\label{app:reflashing}
+Use el paquete web para las actualizaciones de firmware. Complete los pasos siguientes sin desconectar la alimentaci\'on una vez que comience la transferencia.
+\begin{enumerate}
+    \item Abra \url{https://phol-labs.com/iv} y con\'ectese al programador como se describe en la \autoref{ch:web-config}.
+    \item Aseg\'urese de que la velocidad en baudios est\'e fijada en 115200 y haga clic en \texttt{Connect MODBUS}. Espere un mensaje de estado en verde.
+    \item Pulse \texttt{Stop Send Data} para detener cualquier carga autom\'atica de preajustes.
+    \item Haga clic en el icono de firmware, elija el archivo de actualizaci\'on suministrado con su indicador y confirme el aviso.
+    \item Deje el indicador inm\'ovil hasta que la barra de progreso termine y el dispositivo se reinicie.
+\end{enumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image15.png}
+        \caption{Abrir el paquete web}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image11.png}
+        \caption{Seleccionar el puerto serie}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image1.png}
+        \caption{Autorizar el acceso}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image8.png}
+        \caption{Ajustar a 115200 baudios}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image25.png}
+        \caption{Detener las transferencias activas}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image14.png}
+        \caption{Conectar por MODBUS}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image6.png}
+        \caption{Abrir el cuadro de firmware}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image46.png}
+        \caption{Seleccionar el paquete de actualizaci\'on}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image7.png}
+        \caption{Confirmar la carga}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image12.png}
+        \caption{Esperar a que finalice}
+    \end{subfigure}
+    \caption{Secuencia de pantallas del paquete web IV-Conf utilizadas durante el reflasheo de firmware.}
+\end{figure}
+
+\section{Referencia de sensor de temperatura}\label{app:temperature-table}
+La siguiente tabla muestra los valores nominales de resistencia para el sensor NTC Ossca \texttt{01176} utilizado con el preajuste de term\'ometro.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Referencia de resistencia del NTC}
+    \label{tab:ntc-reference}
+    \begin{tabular}{@{} rr @{}}
+        \toprule
+        Resistencia (\si{\ohm}) & Temperatura (\si{\celsius}) \\
+        \midrule
+        270.0 & 58 \\
+        220.0 & 63 \\
+        199.8 & 66 \\
+        111.0 & 83 \\
+        73.8 & 98 \\
+        55.0 & 108 \\
+        48.8 & 113 \\
+        44.0 & 117 \\
+        37.2 & 124 \\
+        32.1 & 130 \\
+        28.2 & 136 \\
+        25.1 & 141 \\
+        22.7 & 146 \\
+        20.4 & 151 \\
+        19.0 & 155 \\
+        18.8 & 155 \\
+        15.9 & 160 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Las futuras revisiones de este ap\'endice incluir\'an datos adicionales de sensores y esquemas de cableado.

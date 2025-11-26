@@ -1,2 +1,95 @@
-\chapter{Configuring with the IV-Conf web pack}\label{ch:web-config}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Configuraci\'on con el paquete web IV-Conf}\label{ch:web-config}
+
+El paquete web IV-Conf es la herramienta principal para configurar el hardware IV-Indicators Nano. Abra \url{https://phol-labs.com/iv} en un navegador basado en Chromium con soporte para Web Serial y conecte el programador suministrado mediante USB.
+
+\section{Conexi\'on con el indicador}
+\begin{enumerate}
+    \item Haga clic en el icono del puerto serie y seleccione la entrada que corresponda al programador.
+    \item Abra el panel \texttt{Settings} y fije la velocidad en baudios a 115200.
+    \item Pulse \texttt{Connect MODBUS}. El banner de estado debe confirmar la conexi\'on sin indicadores de error en rojo.
+\end{enumerate}
+
+\section{Cat\'alogo de preajustes}
+Existen varios preajustes para cada tipo de indicador. El volt\'imetro, por ejemplo, incluye variantes con gr\'aficos de m\'ultiples barras o resaltados amarillos. Seleccione un preajuste que coincida con el indicador f\'isico antes de cargar la configuraci\'on.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Ejemplos de preajustes de volt\'imetro}
+    \label{tab:voltmeter-presets}
+    \begin{tabular}{@{} l l @{}}
+        \toprule
+        Nombre del preajuste & Descripci\'on \\
+        \midrule
+        IV-Volts-Bar-Multi & Volt\'imetro con visualizaci\'on de m\'ultiples barras.\\
+        \\
+        IV-Volts-Bar-Multi4 & Variante de m\'ultiples barras con cuatro niveles.\\
+        \\
+        IV-Volts-BarYellow & Visualizaci\'on de barras con esquema de color amarillo.\\
+        \\
+        IV-Volts-Bar & Visualizaci\'on est\'andar de barras.\\
+        \\
+        IV-Volts & Preajuste minimalista sin gr\'aficos adicionales.\\
+        \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Carga y descarga de datos}
+\begin{itemize}
+    \item Use el bot\'on \texttt{Send data} para cargar el preajuste actual o los ajustes manuales al indicador. La transferencia se completa autom\'aticamente en 10--15~segundos.
+    \item Haga clic en \texttt{Get data} para leer la configuraci\'on existente del indicador antes de editar rangos o colores.
+    \item El control \texttt{Stop Send Data} cancela una carga en curso si seleccion\'o el preajuste equivocado o necesita modificar par\'ametros.
+\end{itemize}
+
+El ajuste manual permite adaptar el inicio/fin del degradado, la intensidad de la retroiluminaci\'on y los rangos num\'ericos del sensor para hardware personalizado. Confirme que cada cambio coincida con el indicador instalado para evitar lecturas enga\~nosas.
+
+\section{Resumen de la interfaz}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image15.png}
+        \caption{Lanzamiento del paquete web}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image11.png}
+        \caption{Selecci\'on del puerto serie}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image1.png}
+        \caption{Autorizaci\'on de acceso al puerto}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image8.png}
+        \caption{Configuraci\'on de baudios}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image22.png}
+        \caption{Conexi\'on mediante MODBUS}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image5.png}
+        \caption{Selector de preajustes}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image3.png}
+        \caption{Controles de ajuste manual}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image2.png}
+        \caption{Confirmaci\'on de env\'io de datos}
+    \end{subfigure}
+    \caption{Paneles clave del paquete web IV-Conf utilizados en la configuraci\'on diaria.}
+\end{figure}
+
+\section{Notas de uso}
+En la mayor\'ia de los casos solo se necesitan los paneles de configuraci\'on. Las actualizaciones de firmware se gestionan por separado en la \autoref{ch:appendix}. Si alg\'un ajuste no se aplica, desconecte y vuelva a conectar la sesi\'on MODBUS y aseg\'urese de haber seleccionado el puerto serie y la velocidad en baudios correctos.
