@@ -1,2 +1,95 @@
-\chapter{Configuring with the IV-Conf web pack}\label{ch:web-config}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Konfigurálás az IV-Conf webes csomaggal}\label{ch:web-config}
+
+Az IV-Conf webes csomag az elsődleges eszköz az IV-Indicators Nano hardver konfigurálásához. Nyissa meg a \url{https://phol-labs.com/iv} címet Web Serialt támogató Chromium-alapú böngészőben, és USB-n csatlakoztassa a mellékelt programozót.
+
+\section{Csatlakozás az indikátorhoz}
+\begin{enumerate}
+    \item Kattintson a soros port ikonjára, és válassza ki a programozóhoz tartozó bejegyzést.
+    \item Nyissa meg a \texttt{Settings} panelt, és állítsa a baud rátát 115200-ra.
+    \item Nyomja meg a \texttt{Connect MODBUS} gombot. A státusz jelzésnek hiba (piros) nélkül kell visszaigazolnia a kapcsolatot.
+\end{enumerate}
+
+\section{Előbeállítás-katalógus}
+Minden indikátortípushoz több előbeállítás érhető el. A voltmérő például több-báros grafikus, illetve sárga kiemelésű változatot is tartalmaz. Válassza ki a fizikai műszerhez illő előbeállítást a feltöltés előtt.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Példa voltmérő előbeállításokra}
+    \label{tab:voltmeter-presets}
+    \begin{tabular}{@{} l l @{}}
+        \toprule
+        Előbeállítás neve & Leírás \\
+        \midrule
+        IV-Volts-Bar-Multi & Voltmérő több-báros kijelzéssel. \\
+        \\
+        IV-Volts-Bar-Multi4 & Négy szintű, több-báros változat. \\
+        \\
+        IV-Volts-BarYellow & Sárga színsémájú vonalas kijelzés. \\
+        \\
+        IV-Volts-Bar & Alapértelmezett vonalas kijelzés. \\
+        \\
+        IV-Volts & Minimál előbeállítás kiegészítő grafika nélkül. \\
+        \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Adatok feltöltése és letöltése}
+\begin{itemize}
+    \item A \texttt{Send data} gombbal küldheti fel az aktuális előbeállítást vagy a kézi módosításokat az indikátorra. Az átvitel 10--15 másodpercen belül automatikusan befejeződik.
+    \item A \texttt{Get data} gombra kattintva beolvashatja a meglévő konfigurációt, mielőtt módosítaná a tartományokat vagy a színeket.
+    \item A \texttt{Stop Send Data} vezérlő megszakítja a folyamatban lévő feltöltést, ha rossz előbeállítást választott vagy paramétert kell módosítani.
+\end{itemize}
+
+A kézi hangolás lehetővé teszi a kezdő és záró árnyalat, a háttérfény erőssége és a numerikus érzékelő-tartományok beállítását az egyedi hardverhez. Győződjön meg arról, hogy minden változtatás megegyezik a telepített indikátorral, hogy elkerülje a félrevezető kijelzést.
+
+\section{Felület áttekintése}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image15.png}
+        \caption{A webes csomag megnyitása}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image11.png}
+        \caption{Soros port kiválasztása}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image1.png}
+        \caption{Porthozzáférés engedélyezése}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image8.png}
+        \caption{Baud ráta beállítása}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image22.png}
+        \caption{MODBUS kapcsolat}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image5.png}
+        \caption{Előbeállítás választó}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image3.png}
+        \caption{Kézi hangolóvezérlők}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image2.png}
+        \caption{Adatküldés visszaigazolása}
+    \end{subfigure}
+    \caption{Az IV-Conf webes csomag fontos paneljei a mindennapi konfigurációhoz.}
+\end{figure}
+
+\section{Használati megjegyzések}
+A legtöbb helyzetben csak a konfigurációs panelekre lesz szükség. A firmware-frissítések külön, a \autoref{ch:appendix} fejezetben szerepelnek. Ha egy beállítás nem lép érvénybe, bontsa és hozza létre újra a MODBUS kapcsolatot, és ellenőrizze, hogy a megfelelő soros port és baud ráta van kiválasztva.

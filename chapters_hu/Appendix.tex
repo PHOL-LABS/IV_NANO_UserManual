@@ -1,2 +1,103 @@
-\chapter{Appendix}\label{ch:appendix}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Függelék}\label{ch:appendix}
+
+\section{IV-Conf webes csomag használata firmware-frissítéshez}\label{app:reflashing}
+Firmware frissítéséhez használja a webes csomagot. Az alábbi lépéseket áramtalanítás nélkül végezze el, amint az átvitel elindult.
+\begin{enumerate}
+    \item Nyissa meg a \url{https://phol-labs.com/iv} oldalt, és csatlakozzon a programozóhoz a \autoref{ch:web-config} fejezetben leírtak szerint.
+    \item Győződjön meg róla, hogy a baud ráta 115200, majd kattintson a \texttt{Connect MODBUS} gombra. Várja meg a zöld státusz üzenetet.
+    \item Nyomja meg a \texttt{Stop Send Data} gombot, hogy leállítsa az automatikus előbeállítás-feltöltést.
+    \item Kattintson a firmware ikonra, válassza ki az indikátorhoz kapott frissítőcsomagot, majd erősítse meg a kérést.
+    \item Hagyja érintetlenül az indikátort, amíg a folyamatjelző végigfut és az eszköz újraindul.
+\end{enumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image15.png}
+        \caption{A webes csomag megnyitása}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image11.png}
+        \caption{Soros port kiválasztása}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image1.png}
+        \caption{Hozzáférés engedélyezése}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image8.png}
+        \caption{115200 baud beállítása}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image25.png}
+        \caption{Aktív átvitelek leállítása}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image14.png}
+        \caption{MODBUS kapcsolat}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image6.png}
+        \caption{Firmware párbeszéd megnyitása}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image46.png}
+        \caption{Frissítőcsomag kiválasztása}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image7.png}
+        \caption{Feltöltés megerősítése}
+    \end{subfigure}
+    \par\medskip
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image12.png}
+        \caption{Várakozás a befejezésre}
+    \end{subfigure}
+    \caption{Az IV-Conf webes csomag képernyői a firmware újraírása során.}
+\end{figure}
+
+\section{Hőmérséklet-érzékelő referencia}\label{app:temperature-table}
+Az alábbi táblázat az Ossca \texttt{01176} NTC érzékelő névleges ellenállásértékeit sorolja fel, amelyet a hőmérő előbeállítás használ.
+
+\begin{table}[htbp]
+    \centering
+    \caption{NTC ellenállás referencia}
+    \label{tab:ntc-reference}
+    \begin{tabular}{@{} rr @{}}
+        \toprule
+        Ellenállás (\si{\ohm}) & Hőmérséklet (\si{\celsius}) \\
+        \midrule
+        270.0 & 58 \\
+        220.0 & 63 \\
+        199.8 & 66 \\
+        111.0 & 83 \\
+        73.8 & 98 \\
+        55.0 & 108 \\
+        48.8 & 113 \\
+        44.0 & 117 \\
+        37.2 & 124 \\
+        32.1 & 130 \\
+        28.2 & 136 \\
+        25.1 & 141 \\
+        22.7 & 146 \\
+        20.4 & 151 \\
+        19.0 & 155 \\
+        18.8 & 155 \\
+        15.9 & 160 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+A függelék későbbi kiadásai további érzékelőadatokat és bekötési diagramokat fognak tartalmazni.

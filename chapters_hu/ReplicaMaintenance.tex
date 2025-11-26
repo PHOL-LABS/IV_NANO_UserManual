@@ -1,2 +1,70 @@
-\chapter{Sensor connections}\label{ch:connections}
-\textit{Translation in progress. Please refer to the English edition.}
+\chapter{Érzékelő csatlakozások}\label{ch:connections}
+
+A következő útmutató az HTML referenciában szereplő bekötési megjegyzéseket foglalja össze. Minden esetben ellenőrizze a polaritást és a csatlakozók tájolását, mielőtt áramot ad.
+
+\section{Feszültségmérés}
+Csatlakoztassa a voltmérő indikátort kapcsolt 12~V tápra és a jármű testpontjára. A földelést ossza meg a többi műszerrel, és védje a tápvezetéket soros biztosítékkal.
+
+\section{Barométer}
+\begin{itemize}
+    \item Érzékelő: 5~V tápfeszültségről működő VAG \texttt{03C906051A}.
+    \item Csatlakozó: \texttt{8K0973703} (anya) a kábelkorbácson.
+    \item Jel: egyetlen analóg kimenet, amely az indikátor bemenetére megy.
+\end{itemize}
+
+\section{Hőmérő}
+Használjon Ossca\,01176 NTC termisztort vagy azzal egyenértékű alkatrészt. Vezesse mindkét kivezetést az indikátor kábelkorbácsára, és kalibrálás előtt ellenőrizze az ellenállást az \autoref{app:temperature-table} értékeihez képest.
+
+\section{Lambda}
+Az IV-Indicators Lambda két szondával együtt használható: a gyári keskenysávú érzékelővel és egy szélessávú Bosch LSU~4.9-cel, amely külön vezérlőhöz csatlakozik.
+\begin{itemize}
+    \item A keskenysávú érzékelők 0{,}1--0{,}9~V jelet adnak, amely kalibráció után közvetlenül beköthető az indikátorba.
+    \item A szélessávú vezérlők (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 és hasonlók) lineáris 0--5~V kimenetet biztosítanak, amelyet az indikátor meg tud jeleníteni.
+    \item Tartsa meg a gyári ECU kábelezését, és a vezérlő analóg kimenetét vezesse az IV-Indicators kábelkorbácsába.
+\end{itemize}
+
+\section{Turbónyomás}
+\begin{itemize}
+    \item Érzékelő: Dacia \texttt{223657266R} (\texttt{161B0004}/\texttt{8200225971}).
+    \item Tápellátás: szabályozott 5~V, közös földdel az indikátorhoz.
+    \item Csatlakozó: tömített, hárompólusú dugó, például Bosch \texttt{1928403966}, ha a gyári csatlakozó nem áll rendelkezésre.
+\end{itemize}
+
+\section{Bekötési diagramok}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image43.jpg}
+    \caption{Lambda bekötési áttekintés}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image10.png}
+    \caption{Példa szélessávú illesztésre}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image44.jpg}
+    \caption{Vezérlő és LSU~4.9 kiosztása}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image45.jpg}
+    \caption{IV-Indicator bekötési részlet}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{image16.png}
+    \caption{Kész beszerelési példa}
+\end{figure}
+\clearpage
+
+\section{Támogatás}
+A PHOL-LABS Kft ingyenesen segít az indikátorok első bekötésében, és összetett rendszerek esetén díjazás ellenében nyújt bővített konzultációt. Egyedi érzékelők vagy kiegészítő vezérlők integrálásakor vegye fel a kapcsolatot a támogatással.
