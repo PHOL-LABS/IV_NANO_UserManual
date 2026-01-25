@@ -6,12 +6,13 @@ The tables below summarize sensor options mentioned in the IV-Indicators Nano La
 
 | Compatible sensor | Signal/supply | Calibration parameters (from presets) |
 | --- | --- | --- |
-| Ossca 01176 NTC thermistor (thermometer preset) | Passive NTC | Validate against the Ossca 01176 resistance table (e.g., 270.0 Ω at 58 °C down to 15.9 Ω at 160 °C). For custom NTC probes, update the beta coefficient and nominal resistance in IV-Conf. |
+| Ossca 01176 NTC thermistor (thermometer preset) | Passive NTC | Validate against the Ossca 01176 resistance table (e.g., 270.0 Ω at 58 °C down to 15.9 Ω at 160 °C). Nominal calibration parameters: R25 = 1 kΩ, β = 3950. For custom NTC probes, update the beta coefficient and nominal resistance in IV-Conf. |
 
 ## Air temperature sensors
 
 | Compatible sensor | Signal/supply | Calibration parameters (from presets) |
 | --- | --- | --- |
+| MFA outside air temperature sensor (VAG 171 919 379 A, Golf Mk2/Jetta II/Passat B2/B3) | 2-wire NTC, floating | Approx. display span −40 °C to +96 °C. Empirical calibration: R25 ≈ 510 Ω, β ≈ 3400–3500 K (fit between +4 °C and +50 °C). Diagnostic reference: 200 Ω ≈ +50 °C. |
 | NTC thermistor equivalent to Ossca 01176 (thermometer preset) | Passive NTC | Use the Ossca 01176 resistance table as the reference and adjust beta coefficient/nominal resistance for custom NTC sensors via IV-Conf. |
 
 ## Oil pressure sensors
