@@ -7,6 +7,7 @@ The tables below summarize sensor options mentioned in the IV-Indicators Nano La
 | Compatible sensor | Signal/supply | Calibration parameters (from presets) |
 | --- | --- | --- |
 | Ossca 01176 NTC thermistor (thermometer preset) | Passive NTC | Validate against the Ossca 01176 resistance table (e.g., 270.0 Ω at 58 °C down to 15.9 Ω at 160 °C). Nominal calibration parameters: R25 = 1 kΩ, β = 3950. For custom NTC probes, update the beta coefficient and nominal resistance in IV-Conf. |
+| RIDEX 829S0003 (Opel/BMW/Volvo compatible) | 2-pin NTC, M12×1.5 thread | Nominal resistance 2080 Ω at 25 °C and 294 Ω at 80 °C (β ≈ 3740 K). Operating temperature range 25–80 °C. Sensor body Ø 7.4 mm, hex 19 mm, supplied with sealing gasket. |
 
 ## Air temperature sensors
 
