@@ -24,6 +24,103 @@
     \end{tabularx}
 \end{table}
 
+\section{Sensor-Kompatibilitätstabellen}
+Die folgenden Tabellen fassen kompatible Sensoren und Kalibrierreferenzen für die Werkspresets zusammen.
+
+\subsection{Öl-/Kühlmitteltemperatursensoren}
+\begin{table}[htbp]
+    \centering
+    \caption{Kompatibilität von Öl-/Kühlmitteltemperatursensoren}
+    \label{tab:oil-coolant-sensors}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibler Sensor & Signal/Versorgung & Kalibrierparameter \\
+        \midrule
+        Ossca \texttt{01176} NTC-Thermistor (Thermometer-Preset) & Passiver NTC &
+            Abgleich mit der Ossca-\texttt{01176}-Widerstandstabelle (z.\,B. 270{,}0~$\Omega$ bei 58~$^\circ$C bis 15{,}9~$\Omega$ bei 160~$^\circ$C). Nennkalibrierung: $R_{25} = 1$~k$\Omega$, $\beta = 3950$. Für kundenspezifische NTC-Sonden Beta und Nennwiderstand in IV-Conf anpassen. \\
+        RIDEX \texttt{829S0003} (Opel/BMW/Volvo kompatibel) & 2-poliger NTC, Gewinde M12\,\texttimes\,1{,}5 &
+            Nennwiderstand 2080~$\Omega$ bei 25~$^\circ$C und 294~$\Omega$ bei 80~$^\circ$C ($\beta \approx 3740$~K). Arbeitsbereich 25--80~$^\circ$C. Sensorgehäuse $\varnothing$~7{,}4~mm, Sechskant 19~mm, mit Dichtung geliefert. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Lufttemperatursensoren}
+\begin{table}[htbp]
+    \centering
+    \caption{Kompatibilität von Lufttemperatursensoren}
+    \label{tab:air-temperature-sensors}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibler Sensor & Signal/Versorgung & Kalibrierparameter \\
+        \midrule
+        MFA-Außenlufttemperatursensor (VAG \texttt{171 919 379 A}, Golf Mk2/Jetta II/Passat B2/B3) & 2-adriger NTC, potentialfrei &
+            Anzeigebereich ca. $-40^\circ$C bis $+96^\circ$C. Empirische Kalibrierung: $R_{25} \approx 510~\Omega$, $\beta \approx 3400$--3500~K (Abgleich zwischen $+4^\circ$C und $+50^\circ$C). Diagnose: 200~$\Omega \approx +50^\circ$C. \\
+        NTC-Thermistor äquivalent zu Ossca \texttt{01176} (Thermometer-Preset) & Passiver NTC &
+            Ossca-\texttt{01176}-Widerstandstabelle als Referenz verwenden und Beta/Nennwiderstand für kundenspezifische NTC-Sensoren über IV-Conf anpassen. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Öldrucksensoren}
+\begin{table}[htbp]
+    \centering
+    \caption{Kompatibilität von Öldrucksensoren}
+    \label{tab:oil-pressure-sensors}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibler Sensor & Signal/Versorgung & Kalibrierparameter \\
+        \midrule
+        VAG \texttt{03C906051A} Drucksensor (Barometer-Preset) & 5~V-Versorgung, Analogausgang &
+            10~bar absoluter Bereich, 0{,}4--0{,}5~V Nennausgang im Ruhezustand. Messbereich mit dem Barometer-Preset konfigurieren und min./max.-Bereiche bei Bedarf in IV-Conf anpassen. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Kraftstoffstandgeber}
+\begin{table}[htbp]
+    \centering
+    \caption{Kompatibilität von Kraftstoffstandsensoren}
+    \label{tab:fuel-level-sensors}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibler Sensor & Signal/Versorgung & Kalibrierparameter \\
+        \midrule
+        Kundenspezifischer Sensor (kein bestimmtes Modell genannt) & Abhängig vom Sensor &
+            Min./Max.-Messbereich in IV-Conf auf den installierten Sensor abstimmen. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Ladedrucksensoren}
+\begin{table}[htbp]
+    \centering
+    \caption{Kompatibilität von Ladedrucksensoren}
+    \label{tab:boost-pressure-sensors}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibler Sensor & Signal/Versorgung & Kalibrierparameter \\
+        \midrule
+        Dacia \texttt{223657266R} (auch \texttt{161B0004}/\texttt{8200225971}) & 5~V-Versorgung, Analogausgang &
+            Arbeitsbereich 20--250~kPa, $\sim$1{,}8~V Nennausgang bei Ladedruck. Boost-Preset verwenden und Range min/max bei Bedarf anpassen. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Breitband-Lambda}
+\begin{table}[htbp]
+    \centering
+    \caption{Kompatibilität von Breitband-Lambda-Controllern}
+    \label{tab:wideband-lambda}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibler Sensor & Signal/Versorgung & Kalibrierparameter \\
+        \midrule
+        Breitband-Controller (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) mit Bosch LSU~4.9-Sonde & Lineares 0--5~V-Ausgangssignal zur Anzeige &
+            Breitband-Controller wandeln die LSU~4.9-Sonde in ein lineares 0--5~V-Signal für die Anzeige; Schmalband-Sensoren liefern einen 0{,}1--0{,}9~V-Hub. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
 \section{Barometer-Preset}
 Die Barometer-Anzeige ist für den Drucksensor \texttt{03C906051A} des Volkswagen-Konzerns ausgelegt.
 \begin{itemize}

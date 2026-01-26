@@ -21,6 +21,103 @@
         Boost & Dacia \texttt{223657266R} & 5~V &
             20--250~kPa tartomány, 1{,}8~V névleges kimenet, egyetlen rögzítőfurat. \\
         \bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Érzékelő kompatibilitási táblázatok}
+Az alábbi táblázatok összefoglalják a kompatibilis érzékelőket és a gyári előbeállítások kalibrációs referenciaértékeit.
+
+\subsection{Olaj-/hűtőfolyadék-hőmérséklet érzékelők}
+\begin{table}[htbp]
+    \centering
+    \caption{Olaj-/hűtőfolyadék-hőmérséklet érzékelők kompatibilitása}
+    \label{tab:oil-coolant-sensors}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibilis érzékelő & Jel/tápellátás & Kalibrációs paraméterek \\
+        \midrule
+        Ossca \texttt{01176} NTC termisztor (hőmérő előbeállítás) & Passzív NTC &
+            Ellenőrizze az Ossca \texttt{01176} ellenállás-táblázat alapján (pl. 270{,}0~$\Omega$ 58~$^\circ$C-nál, 15{,}9~$\Omega$ 160~$^\circ$C-nál). Névleges kalibráció: $R_{25} = 1$~k$\Omega$, $\beta = 3950$. Egyedi NTC szondáknál frissítse a béta együtthatót és a névleges ellenállást az IV-Conf-ben. \\
+        RIDEX \texttt{829S0003} (Opel/BMW/Volvo kompatibilis) & 2-pólusú NTC, M12\,\texttimes\,1.5 menet &
+            Névleges ellenállás 2080~$\Omega$ 25~$^\circ$C-on és 294~$\Omega$ 80~$^\circ$C-on ($\beta \approx 3740$~K). Működési tartomány 25--80~$^\circ$C. Szenzortest $\varnothing$~7{,}4~mm, 19~mm hatszög, tömítőgyűrűvel. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Levegőhőmérséklet érzékelők}
+\begin{table}[htbp]
+    \centering
+    \caption{Levegőhőmérséklet érzékelők kompatibilitása}
+    \label{tab:air-temperature-sensors}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibilis érzékelő & Jel/tápellátás & Kalibrációs paraméterek \\
+        \midrule
+        MFA külső levegőhőmérséklet-érzékelő (VAG \texttt{171 919 379 A}, Golf Mk2/Jetta II/Passat B2/B3) & 2-vezetékes NTC, lebegő &
+            Kijelzési tartomány kb. $-40^\circ$C és $+96^\circ$C között. Empirikus kalibráció: $R_{25} \approx 510~\Omega$, $\beta \approx 3400$--3500~K (illesztés $+4^\circ$C és $+50^\circ$C között). Diagnosztikai referencia: 200~$\Omega \approx +50^\circ$C. \\
+        Ossca \texttt{01176}-tal egyenértékű NTC termisztor (hőmérő előbeállítás) & Passzív NTC &
+            Használja az Ossca \texttt{01176} ellenállás-táblázatot referenciaként, és az IV-Conf-ben állítsa be a béta együtthatót/névleges ellenállást az egyedi NTC érzékelőkhöz. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Olajnyomás-érzékelők}
+\begin{table}[htbp]
+    \centering
+    \caption{Olajnyomás-érzékelők kompatibilitása}
+    \label{tab:oil-pressure-sensors}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibilis érzékelő & Jel/tápellátás & Kalibrációs paraméterek \\
+        \midrule
+        VAG \texttt{03C906051A} nyomásérzékelő (barométer előbeállítás) & 5~V tápellátás, analóg kimenet &
+            10~bar abszolút tartomány, 0{,}4--0{,}5~V névleges kimenet nyugalomban. Állítsa be a mérési tartományt a barométer előbeállítással, és szükség esetén módosítsa a min./max. értékeket IV-Conf-ben. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Üzemanyagszint jeladók}
+\begin{table}[htbp]
+    \centering
+    \caption{Üzemanyagszint-érzékelők kompatibilitása}
+    \label{tab:fuel-level-sensors}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibilis érzékelő & Jel/tápellátás & Kalibrációs paraméterek \\
+        \midrule
+        Egyedi érzékelő (nincs megadott típus) & Az érzékelőtől függ &
+            Az IV-Conf-ben állítsa be a minimális és maximális mérési tartományt az installált érzékelőhöz. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Turbónyomás érzékelők}
+\begin{table}[htbp]
+    \centering
+    \caption{Turbónyomás érzékelők kompatibilitása}
+    \label{tab:boost-pressure-sensors}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibilis érzékelő & Jel/tápellátás & Kalibrációs paraméterek \\
+        \midrule
+        Dacia \texttt{223657266R} (más néven \texttt{161B0004}/\texttt{8200225971}) & 5~V tápellátás, analóg kimenet &
+            20--250~kPa működési tartomány, $\sim$1{,}8~V névleges kimenet töltőnyomásnál. Használja a turbónyomás előbeállítást, és szükség esetén igazítsa a Range min/max értékeket. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Szélessávú lambda}
+\begin{table}[htbp]
+    \centering
+    \caption{Szélessávú lambda vezérlők kompatibilitása}
+    \label{tab:wideband-lambda}
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        Kompatibilis érzékelő & Jel/tápellátás & Kalibrációs paraméterek \\
+        \midrule
+        Szélessávú vezérlő (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) Bosch LSU~4.9 szondával & Lineáris 0--5~V kimenet az indikátornak &
+            A szélessávú vezérlők a LSU~4.9 szondát lineáris 0--5~V jellé alakítják, amelyet az indikátor elfogad; a keskenysávú érzékelők 0{,}1--0{,}9~V tartományt adnak. \\
+        \bottomrule
     \end{tabularx}
 \end{table}
 
