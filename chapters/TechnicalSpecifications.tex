@@ -2,124 +2,123 @@
 
 \section{Supported sensors}
 
-\begin{table}[htbp]
-    \centering
-    \caption{Factory presets and compatible sensors}
-    \label{tab:sensor-characteristics}
+\noindent\textbf{Factory presets and compatible sensors}\label{tab:sensor-characteristics}\\
 
-    \begin{tabularx}{\textwidth}{@{} l l l X @{}}
-        \toprule
-        Indicator & Sensor & Supply & Notes \\
-        \midrule
-        Voltmeter & Vehicle harness & 12~V system & Direct measurement of charging voltage. \\
-        Barometer & VAG \texttt{03C906051A} & 5~V &
-            10~bar range, 0.4--0.5~V nominal output, M10\,\texttimes\,1.0 thread. \\
-        Thermometer & Ossca \texttt{01176} NTC & Passive &
-            Reference values listed in \autoref{app:temperature-table}. \\
-        Lambda & Narrowband O$_2$ sensor & Passive &
-            0.1--0.9~V swing, accepts 0--5~V from wideband controllers. \\
-        Boost & Dacia \texttt{223657266R} & 5~V &
-            20--250~kPa span, 1.8~V nominal output, single mounting bore. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,2.6cm] Q[l,5cm] Q[l,2.2cm] X[l]},
+    hlines
+}
+\textbf{Indicator} & \textbf{Sensor} & \textbf{Supply} & \textbf{Notes} \\
+Voltmeter & Vehicle harness & 12~V system & Direct measurement of charging voltage. \\
+Barometer & VAG \texttt{03C906051A} & 5~V &
+    10~bar range, 0.4--0.5~V nominal output, M10\,\texttimes\,1.0 thread. \\
+Thermometer & Ossca \texttt{01176} NTC & Passive &
+    Reference values listed in \autoref{app:temperature-table}. \\
+Lambda & Narrowband O$_2$ sensor & Passive &
+    0.1--0.9~V swing, accepts 0--5~V from wideband controllers. \\
+Boost & Dacia \texttt{223657266R} & 5~V &
+    20--250~kPa span, 1.8~V nominal output, single mounting bore. \\
+\end{tblr}}
+\end{samepage}
 
 \section{Sensor compatibility tables}
 The following tables summarize compatible sensors and calibration references for the factory presets.
 
 \subsection{Oil/coolant temperature sensors}
-\begin{table}[htbp]
-    \centering
-    \caption{Oil/coolant temperature sensor compatibility}
-    \label{tab:oil-coolant-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Compatible sensor & Signal/supply & Calibration parameters \\
-        \midrule
-        Ossca \texttt{01176} NTC thermistor (thermometer preset) & Passive NTC &
-            Validate against the Ossca \texttt{01176} resistance table (e.g., 270.0~$\Omega$ at 58~$^\circ$C down to 15.9~$\Omega$ at 160~$^\circ$C). Nominal calibration: $R_{25} = 1$~k$\Omega$, $\beta = 3950$. For custom NTC probes, update beta and nominal resistance in IV-Conf. \\
-        RIDEX \texttt{829S0003} (Opel/BMW/Volvo compatible) & 2-pin NTC, M12\,\texttimes\,1.5 thread &
-            Nominal resistance 2080~$\Omega$ at 25~$^\circ$C and 294~$\Omega$ at 80~$^\circ$C ($\beta \approx 3740$~K). Operating range 25--80~$^\circ$C. Sensor body $\varnothing$~7.4~mm, hex 19~mm, supplied with sealing gasket. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Oil/coolant temperature sensor compatibility}\label{tab:oil-coolant-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Compatible sensor} & \textbf{Signal/supply} & \textbf{Calibration parameters} \\
+Ossca \texttt{01176} NTC thermistor (thermometer preset) & Passive NTC &
+    Validate against the Ossca \texttt{01176} resistance table (e.g., 270.0~$\Omega$ at 58~$^\circ$C down to 15.9~$\Omega$ at 160~$^\circ$C). Nominal calibration: $R_{25} = 1$~k$\Omega$, $\beta = 3950$. For custom NTC probes, update beta and nominal resistance in IV-Conf. \\
+RIDEX \texttt{829S0003} (Opel/BMW/Volvo compatible) & 2-pin NTC, M12\,\texttimes\,1.5 thread &
+    Nominal resistance 2080~$\Omega$ at 25~$^\circ$C and 294~$\Omega$ at 80~$^\circ$C ($\beta \approx 3740$~K). Operating range 25--80~$^\circ$C. Sensor body $\varnothing$~7.4~mm, hex 19~mm, supplied with sealing gasket. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Air temperature sensors}
-\begin{table}[htbp]
-    \centering
-    \caption{Air temperature sensor compatibility}
-    \label{tab:air-temperature-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Compatible sensor & Signal/supply & Calibration parameters \\
-        \midrule
-        MFA outside air temperature sensor (VAG \texttt{171 919 379 A}, Golf Mk2/Jetta II/Passat B2/B3) & 2-wire NTC, floating &
-            Approximate display span $-40^\circ$C to $+96^\circ$C. Empirical calibration: $R_{25} \approx 510~\Omega$, $\beta \approx 3400$--3500~K (fit between $+4^\circ$C and $+50^\circ$C). Diagnostic reference: 200~$\Omega \approx +50^\circ$C. \\
-        NTC thermistor equivalent to Ossca \texttt{01176} (thermometer preset) & Passive NTC &
-            Use the Ossca \texttt{01176} resistance table as the reference and adjust beta/nominal resistance for custom NTC sensors via IV-Conf. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Air temperature sensor compatibility}\label{tab:air-temperature-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Compatible sensor} & \textbf{Signal/supply} & \textbf{Calibration parameters} \\
+MFA outside air temperature sensor (VAG \texttt{171 919 379 A}, Golf Mk2/Jetta II/Passat B2/B3) & 2-wire NTC, floating &
+    Approximate display span $-40^\circ$C to $+96^\circ$C. Empirical calibration: $R_{25} \approx 510~\Omega$, $\beta \approx 3400$--3500~K (fit between $+4^\circ$C and $+50^\circ$C). Diagnostic reference: 200~$\Omega \approx +50^\circ$C. Connector housing \texttt{1J0973802}; mating connector \texttt{1J0973702}. \\
+NTC thermistor equivalent to Ossca \texttt{01176} (thermometer preset) & Passive NTC &
+    Use the Ossca \texttt{01176} resistance table as the reference and adjust beta/nominal resistance for custom NTC sensors via IV-Conf. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Oil pressure sensors}
-\begin{table}[htbp]
-    \centering
-    \caption{Oil pressure sensor compatibility}
-    \label{tab:oil-pressure-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Compatible sensor & Signal/supply & Calibration parameters \\
-        \midrule
-        VAG \texttt{03C906051A} pressure sensor (barometer preset) & 5~V supply, analogue output &
-            10~bar absolute range, 0.4--0.5~V nominal output at rest. Configure the measurement range with the barometer preset and adjust minimum/maximum ranges in IV-Conf if required. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Oil pressure sensor compatibility}\label{tab:oil-pressure-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Compatible sensor} & \textbf{Signal/supply} & \textbf{Calibration parameters} \\
+VAG \texttt{03C906051A} pressure sensor (barometer preset) & 5~V supply, analogue output &
+    10~bar absolute range, 0.4--0.5~V nominal output at rest. Configure the measurement range with the barometer preset and adjust minimum/maximum ranges in IV-Conf if required. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Fuel level gauges}
-\begin{table}[htbp]
-    \centering
-    \caption{Fuel level sensor compatibility}
-    \label{tab:fuel-level-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Compatible sensor & Signal/supply & Calibration parameters \\
-        \midrule
-        Custom sensor (no specific model listed) & Depends on sensor &
-            Use IV-Conf to set the minimum and maximum measurement range to match the installed sensor. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Fuel level sensor compatibility}\label{tab:fuel-level-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Compatible sensor} & \textbf{Signal/supply} & \textbf{Calibration parameters} \\
+Custom sensor (no specific model listed) & Depends on sensor &
+    Use IV-Conf to set the minimum and maximum measurement range to match the installed sensor. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Boost pressure sensors}
-\begin{table}[htbp]
-    \centering
-    \caption{Boost pressure sensor compatibility}
-    \label{tab:boost-pressure-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Compatible sensor & Signal/supply & Calibration parameters \\
-        \midrule
-        Dacia \texttt{223657266R} (also \texttt{161B0004}/\texttt{8200225971}) & 5~V supply, analogue output &
-            20--250~kPa operating window, $\sim$1.8~V nominal output at boost. Use the boost preset and adjust range min/max if needed. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Boost pressure sensor compatibility}\label{tab:boost-pressure-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Compatible sensor} & \textbf{Signal/supply} & \textbf{Calibration parameters} \\
+Dacia \texttt{223657266R} (also \texttt{161B0004}/\texttt{8200225971}) & 5~V supply, analogue output &
+    20--250~kPa operating window, $\sim$1.8~V nominal output at boost. Use the boost preset and adjust range min/max if needed. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Wideband lambda}
-\begin{table}[htbp]
-    \centering
-    \caption{Wideband lambda controller compatibility}
-    \label{tab:wideband-lambda}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Compatible sensor & Signal/supply & Calibration parameters \\
-        \midrule
-        Wideband controller (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) with Bosch LSU~4.9 probe & 0--5~V linear output to gauge &
-            Wideband controllers translate the LSU~4.9 probe into a linear 0--5~V signal accepted by the gauge; narrowband sensors provide a 0.1--0.9~V swing. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Wideband lambda controller compatibility}\label{tab:wideband-lambda}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Compatible sensor} & \textbf{Signal/supply} & \textbf{Calibration parameters} \\
+Wideband controller (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) with Bosch LSU~4.9 probe & 0--5~V linear output to gauge &
+    Wideband controllers translate the LSU~4.9 probe into a linear 0--5~V signal accepted by the gauge; narrowband sensors provide a 0.1--0.9~V swing. \\
+\end{tblr}}
+\end{samepage}
 
 
 \section{Barometer preset}

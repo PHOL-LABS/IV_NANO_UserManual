@@ -2,124 +2,123 @@
 
 \section{Capteurs pris en charge}
 
-\begin{table}[htbp]
-    \centering
-    \caption{Préréglages d'usine et capteurs compatibles}
-    \label{tab:sensor-characteristics}
+\noindent\textbf{Préréglages d'usine et capteurs compatibles}\label{tab:sensor-characteristics}\\
 
-    \begin{tabularx}{\textwidth}{@{} l l l X @{}}
-        \toprule
-        Indicateur & Capteur & Alimentation & Remarques \\
-        \midrule
-        Voltmètre & Faisceau du véhicule & Système 12~V & Mesure directe de la tension de charge. \\
-        Baromètre & VAG \texttt{03C906051A} & 5~V &
-            Plage 10~bar, sortie nominale 0.4--0.5~V, filetage M10\,\texttimes\,1.0. \\
-        Thermomètre & NTC Ossca \texttt{01176} & Passif &
-            Valeurs de référence listées dans \autoref{app:temperature-table}. \\
-        Lambda & Sonde O$_2$ étroite & Passif &
-            Variation 0.1--0.9~V, accepte 0--5~V depuis les contrôleurs large bande. \\
-        Boost & Dacia \texttt{223657266R} & 5~V &
-            Étendue 20--250~kPa, sortie nominale 1.8~V, seul perçage de montage. \\
-        \bottomrule
-\end{tabularx}
-\end{table}
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,2.6cm] Q[l,5cm] Q[l,2.2cm] X[l]},
+    hlines
+}
+\textbf{Indicateur} & \textbf{Capteur} & \textbf{Alimentation} & \textbf{Remarques} \\
+Voltmètre & Faisceau du véhicule & Système 12~V & Mesure directe de la tension de charge. \\
+Baromètre & VAG \texttt{03C906051A} & 5~V &
+    Plage 10~bar, sortie nominale 0.4--0.5~V, filetage M10\,\texttimes\,1.0. \\
+Thermomètre & NTC Ossca \texttt{01176} & Passif &
+    Valeurs de référence listées dans \autoref{app:temperature-table}. \\
+Lambda & Sonde O$_2$ étroite & Passif &
+    Variation 0.1--0.9~V, accepte 0--5~V depuis les contrôleurs large bande. \\
+Boost & Dacia \texttt{223657266R} & 5~V &
+    Étendue 20--250~kPa, sortie nominale 1.8~V, seul perçage de montage. \\
+\end{tblr}}
+\end{samepage}
 
 \section{Tableaux de compatibilité des capteurs}
 Les tableaux suivants résument les capteurs compatibles et les références d'étalonnage des préréglages d'usine.
 
 \subsection{Capteurs de température d'huile/liquide de refroidissement}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilité des capteurs de température d'huile/liquide de refroidissement}
-    \label{tab:oil-coolant-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Capteur compatible & Signal/alimentation & Paramètres d'étalonnage \\
-        \midrule
-        Thermistance NTC Ossca \texttt{01176} (préréglages thermomètre) & NTC passif &
-            Valider avec la table de résistances Ossca \texttt{01176} (p.\,ex., 270{,}0~$\Omega$ à 58~$^\circ$C jusqu'à 15{,}9~$\Omega$ à 160~$^\circ$C). Étalonnage nominal : $R_{25} = 1$~k$\Omega$, $\beta = 3950$. Pour des sondes NTC personnalisées, ajustez le beta et la résistance nominale dans IV-Conf. \\
-        RIDEX \texttt{829S0003} (compatible Opel/BMW/Volvo) & NTC à 2 broches, filetage M12\,\texttimes\,1.5 &
-            Résistance nominale 2080~$\Omega$ à 25~$^\circ$C et 294~$\Omega$ à 80~$^\circ$C ($\beta \approx 3740$~K). Plage de fonctionnement 25--80~$^\circ$C. Corps $\varnothing$~7{,}4~mm, hexagone 19~mm, joint d'étanchéité fourni. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilité des capteurs de température d'huile/liquide de refroidissement}\label{tab:oil-coolant-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Capteur compatible} & \textbf{Signal/alimentation} & \textbf{Paramètres d'étalonnage} \\
+Thermistance NTC Ossca \texttt{01176} (préréglages thermomètre) & NTC passif &
+    Valider avec la table de résistances Ossca \texttt{01176} (p.\,ex., 270{,}0~$\Omega$ à 58~$^\circ$C jusqu'à 15{,}9~$\Omega$ à 160~$^\circ$C). Étalonnage nominal : $R_{25} = 1$~k$\Omega$, $\beta = 3950$. Pour des sondes NTC personnalisées, ajustez le beta et la résistance nominale dans IV-Conf. \\
+RIDEX \texttt{829S0003} (compatible Opel/BMW/Volvo) & NTC à 2 broches, filetage M12\,\texttimes\,1.5 &
+    Résistance nominale 2080~$\Omega$ à 25~$^\circ$C et 294~$\Omega$ à 80~$^\circ$C ($\beta \approx 3740$~K). Plage de fonctionnement 25--80~$^\circ$C. Corps $\varnothing$~7{,}4~mm, hexagone 19~mm, joint d'étanchéité fourni. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Capteurs de température d'air}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilité des capteurs de température d'air}
-    \label{tab:air-temperature-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Capteur compatible & Signal/alimentation & Paramètres d'étalonnage \\
-        \midrule
-        Sonde de température extérieure MFA (VAG \texttt{171 919 379 A}, Golf Mk2/Jetta II/Passat B2/B3) & NTC à 2 fils, flottant &
-            Plage d'affichage approximative de $-40^\circ$C à $+96^\circ$C. Étalonnage empirique : $R_{25} \approx 510~\Omega$, $\beta \approx 3400$--3500~K (ajusté entre $+4^\circ$C et $+50^\circ$C). Référence de diagnostic : 200~$\Omega \approx +50^\circ$C. \\
-        Thermistance NTC équivalente à Ossca \texttt{01176} (préréglages thermomètre) & NTC passif &
-            Utilisez la table de résistances Ossca \texttt{01176} comme référence et ajustez le beta/la résistance nominale pour les capteurs NTC personnalisés via IV-Conf. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilité des capteurs de température d'air}\label{tab:air-temperature-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Capteur compatible} & \textbf{Signal/alimentation} & \textbf{Paramètres d'étalonnage} \\
+Sonde de température extérieure MFA (VAG \texttt{171 919 379 A}, Golf Mk2/Jetta II/Passat B2/B3) & NTC à 2 fils, flottant &
+    Plage d'affichage approximative de $-40^\circ$C à $+96^\circ$C. Étalonnage empirique : $R_{25} \approx 510~\Omega$, $\beta \approx 3400$--3500~K (ajusté entre $+4^\circ$C et $+50^\circ$C). Référence de diagnostic : 200~$\Omega \approx +50^\circ$C. Boîtier de connecteur \texttt{1J0973802} ; connecteur accouplé \texttt{1J0973702}. \\
+Thermistance NTC équivalente à Ossca \texttt{01176} (préréglages thermomètre) & NTC passif &
+    Utilisez la table de résistances Ossca \texttt{01176} comme référence et ajustez le beta/la résistance nominale pour les capteurs NTC personnalisés via IV-Conf. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Capteurs de pression d'huile}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilité des capteurs de pression d'huile}
-    \label{tab:oil-pressure-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Capteur compatible & Signal/alimentation & Paramètres d'étalonnage \\
-        \midrule
-        Capteur de pression VAG \texttt{03C906051A} (préréglages baromètre) & Alimentation 5~V, sortie analogique &
-            Plage absolue 10~bar, sortie nominale 0.4--0.5~V au repos. Configurez la plage avec le préréglage baromètre et ajustez les min./max. dans IV-Conf si nécessaire. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilité des capteurs de pression d'huile}\label{tab:oil-pressure-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Capteur compatible} & \textbf{Signal/alimentation} & \textbf{Paramètres d'étalonnage} \\
+Capteur de pression VAG \texttt{03C906051A} (préréglages baromètre) & Alimentation 5~V, sortie analogique &
+    Plage absolue 10~bar, sortie nominale 0.4--0.5~V au repos. Configurez la plage avec le préréglage baromètre et ajustez les min./max. dans IV-Conf si nécessaire. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Jauges de niveau de carburant}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilité des capteurs de niveau de carburant}
-    \label{tab:fuel-level-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Capteur compatible & Signal/alimentation & Paramètres d'étalonnage \\
-        \midrule
-        Capteur personnalisé (aucun modèle spécifique) & Dépend du capteur &
-            Utilisez IV-Conf pour définir les plages de mesure min./max. en fonction du capteur installé. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilité des capteurs de niveau de carburant}\label{tab:fuel-level-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Capteur compatible} & \textbf{Signal/alimentation} & \textbf{Paramètres d'étalonnage} \\
+Capteur personnalisé (aucun modèle spécifique) & Dépend du capteur &
+    Utilisez IV-Conf pour définir les plages de mesure min./max. en fonction du capteur installé. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Capteurs de pression de suralimentation}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilité des capteurs de pression de suralimentation}
-    \label{tab:boost-pressure-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Capteur compatible & Signal/alimentation & Paramètres d'étalonnage \\
-        \midrule
-        Dacia \texttt{223657266R} (aussi \texttt{161B0004}/\texttt{8200225971}) & Alimentation 5~V, sortie analogique &
-            Fenêtre de fonctionnement 20--250~kPa, sortie nominale $\sim$1{,}8~V en suralimentation. Utilisez le préréglage boost et ajustez range min/max si nécessaire. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilité des capteurs de pression de suralimentation}\label{tab:boost-pressure-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Capteur compatible} & \textbf{Signal/alimentation} & \textbf{Paramètres d'étalonnage} \\
+Dacia \texttt{223657266R} (aussi \texttt{161B0004}/\texttt{8200225971}) & Alimentation 5~V, sortie analogique &
+    Fenêtre de fonctionnement 20--250~kPa, sortie nominale $\sim$1{,}8~V en suralimentation. Utilisez le préréglage boost et ajustez range min/max si nécessaire. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Lambda large bande}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilité des contrôleurs lambda large bande}
-    \label{tab:wideband-lambda}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Capteur compatible & Signal/alimentation & Paramètres d'étalonnage \\
-        \midrule
-        Contrôleur large bande (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) avec sonde Bosch LSU~4.9 & Sortie linéaire 0--5~V vers l'indicateur &
-            Les contrôleurs large bande traduisent la sonde LSU~4.9 en un signal linéaire 0--5~V accepté par l'indicateur ; les capteurs à bande étroite fournissent une variation de 0.1--0.9~V. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilité des contrôleurs lambda large bande}\label{tab:wideband-lambda}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Capteur compatible} & \textbf{Signal/alimentation} & \textbf{Paramètres d'étalonnage} \\
+Contrôleur large bande (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) avec sonde Bosch LSU~4.9 & Sortie linéaire 0--5~V vers l'indicateur &
+    Les contrôleurs large bande traduisent la sonde LSU~4.9 en un signal linéaire 0--5~V accepté par l'indicateur ; les capteurs à bande étroite fournissent une variation de 0.1--0.9~V. \\
+\end{tblr}}
+\end{samepage}
 
 
 \section{Préréglage baromètre}

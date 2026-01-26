@@ -2,124 +2,123 @@
 
 \section{Поддерживаемые датчики}
 
-\begin{table}[htbp]
-    \centering
-    \caption{Заводские пресеты и совместимые датчики}
-    \label{tab:sensor-characteristics}
+\noindent\textbf{Заводские пресеты и совместимые датчики}\label{tab:sensor-characteristics}\\
 
-    \begin{tabularx}{\textwidth}{@{} l l l X @{}}
-        \toprule
-        Индикатор & Датчик & Питание & Примечания \\
-        \midrule
-        Voltmeter & Бортовая сеть & 12~В & Прямое измерение напряжения зарядки. \\
-        Barometer & VAG \texttt{03C906051A} & 5~В &
-            Диапазон 10~бар, номинальный выход 0.4--0.5~В, резьба M10\,\texttimes\,1.0. \\
-        Thermometer & NTC Ossca \texttt{01176} & Пассивный &
-            Опорные значения приведены в \autoref{app:temperature-table}. \\
-        Lambda & Узкополосный O$_2$ датчик & Пассивный &
-            Размах 0.1--0.9~В, принимает 0--5~В от широкополосных контроллеров. \\
-        Boost & Dacia \texttt{223657266R} & 5~В &
-            Диапазон 20--250~кПа, номинальный выход 1.8~В, одно крепёжное отверстие. \\
-        \bottomrule
-\end{tabularx}
-\end{table}
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,2.6cm] Q[l,5cm] Q[l,2.2cm] X[l]},
+    hlines
+}
+\textbf{Индикатор} & \textbf{Датчик} & \textbf{Питание} & \textbf{Примечания} \\
+Voltmeter & Бортовая сеть & 12~В & Прямое измерение напряжения зарядки. \\
+Barometer & VAG \texttt{03C906051A} & 5~В &
+    Диапазон 10~бар, номинальный выход 0.4--0.5~В, резьба M10\,\texttimes\,1.0. \\
+Thermometer & NTC Ossca \texttt{01176} & Пассивный &
+    Опорные значения приведены в \autoref{app:temperature-table}. \\
+Lambda & Узкополосный O$_2$ датчик & Пассивный &
+    Размах 0.1--0.9~В, принимает 0--5~В от широкополосных контроллеров. \\
+Boost & Dacia \texttt{223657266R} & 5~В &
+    Диапазон 20--250~кПа, номинальный выход 1.8~В, одно крепёжное отверстие. \\
+\end{tblr}}
+\end{samepage}
 
 \section{Таблицы совместимости датчиков}
 В таблицах ниже приведены совместимые датчики и опорные параметры калибровки для заводских пресетов.
 
 \subsection{Датчики температуры масла/охлаждающей жидкости}
-\begin{table}[htbp]
-    \centering
-    \caption{Совместимость датчиков температуры масла/охлаждающей жидкости}
-    \label{tab:oil-coolant-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Совместимый датчик & Сигнал/питание & Параметры калибровки \\
-        \midrule
-        Терморезистор Ossca \texttt{01176} NTC (пресет термометра) & Пассивный NTC &
-            Проверяйте по таблице сопротивлений Ossca \texttt{01176} (например, 270{,}0~$\Omega$ при 58~$^\circ$C до 15{,}9~$\Omega$ при 160~$^\circ$C). Номинальная калибровка: $R_{25} = 1$~k$\Omega$, $\beta = 3950$. Для пользовательских NTC обновите коэффициент бета и номинальное сопротивление в IV-Conf. \\
-        RIDEX \texttt{829S0003} (совместим с Opel/BMW/Volvo) & 2-контактный NTC, резьба M12\,\texttimes\,1.5 &
-            Номинальное сопротивление 2080~$\Omega$ при 25~$^\circ$C и 294~$\Omega$ при 80~$^\circ$C ($\beta \approx 3740$~K). Рабочий диапазон 25--80~$^\circ$C. Корпус $\varnothing$~7{,}4~мм, шестигранник 19~мм, поставляется с уплотнительной прокладкой. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Совместимость датчиков температуры масла/охлаждающей жидкости}\label{tab:oil-coolant-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Совместимый датчик} & \textbf{Сигнал/питание} & \textbf{Параметры калибровки} \\
+Терморезистор Ossca \texttt{01176} NTC (пресет термометра) & Пассивный NTC &
+    Проверяйте по таблице сопротивлений Ossca \texttt{01176} (например, 270{,}0~$\Omega$ при 58~$^\circ$C до 15{,}9~$\Omega$ при 160~$^\circ$C). Номинальная калибровка: $R_{25} = 1$~k$\Omega$, $\beta = 3950$. Для пользовательских NTC обновите коэффициент бета и номинальное сопротивление в IV-Conf. \\
+RIDEX \texttt{829S0003} (совместим с Opel/BMW/Volvo) & 2-контактный NTC, резьба M12\,\texttimes\,1.5 &
+    Номинальное сопротивление 2080~$\Omega$ при 25~$^\circ$C и 294~$\Omega$ при 80~$^\circ$C ($\beta \approx 3740$~K). Рабочий диапазон 25--80~$^\circ$C. Корпус $\varnothing$~7{,}4~мм, шестигранник 19~мм, поставляется с уплотнительной прокладкой. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Датчики температуры воздуха}
-\begin{table}[htbp]
-    \centering
-    \caption{Совместимость датчиков температуры воздуха}
-    \label{tab:air-temperature-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Совместимый датчик & Сигнал/питание & Параметры калибровки \\
-        \midrule
-        Датчик наружной температуры MFA (VAG \texttt{171 919 379 A}, Golf Mk2/Jetta II/Passat B2/B3) & 2-проводной NTC, плавающий &
-            Диапазон отображения примерно от $-40^\circ$C до $+96^\circ$C. Эмпирическая калибровка: $R_{25} \approx 510~\Omega$, $\beta \approx 3400$--3500~K (подгонка между $+4^\circ$C и $+50^\circ$C). Диагностическая точка: 200~$\Omega \approx +50^\circ$C. \\
-        Терморезистор NTC, эквивалентный Ossca \texttt{01176} (пресет термометра) & Пассивный NTC &
-            Используйте таблицу сопротивлений Ossca \texttt{01176} в качестве опорной и настройте бета/номинальное сопротивление для пользовательских NTC через IV-Conf. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Совместимость датчиков температуры воздуха}\label{tab:air-temperature-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Совместимый датчик} & \textbf{Сигнал/питание} & \textbf{Параметры калибровки} \\
+Датчик наружной температуры MFA (VAG \texttt{171 919 379 A}, Golf Mk2/Jetta II/Passat B2/B3) & 2-проводной NTC, плавающий &
+    Диапазон отображения примерно от $-40^\circ$C до $+96^\circ$C. Эмпирическая калибровка: $R_{25} \approx 510~\Omega$, $\beta \approx 3400$--3500~K (подгонка между $+4^\circ$C и $+50^\circ$C). Диагностическая точка: 200~$\Omega \approx +50^\circ$C. Корпус разъёма \texttt{1J0973802}; ответная часть \texttt{1J0973702}. \\
+Терморезистор NTC, эквивалентный Ossca \texttt{01176} (пресет термометра) & Пассивный NTC &
+    Используйте таблицу сопротивлений Ossca \texttt{01176} в качестве опорной и настройте бета/номинальное сопротивление для пользовательских NTC через IV-Conf. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Датчики давления масла}
-\begin{table}[htbp]
-    \centering
-    \caption{Совместимость датчиков давления масла}
-    \label{tab:oil-pressure-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Совместимый датчик & Сигнал/питание & Параметры калибровки \\
-        \midrule
-        Датчик давления VAG \texttt{03C906051A} (пресет барометра) & Питание 5~В, аналоговый выход &
-            Абсолютный диапазон 10~бар, номинальный выход 0.4--0.5~В в покое. Настройте измерительный диапазон через пресет барометра и при необходимости скорректируйте минимум/максимум в IV-Conf. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Совместимость датчиков давления масла}\label{tab:oil-pressure-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Совместимый датчик} & \textbf{Сигнал/питание} & \textbf{Параметры калибровки} \\
+Датчик давления VAG \texttt{03C906051A} (пресет барометра) & Питание 5~В, аналоговый выход &
+    Абсолютный диапазон 10~бар, номинальный выход 0.4--0.5~В в покое. Настройте измерительный диапазон через пресет барометра и при необходимости скорректируйте минимум/максимум в IV-Conf. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Датчики уровня топлива}
-\begin{table}[htbp]
-    \centering
-    \caption{Совместимость датчиков уровня топлива}
-    \label{tab:fuel-level-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Совместимый датчик & Сигнал/питание & Параметры калибровки \\
-        \midrule
-        Пользовательский датчик (модель не указана) & Зависит от датчика &
-            Задайте минимальный и максимальный диапазоны измерения в IV-Conf под установленный датчик. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Совместимость датчиков уровня топлива}\label{tab:fuel-level-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Совместимый датчик} & \textbf{Сигнал/питание} & \textbf{Параметры калибровки} \\
+Пользовательский датчик (модель не указана) & Зависит от датчика &
+    Задайте минимальный и максимальный диапазоны измерения в IV-Conf под установленный датчик. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Датчики давления наддува}
-\begin{table}[htbp]
-    \centering
-    \caption{Совместимость датчиков давления наддува}
-    \label{tab:boost-pressure-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Совместимый датчик & Сигнал/питание & Параметры калибровки \\
-        \midrule
-        Dacia \texttt{223657266R} (также \texttt{161B0004}/\texttt{8200225971}) & Питание 5~В, аналоговый выход &
-            Окно работы 20--250~кПа, номинальный выход $\sim$1{,}8~В при наддуве. Используйте пресет наддува и при необходимости скорректируйте range min/max. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Совместимость датчиков давления наддува}\label{tab:boost-pressure-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Совместимый датчик} & \textbf{Сигнал/питание} & \textbf{Параметры калибровки} \\
+Dacia \texttt{223657266R} (также \texttt{161B0004}/\texttt{8200225971}) & Питание 5~В, аналоговый выход &
+    Окно работы 20--250~кПа, номинальный выход $\sim$1{,}8~В при наддуве. Используйте пресет наддува и при необходимости скорректируйте range min/max. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Широкополосная лямбда}
-\begin{table}[htbp]
-    \centering
-    \caption{Совместимость контроллеров широкополосной лямбды}
-    \label{tab:wideband-lambda}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Совместимый датчик & Сигнал/питание & Параметры калибровки \\
-        \midrule
-        Широкополосный контроллер (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) с датчиком Bosch LSU~4.9 & Линейный выход 0--5~В на индикатор &
-            Широкополосные контроллеры преобразуют LSU~4.9 в линейный сигнал 0--5~В, принимаемый индикатором; узкополосные датчики дают диапазон 0.1--0.9~В. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Совместимость контроллеров широкополосной лямбды}\label{tab:wideband-lambda}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Совместимый датчик} & \textbf{Сигнал/питание} & \textbf{Параметры калибровки} \\
+Широкополосный контроллер (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) с датчиком Bosch LSU~4.9 & Линейный выход 0--5~В на индикатор &
+    Широкополосные контроллеры преобразуют LSU~4.9 в линейный сигнал 0--5~В, принимаемый индикатором; узкополосные датчики дают диапазон 0.1--0.9~В. \\
+\end{tblr}}
+\end{samepage}
 
 \section{Пресет барометра}
 Индикатор барометра рассчитан на датчик давления \texttt{03C906051A} группы Volkswagen.
