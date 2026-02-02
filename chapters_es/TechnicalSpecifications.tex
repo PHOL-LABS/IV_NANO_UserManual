@@ -2,124 +2,123 @@
 
 \section{Sensores compatibles}
 
-\begin{table}[htbp]
-    \centering
-    \caption{Preajustes de f\'abrica y sensores compatibles}
-    \label{tab:sensor-characteristics}
+\noindent\textbf{Preajustes de f\'abrica y sensores compatibles}\label{tab:sensor-characteristics}\\
 
-    \begin{tabularx}{\textwidth}{@{} l l l X @{}}
-        \toprule
-        Indicador & Sensor & Alimentaci\'on & Notas \\
-        \midrule
-        Voltmeter & Arn\'es del veh\'iculo & Sistema de 12~V & Medici\'on directa del voltaje de carga. \\
-        Barometer & VAG \texttt{03C906051A} & 5~V &
-            Rango de 10~bar, salida nominal de 0.4--0.5~V, rosca M10\,\texttimes\,1.0. \\
-        Thermometer & NTC Ossca \texttt{01176} & Pasivo &
-            Valores de referencia indicados en la \autoref{app:temperature-table}. \\
-        Lambda & Sensor de O$_2$ de banda estrecha & Pasivo &
-            Recorrido de 0.1--0.9~V, acepta 0--5~V de controladores de banda ancha. \\
-        Boost & Dacia \texttt{223657266R} & 5~V &
-            Intervalo de 20--250~kPa, salida nominal de 1.8~V, orificio \'unico de montaje. \\
-        \bottomrule
-\end{tabularx}
-\end{table}
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,2.6cm] Q[l,5cm] Q[l,2.2cm] X[l]},
+    hlines
+}
+\textbf{Indicador} & \textbf{Sensor} & \textbf{Alimentaci\'on} & \textbf{Notas} \\
+Voltmeter & Arn\'es del veh\'iculo & Sistema de 12~V & Medici\'on directa del voltaje de carga. \\
+Barometer & VAG \texttt{03C906051A} & 5~V &
+    Rango de 10~bar, salida nominal de 0.4--0.5~V, rosca M10\,\texttimes\,1.0. \\
+Thermometer & NTC Ossca \texttt{01176} & Pasivo &
+    Valores de referencia indicados en la \autoref{app:temperature-table}. \\
+Lambda & Sensor de O$_2$ de banda estrecha & Pasivo &
+    Recorrido de 0.1--0.9~V, acepta 0--5~V de controladores de banda ancha. \\
+Boost & Dacia \texttt{223657266R} & 5~V &
+    Intervalo de 20--250~kPa, salida nominal de 1.8~V, orificio \'unico de montaje. \\
+\end{tblr}}
+\end{samepage}
 
 \section{Tablas de compatibilidad de sensores}
 Las siguientes tablas resumen los sensores compatibles y las referencias de calibraci\'on de los preajustes de f\'abrica.
 
 \subsection{Sensores de temperatura de aceite/refrigerante}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilidad de sensores de temperatura de aceite/refrigerante}
-    \label{tab:oil-coolant-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Sensor compatible & Se\~nal/alimentaci\'on & Par\'ametros de calibraci\'on \\
-        \midrule
-        Termistor NTC Ossca \texttt{01176} (preajuste de term\'ometro) & NTC pasivo &
-            Validar con la tabla de resistencias Ossca \texttt{01176} (p.\,ej., 270{,}0~$\Omega$ a 58~$^\circ$C hasta 15{,}9~$\Omega$ a 160~$^\circ$C). Calibraci\'on nominal: $R_{25} = 1$~k$\Omega$, $\beta = 3950$. Para sondas NTC personalizadas, ajuste beta y resistencia nominal en IV-Conf. \\
-        RIDEX \texttt{829S0003} (compatible Opel/BMW/Volvo) & NTC de 2 pines, rosca M12\,\texttimes\,1.5 &
-            Resistencia nominal 2080~$\Omega$ a 25~$^\circ$C y 294~$\Omega$ a 80~$^\circ$C ($\beta \approx 3740$~K). Rango operativo 25--80~$^\circ$C. Cuerpo $\varnothing$~7{,}4~mm, hex\'agono 19~mm, con junta de sellado. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilidad de sensores de temperatura de aceite/refrigerante}\label{tab:oil-coolant-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Sensor compatible} & \textbf{Se\~nal/alimentaci\'on} & \textbf{Par\'ametros de calibraci\'on} \\
+Termistor NTC Ossca \texttt{01176} (preajuste de term\'ometro) & NTC pasivo &
+    Validar con la tabla de resistencias Ossca \texttt{01176} (p.\,ej., 270{,}0~$\Omega$ a 58~$^\circ$C hasta 15{,}9~$\Omega$ a 160~$^\circ$C). Calibraci\'on nominal: $R_{25} = 1$~k$\Omega$, $\beta = 3950$. Para sondas NTC personalizadas, ajuste beta y resistencia nominal en IV-Conf. \\
+RIDEX \texttt{829S0003} (compatible Opel/BMW/Volvo) & NTC de 2 pines, rosca M12\,\texttimes\,1.5 &
+    Resistencia nominal 2080~$\Omega$ a 25~$^\circ$C y 294~$\Omega$ a 80~$^\circ$C ($\beta \approx 3740$~K). Rango operativo 25--80~$^\circ$C. Cuerpo $\varnothing$~7{,}4~mm, hex\'agono 19~mm, con junta de sellado. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Sensores de temperatura del aire}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilidad de sensores de temperatura del aire}
-    \label{tab:air-temperature-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Sensor compatible & Se\~nal/alimentaci\'on & Par\'ametros de calibraci\'on \\
-        \midrule
-        Sensor de temperatura exterior MFA (VAG \texttt{171 919 379 A}, Golf Mk2/Jetta II/Passat B2/B3) & NTC de 2 hilos, flotante &
-            Rango aproximado de visualizaci\'on $-40^\circ$C a $+96^\circ$C. Calibraci\'on emp\'irica: $R_{25} \approx 510~\Omega$, $\beta \approx 3400$--3500~K (ajuste entre $+4^\circ$C y $+50^\circ$C). Referencia de diagn\'ostico: 200~$\Omega \approx +50^\circ$C. \\
-        Termistor NTC equivalente a Ossca \texttt{01176} (preajuste de term\'ometro) & NTC pasivo &
-            Use la tabla de resistencias Ossca \texttt{01176} como referencia y ajuste beta/resistencia nominal para sensores NTC personalizados mediante IV-Conf. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilidad de sensores de temperatura del aire}\label{tab:air-temperature-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Sensor compatible} & \textbf{Se\~nal/alimentaci\'on} & \textbf{Par\'ametros de calibraci\'on} \\
+Sensor de temperatura exterior MFA (VAG \texttt{171 919 379 A}, Golf Mk2/Jetta II/Passat B2/B3) & NTC de 2 hilos, flotante &
+    Rango aproximado de visualizaci\'on $-40^\circ$C a $+96^\circ$C. Calibraci\'on emp\'irica: $R_{25} \approx 510~\Omega$, $\beta \approx 3400$--3500~K (ajuste entre $+4^\circ$C y $+50^\circ$C). Referencia de diagn\'ostico: 200~$\Omega \approx +50^\circ$C. Carcasa del conector \texttt{1J0973802}; conector de acoplamiento \texttt{1J0973702}. \\
+Termistor NTC equivalente a Ossca \texttt{01176} (preajuste de term\'ometro) & NTC pasivo &
+    Use la tabla de resistencias Ossca \texttt{01176} como referencia y ajuste beta/resistencia nominal para sensores NTC personalizados mediante IV-Conf. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Sensores de presi\'on de aceite}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilidad de sensores de presi\'on de aceite}
-    \label{tab:oil-pressure-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Sensor compatible & Se\~nal/alimentaci\'on & Par\'ametros de calibraci\'on \\
-        \midrule
-        Sensor de presi\'on VAG \texttt{03C906051A} (preajuste barom\'etrico) & Alimentaci\'on 5~V, salida anal\'ogica &
-            Rango absoluto 10~bar, salida nominal 0.4--0.5~V en reposo. Configure el rango con el preajuste barom\'etrico y ajuste m\'in./m\'ax. en IV-Conf si es necesario. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilidad de sensores de presi\'on de aceite}\label{tab:oil-pressure-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Sensor compatible} & \textbf{Se\~nal/alimentaci\'on} & \textbf{Par\'ametros de calibraci\'on} \\
+Sensor de presi\'on VAG \texttt{03C906051A} (preajuste barom\'etrico) & Alimentaci\'on 5~V, salida anal\'ogica &
+    Rango absoluto 10~bar, salida nominal 0.4--0.5~V en reposo. Configure el rango con el preajuste barom\'etrico y ajuste m\'in./m\'ax. en IV-Conf si es necesario. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Indicadores de nivel de combustible}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilidad de sensores de nivel de combustible}
-    \label{tab:fuel-level-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Sensor compatible & Se\~nal/alimentaci\'on & Par\'ametros de calibraci\'on \\
-        \midrule
-        Sensor personalizado (sin modelo espec\'ifico) & Depende del sensor &
-            Use IV-Conf para definir los rangos m\'inimo y m\'aximo de medida seg\'un el sensor instalado. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilidad de sensores de nivel de combustible}\label{tab:fuel-level-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Sensor compatible} & \textbf{Se\~nal/alimentaci\'on} & \textbf{Par\'ametros de calibraci\'on} \\
+Sensor personalizado (sin modelo espec\'ifico) & Depende del sensor &
+    Use IV-Conf para definir los rangos m\'inimo y m\'aximo de medida seg\'un el sensor instalado. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Sensores de presi\'on de turbo}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilidad de sensores de presi\'on de turbo}
-    \label{tab:boost-pressure-sensors}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Sensor compatible & Se\~nal/alimentaci\'on & Par\'ametros de calibraci\'on \\
-        \midrule
-        Dacia \texttt{223657266R} (tambi\'en \texttt{161B0004}/\texttt{8200225971}) & Alimentaci\'on 5~V, salida anal\'ogica &
-            Ventana operativa 20--250~kPa, salida nominal $\sim$1{,}8~V con turbo. Use el preajuste de turbo y ajuste rango m\'in./m\'ax. si es necesario. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilidad de sensores de presi\'on de turbo}\label{tab:boost-pressure-sensors}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Sensor compatible} & \textbf{Se\~nal/alimentaci\'on} & \textbf{Par\'ametros de calibraci\'on} \\
+Dacia \texttt{223657266R} (tambi\'en \texttt{161B0004}/\texttt{8200225971}) & Alimentaci\'on 5~V, salida anal\'ogica &
+    Ventana operativa 20--250~kPa, salida nominal $\sim$1{,}8~V con turbo. Use el preajuste de turbo y ajuste rango m\'in./m\'ax. si es necesario. \\
+\end{tblr}}
+\end{samepage}
 
 \subsection{Lambda de banda ancha}
-\begin{table}[htbp]
-    \centering
-    \caption{Compatibilidad de controladores lambda de banda ancha}
-    \label{tab:wideband-lambda}
-    \begin{tabularx}{\textwidth}{@{} l l X @{}}
-        \toprule
-        Sensor compatible & Se\~nal/alimentaci\'on & Par\'ametros de calibraci\'on \\
-        \midrule
-        Controlador de banda ancha (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) con sonda Bosch LSU~4.9 & Salida lineal 0--5~V al indicador &
-            Los controladores de banda ancha convierten la sonda LSU~4.9 en una se\~nal lineal de 0--5~V aceptada por el indicador; los sensores de banda estrecha entregan 0.1--0.9~V. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
+\noindent\textbf{Compatibilidad de controladores lambda de banda ancha}\label{tab:wideband-lambda}\\
+
+\begin{samepage}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,6cm] Q[l,3.2cm] X[l]},
+    hlines
+}
+\textbf{Sensor compatible} & \textbf{Se\~nal/alimentaci\'on} & \textbf{Par\'ametros de calibraci\'on} \\
+Controlador de banda ancha (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) con sonda Bosch LSU~4.9 & Salida lineal 0--5~V al indicador &
+    Los controladores de banda ancha convierten la sonda LSU~4.9 en una se\~nal lineal de 0--5~V aceptada por el indicador; los sensores de banda estrecha entregan 0.1--0.9~V. \\
+\end{tblr}}
+\end{samepage}
 
 \section{Preajuste barom\'etrico}
 El indicador barom\'etrico est\'a dise\~nado para el sensor de presi\'on \texttt{03C906051A} del Grupo Volkswagen.

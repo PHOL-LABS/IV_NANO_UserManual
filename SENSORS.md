@@ -13,7 +13,7 @@ The tables below summarize sensor options mentioned in the IV-Indicators Nano La
 
 | Compatible sensor | Signal/supply | Calibration parameters (from presets) |
 | --- | --- | --- |
-| MFA outside air temperature sensor (VAG 171 919 379 A, Golf Mk2/Jetta II/Passat B2/B3) | 2-wire NTC, floating | Approx. display span −40 °C to +96 °C. Empirical calibration: R25 ≈ 510 Ω, β ≈ 3400–3500 K (fit between +4 °C and +50 °C). Diagnostic reference: 200 Ω ≈ +50 °C. |
+| MFA outside air temperature sensor (VAG 171 919 379 A, Golf Mk2/Jetta II/Passat B2/B3) | 2-wire NTC, floating | Approx. display span −40 °C to +96 °C. Empirical calibration: R25 ≈ 510 Ω, β ≈ 3400–3500 K (fit between +4 °C and +50 °C). Diagnostic reference: 200 Ω ≈ +50 °C. Connector housing 1J0973802; mating connector 1J0973702. |
 | NTC thermistor equivalent to Ossca 01176 (thermometer preset) | Passive NTC | Use the Ossca 01176 resistance table as the reference and adjust beta coefficient/nominal resistance for custom NTC sensors via IV-Conf. |
 
 ## Oil pressure sensors
