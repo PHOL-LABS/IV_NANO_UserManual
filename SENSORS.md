@@ -32,7 +32,7 @@ The tables below summarize sensor options mentioned in the IV-Indicators Nano La
 
 | Compatible sensor | Signal/supply | Calibration parameters (from presets) |
 | --- | --- | --- |
-| Dacia 223657266R (also 161B0004/8200225971) | 5 V supply, analogue output | 20–250 kPa operating window, ~1.8 V nominal output at boost; use the boost preset and adjust range min/max if needed. |
+| Dacia 223657266R (also 161B0004/8200225971) | 5 V supply, analogue output | 20–250 kPa operating window, ~1.8 V nominal output at boost; use the boost preset and adjust range min/max if needed. Default parameters: 0.25V min, 4.75V max, 20 kPa min, 250 kPa max. 1.8V output = ~100kPa atmosperic pressure|
 
 ## Wideband lambda
 
