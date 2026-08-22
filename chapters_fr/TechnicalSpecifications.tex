@@ -117,6 +117,8 @@ Dacia \texttt{223657266R} (aussi \texttt{161B0004}/\texttt{8200225971}) & Alimen
 \textbf{Capteur compatible} & \textbf{Signal/alimentation} & \textbf{Paramètres d'étalonnage} \\
 Contrôleur large bande (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) avec sonde Bosch LSU~4.9 & Sortie linéaire 0--5~V vers l'indicateur &
     Les contrôleurs large bande traduisent la sonde LSU~4.9 en un signal linéaire 0--5~V accepté par l'indicateur ; les capteurs à bande étroite fournissent une variation de 0.1--0.9~V. \\
+Kit KAOLALI 30-0300 X-Wideband UEGO (kit générique Amazon) & Sortie linéaire 0--5~V vers l'indicateur &
+    Kit lambda large bande complet pris en charge ; suivre son manuel pour le câblage, l'installation de la sonde et l'étalonnage. \\
 \end{tblr}}
 \end{samepage}
 
@@ -144,7 +146,7 @@ L'indicateur boost attend le capteur Dacia \texttt{223657266R} (\texttt{161B0004
 \end{itemize}
 
 \section{Intégration lambda}
-IV-Indicators Lambda lit directement les sondes étroites mais est conçu pour fonctionner avec un contrôleur large bande sur les moteurs préparés. Les contrôleurs recommandés incluent SLC Free, DIY-EFI TinyWB et Sigma Lambda Controller Free~2. Chaque appareil convertit une sonde Bosch LSU~4.9 en un signal linéaire 0--5~V que l'indicateur peut afficher.
+IV-Indicators Lambda lit directement les sondes étroites mais est conçu pour fonctionner avec un contrôleur large bande sur les moteurs préparés. Les contrôleurs recommandés incluent SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 et le kit générique Amazon \textbf{KAOLALI 30-0300 X-Wideband UEGO}. Chaque appareil convertit le signal d'une sonde large bande en un signal linéaire 0--5~V que l'indicateur peut afficher. Les instructions d'installation et d'étalonnage du kit KAOLALI pris en charge sont disponibles dans le \href{https://github.com/PHOL-LABS/IV_NANO_UserManual/blob/master/lambda_kit_user_manual.pdf}{manuel d'utilisation du kit lambda}.
 
 \section{Images de référence des capteurs}
 \begin{figure}[htbp]
