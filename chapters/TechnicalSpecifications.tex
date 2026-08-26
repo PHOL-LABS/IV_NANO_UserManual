@@ -117,6 +117,8 @@ Dacia \texttt{223657266R} (also \texttt{161B0004}/\texttt{8200225971}) & 5~V sup
 \textbf{Compatible sensor} & \textbf{Signal/supply} & \textbf{Calibration parameters} \\
 Wideband controller (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) with Bosch LSU~4.9 probe & 0--5~V linear output to gauge &
     Wideband controllers translate the LSU~4.9 probe into a linear 0--5~V signal accepted by the gauge; narrowband sensors provide a 0.1--0.9~V swing. \\
+KAOLALI 30-0300 X-Wideband UEGO kit (generic Amazon kit) & 0--5~V linear output to gauge &
+    Supported complete wideband lambda kit; follow the kit manual for wiring, sensor installation, and calibration. \\
 \end{tblr}}
 \end{samepage}
 
@@ -144,7 +146,7 @@ The boost indicator expects the Dacia \texttt{223657266R} (\texttt{161B0004}/\te
 \end{itemize}
 
 \section{Lambda integration}
-IV-Indicators Lambda reads narrowband sensors directly but is intended to work alongside a wideband controller for tuned engines. Recommended controllers include SLC Free, DIY-EFI TinyWB, and Sigma Lambda Controller Free~2. Each device converts a Bosch LSU~4.9 probe into a linear 0--5~V signal that the indicator can display.
+IV-Indicators Lambda reads narrowband sensors directly but is intended to work alongside a wideband controller for tuned engines. Recommended controllers include SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2, and the generic Amazon \textbf{KAOLALI 30-0300 X-Wideband UEGO} kit. Each device converts a wideband probe signal into a linear 0--5~V signal that the indicator can display. Installation and calibration instructions for the supported KAOLALI kit are available in the \href{https://github.com/PHOL-LABS/IV_NANO_UserManual/blob/master/lambda_kit_user_manual.pdf}{Lambda kit user manual}.
 
 \section{Sensor reference images}
 \begin{figure}[htbp]

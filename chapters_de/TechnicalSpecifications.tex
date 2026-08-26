@@ -117,6 +117,8 @@ Dacia \texttt{223657266R} (auch \texttt{161B0004}/\texttt{8200225971}) & 5~V-Ver
 \textbf{Kompatibler Sensor} & \textbf{Signal/Versorgung} & \textbf{Kalibrierparameter} \\
 Breitband-Controller (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) mit Bosch LSU~4.9-Sonde & Lineares 0--5~V-Ausgangssignal zur Anzeige &
     Breitband-Controller wandeln die LSU~4.9-Sonde in ein lineares 0--5~V-Signal für die Anzeige; Schmalband-Sensoren liefern einen 0{,}1--0{,}9~V-Hub. \\
+KAOLALI 30-0300 X-Wideband UEGO Kit (generisches Amazon-Kit) & Lineares 0--5~V-Ausgangssignal zur Anzeige &
+    Unterstütztes komplettes Breitband-Lambda-Kit; für Verkabelung, Sensoreinbau und Kalibrierung die Anleitung des Kits beachten. \\
 \end{tblr}}
 \end{samepage}
 
@@ -143,7 +145,7 @@ Die Boost-Anzeige erwartet den Sensor Dacia \texttt{223657266R} (\texttt{161B000
 \end{itemize}
 
 \section{Lambda-Integration}
-IV-Indicators Lambda liest Schmalband-Sonden direkt aus, ist bei getunten Motoren jedoch für den Betrieb mit einem Breitband-Controller gedacht. Empfohlene Controller sind SLC Free, DIY-EFI TinyWB und Sigma Lambda Controller Free~2. Jedes Gerät wandelt eine Bosch LSU~4.9-Sonde in ein lineares 0--5~V-Signal um, das die Anzeige darstellen kann.
+IV-Indicators Lambda liest Schmalband-Sonden direkt aus, ist bei getunten Motoren jedoch für den Betrieb mit einem Breitband-Controller gedacht. Empfohlene Controller sind SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 und das generische Amazon-Kit \textbf{KAOLALI 30-0300 X-Wideband UEGO}. Jedes Gerät wandelt das Signal einer Breitbandsonde in ein lineares 0--5~V-Signal um, das die Anzeige darstellen kann. Anweisungen zur Installation und Kalibrierung des unterstützten KAOLALI-Kits finden Sie in der \href{https://github.com/PHOL-LABS/IV_NANO_UserManual/blob/master/lambda_kit_user_manual.pdf}{Bedienungsanleitung des Lambda-Kits}.
 
 \section{Sensorreferenzen}
 \begin{figure}[htbp]

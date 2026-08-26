@@ -117,6 +117,8 @@ Dacia \texttt{223657266R} (más néven \texttt{161B0004}/\texttt{8200225971}) & 
 \textbf{Kompatibilis érzékelő} & \textbf{Jel/tápellátás} & \textbf{Kalibrációs paraméterek} \\
 Szélessávú vezérlő (SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2) Bosch LSU~4.9 szondával & Lineáris 0--5~V kimenet az indikátornak &
     A szélessávú vezérlők a LSU~4.9 szondát lineáris 0--5~V jellé alakítják, amelyet az indikátor elfogad; a keskenysávú érzékelők 0{,}1--0{,}9~V tartományt adnak. \\
+KAOLALI 30-0300 X-Wideband UEGO készlet (általános Amazon-készlet) & Lineáris 0--5~V kimenet az indikátornak &
+    Támogatott, komplett szélessávú lambda készlet; a bekötéshez, a szonda telepítéséhez és a kalibráláshoz kövesse a készlet kézikönyvét. \\
 \end{tblr}}
 \end{samepage}
 
@@ -143,7 +145,7 @@ A turbónyomás indikátor a Dacia \texttt{223657266R} (\texttt{161B0004}/\textt
 \end{itemize}
 
 \section{Lambda integráció}
-Az IV-Indicators Lambda közvetlenül olvassa a keskenysávú érzékelőket, de hangolt motoroknál szélessávú vezérlővel együtt használható. Ajánlott vezérlők: SLC Free, DIY-EFI TinyWB és Sigma Lambda Controller Free~2. Ezek a Bosch LSU~4.9 szondát lineáris 0--5~V jellé alakítják, amelyet az indikátor meg tud jeleníteni.
+Az IV-Indicators Lambda közvetlenül olvassa a keskenysávú érzékelőket, de hangolt motoroknál szélessávú vezérlővel együtt használható. Ajánlott vezérlők: SLC Free, DIY-EFI TinyWB, Sigma Lambda Controller Free~2 és az általános Amazon \textbf{KAOLALI 30-0300 X-Wideband UEGO} készlet. Ezek a szélessávú szonda jelét lineáris 0--5~V jellé alakítják, amelyet az indikátor meg tud jeleníteni. A támogatott KAOLALI készlet telepítési és kalibrálási útmutatója a \href{https://github.com/PHOL-LABS/IV_NANO_UserManual/blob/master/lambda_kit_user_manual.pdf}{lambda készlet felhasználói kézikönyvében} található.
 
 \section{Érzékelő referencia képek}
 \begin{figure}[htbp]
