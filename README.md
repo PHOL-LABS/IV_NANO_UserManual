@@ -1,66 +1,45 @@
-# IV-Indicators Nano User Manuals
+# IV-Evo User Manual
 
-[![CI](https://github.com/Sgw32/DR_UserManuals/actions/workflows/main.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/main.yml)
-[![CI (French)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/french.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/french.yml)
-[![CI (German)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/german.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/german.yml)
-[![CI (Hungarian)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/hungarian.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/hungarian.yml)
-[![CI (Russian)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/russian.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/russian.yml)
-[![CI (Spanish)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/spanish.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/spanish.yml)
+User manuals in English, German, Spanish, French, Hungarian and Russian for the PHOL-LABS IV-Evo display indicator, adapted from the supplied `IV-EVO User Manual.zip` HTML documentation. This repository originated as an IV-Nano manual fork; Nano configuration instructions and sensor tables are not specifications for IV-Evo.
 
-This repository hosts the LaTeX sources for the official documentation shipped with every IV-Indicators Nano gauge set.  The manuals describe the modular indicator family that covers Golf 2, Jetta 2, Golf 1, Jetta 1, Polo, and Audi 80 B2 installations.  They are kept in sync with the production firmware, configuration utilities, and wiring harnesses supplied with the devices.
+## Build
 
-## 📘 What is inside
+Use TeX Live 2025 with latexmk and biber:
 
-- **Fundamental safety guidance** describing how to handle the programmer, power the indicators, and avoid damage to the electronics.
-- **Device overview** summarizing the IV-Indicators variants (voltmeter, barometer, thermometer, lambda, boost) and the compatible sensors shipped or recommended for each option.
-- **Configuration walkthroughs** for the IV-Conf Android beta app and the IV-Conf web pack, including preset management and calibration adjustments.
-- **Reference appendices** that consolidate sensor characteristics, temperature tables, and reflashing instructions.
+```sh
+latexmk IV_Evo_User_Manual
+```
 
-The compiled PDF (`IV_Indicators_User_Manual.pdf`) is the master document used for customer deliveries.  Each section of the manual lives in the `chapters/` directory, supporting data and macros reside in `preamble/`, while ancillary assets (figures, tables, and scripts) are stored under `figures/` and `anc/`.
+This produces `IV_Evo_User_Manual.pdf`. Add `_de`, `_es`, `_fr`, `_hu` or `_ru` to the target for a localized edition (for example, `latexmk IV_Evo_User_Manual_hu`). The original `IV_Indicators_User_Manual` entry points, with the same language suffixes, build the corresponding Evo editions and preserve existing CI/release artifact names. Build sequentially: aliases share chapter auxiliary files. All CI and release builds pin TeX Live 2025.
 
-Localized builds are published alongside the English edition: French (`_fr`), Russian (`_ru`), Hungarian (`_hu`), German (`_de`), and Spanish (`_es`).  Each translation currently carries placeholder text so that outdated Digifiz content is removed while the new wording is being prepared.
+In the prepared cloud environment, use the retained TeX Live container:
 
-## 🚗 Vehicle coverage
+```sh
+docker start iv-manual-tex
+docker exec -e TEXMFVAR=/work/.aux/texmf-var \
+  -e TEXMFCONFIG=/work/.aux/texmf-config \
+  -e XDG_CACHE_HOME=/work/.aux/cache \
+  iv-manual-tex latexmk IV_Evo_User_Manual
+```
 
-IV-Indicators Nano modules are designed for the following Volkswagen Group classics:
+Host TeX lacks required packages. The full TeX Live 2026 image tested during setup also failed on the template's proof environment; the environment pins TeX Live 2025. Current illustrations are raster images, so SVG tools are not needed for this build. PDF/A conformance requires a separate VeraPDF check; producing a PDF alone does not establish conformance.
 
-- **Volkswagen Golf Mk2 (1983–1992)**
-- **Volkswagen Jetta Mk2 (1984–1992)**
-- **Volkswagen Golf Mk1**
-- **Volkswagen Jetta Mk1**
-- **Volkswagen Polo (86C)**
-- **Audi 80 B2 (1978–1986)**
+## Structure and sources
 
-Adapters for additional models will be documented as compatibility is confirmed.
+- `chapters_evo/`: English safety, overview, package, sensor options, Wi-Fi/wiring, applications, and Lua API appendix.
+- `chapters_evo_{de,es,fr,hu,ru}/`: localized safety, overview/package, Wi-Fi, connections, applications, and Lua reference. Translations consolidate repetitive source prose while retaining the sensor requirements, calibration limits, every original figure, all API signatures and both code examples. App IDs and Lua identifiers remain unchanged; original diagram labels remain in English.
+- `figures/ivevo/`: figures from the supplied Evo documentation.
+- `iv_evo_reference/IVEVOUserManual.html` and its `images/`: unchanged source documentation for traceability. Open the HTML locally with its images beside it.
+- `preamble/` and `frontmatter/`: shared layout and title page; Evo branding is enabled by the English entry point.
 
-## 🛠️ Building the manual locally
+The English manual replaces the Nano Android/IV-Conf workflow with Evo Wi-Fi setup, covers BLE gear telemetry and Digifiz Next 1.0.14+, and includes the Lua runtime and module API. Its example display coordinates are adjusted for the stated screen dimensions and its bar width is clamped.
 
-1. Install a recent TeX distribution (TeX Live 2025 or newer is recommended) that includes `latexmk`, `pdflatex`/`lualatex`, and `biber`.
-2. For the automated figure pipeline, also install `inkscape`, `perl`, `sed`, `uconv`, and `ghostscript`.  These utilities enable vector export and watermark generation used in the PDF.
-3. Clone this repository and run:
+The supplied text leaves RPM calibration units, the boost transfer curve, general electrical limits unspecified. The manual identifies these gaps instead of importing Nano values. The illustrated pinout is transcribed from the supplied board photograph. Package contents follow the explicit package list (indicator and wired KF2510 socket), rather than an inconsistent marketing reference to an included programmer.
 
-   ```sh
-   latexmk IV_Indicators_User_Manual
-   ```
+## Archived Nano material
 
-   The command builds `IV_Indicators_User_Manual.pdf` in the repository root.  Clean builds (`latexmk -C`) and alternative engines can be configured in `.latexmkrc`.
+The old `chapters/`, `chapters_de/`, `chapters_es/`, `chapters_fr/`, `chapters_hu/`, `chapters_ru/`, `iv_nano_reference/` and `SENSORS.md` remain archived source material. No active manual entry point includes those chapters. All six CI and release artifacts now contain Evo documentation. Hungarian uses Hungarian Babel settings and `lang=hu` PDF metadata.
 
-If you prefer cloud editing, you can upload the project to Overleaf.  Select the latest TeX Live compiler and ensure shell-escape is enabled for chapters that render SVG figures.
+## License
 
-## 🤝 Community and support
-
-For hardware sales, installation services, or manual feedback, reach out to PHOL-LABS Kft via the contact information supplied with your order.  Community channels for IV-Indicators Nano will be announced alongside firmware milestones.
-
-## 💖 Support the project
-
-- **PayPal:** `sgw32nc@gmail.com`
-- **Crypto (ETH / USDT ERC-20):** `0xeDc17cb23241eACe19DF3617291aa7d2d92E62DC`
-- **3D printed accessories and models:** [cgtrader.com/sgw32](https://www.cgtrader.com/sgw32)
-
-## 🧾 License
-
-Documentation sources in this repository are released under the [Creative Commons CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) dedication (see `LICENSE`).
-
-## ™️ Trademarks
-
-Volkswagen, Audi, and their respective vehicle names are trademarks of Volkswagen AG and Audi AG.  References are provided solely for identification of compatible vehicles.  IV-Indicators Nano is produced by PHOL-LABS Kft and is not affiliated with the OEMs listed above.
+Documentation is released under CC0 1.0; see `LICENSE`. Product and vehicle trademarks remain the property of their respective owners.

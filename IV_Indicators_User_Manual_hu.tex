@@ -1,11 +1,11 @@
 \newcommand*{\TeXturedVERSION}{1.5.0} %% TeXtured 2025-08-06
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% NOTE: If you find any issues or have any suggestions, please open %%
 %%       an Issue on GitHub: https://github.com/jdujava/TeXtured     %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Enable built-in LaTeX support for PDF/A compliance (must be before `\documentclass`)
-\DocumentMetadata{lang=de, pdfversion=1.7, pdfstandard=A-2u}
+\DocumentMetadata{lang=hu, pdfversion=1.7, pdfstandard=A-2u}
 \input{preamble/pdfA-compliance/glyphtounicode}
 
 %% NOTE: Choose the desirable page layout version (electronic vs print)
@@ -22,63 +22,32 @@
 \CENSORtrue         % THIS IS A CENSORED VERSION
 
 %% Preamble - data, packages, macros, and more
+\def\IVEVO{1}
+\def\EVODraft{Tervezet}
+\def\EVOTitle{IV-Evo használati útmutató}
+\def\EVOProduct{IV-Evo Golf/Jetta II modellekhez}
 \input{preamble/main}
 
 %% Only uncommented files are included (faster compilation)
 %% NOTE: If no files are uncommented, all files are included
-\includeonlysmart{
-    % frontmatter_hu/title,
-    % frontmatter_hu/declaration,
-    % frontmatter_hu/dedication,
-    % frontmatter_hu/information,
-    % chapters_hu/Precautions,
-    % chapters_hu/Introduction,
-    % chapters_hu/ProductDescription,
-    % chapters_hu/OperatingPrinciple,
-    % chapters_hu/TechnicalSpecifications,
-    % chapters_hu/Safety,
-    % chapters_hu/Preparation,
-    % chapters_hu/ReplicaNextMaintenance,
-    % chapters_hu/ReplicaNextScenarios,
-    % chapters_hu/ReplicaMaintenance,
-    % chapters_hu/ReplicaScenarios,
-    % chapters_hu/Marking,
-    % chapters_hu/Package,
-    % chapters_hu/Storage,
-    % chapters_hu/Appendix,
-}
-
+\emergencystretch=2em
 \begin{document}
-\selectlanguage{ngerman}
+\selectlanguage{magyar}
 
 \frontmatter
 \include{frontmatter_hu/title}
-% \include{frontmatter_hu/declaration}
-% \include{frontmatter_hu/dedication}
-% \include{frontmatter_hu/information}
+% \include{frontmatter/declaration}
+% \include{frontmatter/dedication}
+% \include{frontmatter/information}
 
 \contentsandlists
 
 \mainmatter
-\include{chapters_hu/Precautions}
-\include{chapters_hu/Introduction}
-\include{chapters_hu/ProductDescription}
-\include{chapters_hu/OperatingPrinciple}
-\include{chapters_hu/TechnicalSpecifications}
-\include{chapters_hu/Safety}
-\include{chapters_hu/Preparation}
-\include{chapters_hu/ReplicaNextMaintenance}
-\include{chapters_hu/ReplicaNextScenarios}
-\include{chapters_hu/ReplicaMaintenance}
-\include{chapters_hu/ReplicaScenarios}
-\include{chapters_hu/Marking}
-\include{chapters_hu/Package}
-\include{chapters_hu/Storage}
-
+\include{chapters_evo_hu/Safety}
+\include{chapters_evo_hu/Overview}
+\include{chapters_evo_hu/Configuration}
+\include{chapters_evo_hu/Connections}
+\include{chapters_evo_hu/Applications}
 \appendix
-\include{chapters_hu/Appendix}
-
-\backmatter
-\references
-
+\include{chapters_evo_hu/LuaAPI}
 \end{document}

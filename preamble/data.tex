@@ -68,3 +68,25 @@
 \newcommand*{\ManualKeywordsPlaintext}{%
     IV-Indicators Nano, Volkswagen, Audi, Modular Gauge, Configuration, Installation%
 }
+
+% Evo branding is enabled by every active manual entry point.
+\ifdefined\IVEVO
+\renewcommand*{\IVIndicators}{IV-Evo}
+\renewcommand*{\IVIndicatorsShort}{IV-Evo}
+\renewcommand*{\ManualTitlePlaintext}{IV-Evo User Manual}
+\ifdefined\EVOTitle
+\renewcommand*{\ManualTitle}{\EVOTitle}
+\renewcommand*{\ManualTitlePlaintext}{\EVOTitle}
+\fi
+\renewcommand*{\ProductLine}{IV-Evo for Golf/Jetta II}
+\ifdefined\EVOProduct
+\renewcommand*{\ProductLine}{\EVOProduct}
+\fi
+\renewcommand*{\ManualAbstract}{IV-Evo installation, Wi-Fi configuration, applications, sensors and Lua API reference.}
+\renewcommand*{\ManualSubject}{User manual for IV-Evo display indicators}
+\ifdefined\EVOTitle
+\renewcommand*{\ManualSubject}{\EVOTitle}
+\fi
+\renewcommand*{\ManualKeywords}{IV-Evo, ESP32-C3, Wi-Fi, Bluetooth LE, Lua}
+\renewcommand*{\ManualKeywordsPlaintext}{IV-Evo, ESP32-C3, Wi-Fi, Bluetooth LE, Lua}
+\fi

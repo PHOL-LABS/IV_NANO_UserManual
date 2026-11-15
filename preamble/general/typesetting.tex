@@ -1,11 +1,14 @@
 %%% Typesetting, figures, tables, etc.
 
 \ifpdftex % only for pdfLaTeX
-    \usepackage[T1,T2A]{fontenc} % support for Latin and Cyrillic scripts
+    \usepackage[T2A,T1]{fontenc} % support for Latin and Cyrillic scripts
     \usepackage[utf8]{inputenc}  % explicit UTF-8 input encoding for compatibility
 \fi
 \usepackage{lmodern}  % Latin Modern fonts
-\usepackage[main=english,french,russian]{babel} % multi-language support
+% Avoid the legacy Hungarian refstepcounter patch conflicting with PDF management.
+% Hungarian captions, dates and hyphenation remain enabled.
+\PassOptionsToPackage{hunnewlabel=no}{magyar.ldf}
+\usepackage[main=english,french,russian,ngerman,spanish,magyar]{babel} % multi-language support
 \usepackage{romanbar} % Roman numerals with bars, provides `\Romanbar{...}`
 
 %% slightly more breathing space between lines
