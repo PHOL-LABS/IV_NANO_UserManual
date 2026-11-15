@@ -28,42 +28,42 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: IV_Indicators_User_Manual.tex
-          texlive_version: 2025
+          texlive_version: latest
           extra_system_packages: coreutils icu inkscape
 
       - name: Build German manual
         uses: xu-cheng/latex-action@v3
         with:
           root_file: IV_Indicators_User_Manual_de.tex
-          texlive_version: 2025
+          texlive_version: latest
           extra_system_packages: coreutils icu inkscape
 
       - name: Build Spanish manual
         uses: xu-cheng/latex-action@v3
         with:
           root_file: IV_Indicators_User_Manual_es.tex
-          texlive_version: 2025
+          texlive_version: latest
           extra_system_packages: coreutils icu inkscape
 
       - name: Build French manual
         uses: xu-cheng/latex-action@v3
         with:
           root_file: IV_Indicators_User_Manual_fr.tex
-          texlive_version: 2025
+          texlive_version: latest
           extra_system_packages: coreutils icu inkscape
 
       - name: Build Hungarian manual
         uses: xu-cheng/latex-action@v3
         with:
           root_file: IV_Indicators_User_Manual_hu.tex
-          texlive_version: 2025
+          texlive_version: latest
           extra_system_packages: coreutils icu inkscape
 
       - name: Build Russian manual
         uses: xu-cheng/latex-action@v3
         with:
           root_file: IV_Indicators_User_Manual_ru.tex
-          texlive_version: 2025
+          texlive_version: latest
           extra_system_packages: coreutils icu inkscape
 
       - name: Create GitHub Release

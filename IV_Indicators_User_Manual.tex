@@ -22,11 +22,32 @@
 \CENSORtrue         % THIS IS A CENSORED VERSION
 
 %% Preamble - data, packages, macros, and more
-\def\IVEVO{1}
 \input{preamble/main}
 
 %% Only uncommented files are included (faster compilation)
 %% NOTE: If no files are uncommented, all files are included
+\includeonlysmart{
+    % frontmatter/title,
+    % frontmatter/declaration,
+    % frontmatter/dedication,
+    % frontmatter/information,
+    % chapters/Precautions,
+    % chapters/Introduction,
+    % chapters/ProductDescription,
+    % chapters/OperatingPrinciple,
+    % chapters/TechnicalSpecifications,
+    % chapters/Safety,
+    % chapters/Preparation,
+    % chapters/ReplicaNextMaintenance,
+    % chapters/ReplicaNextScenarios,
+    % chapters/ReplicaMaintenance,
+    % chapters/ReplicaScenarios,
+    % chapters/Marking,
+    % chapters/Package,
+    % chapters/Storage,
+    % chapters/Appendix,
+}
+
 \begin{document}
 \selectlanguage{english}
 
@@ -39,12 +60,25 @@
 \contentsandlists
 
 \mainmatter
-\include{chapters_evo/Safety}
-\include{chapters_evo/Overview}
-\include{chapters_evo/Package}
-\include{chapters_evo/ApplicationsOverview}
-\include{chapters_evo/Configuration}
-\include{chapters_evo/Applications}
+\include{chapters/Precautions}
+\include{chapters/Introduction}
+\include{chapters/ProductDescription}
+\include{chapters/OperatingPrinciple}
+\include{chapters/TechnicalSpecifications}
+\include{chapters/Safety}
+\include{chapters/Preparation}
+\include{chapters/ReplicaNextMaintenance}
+\include{chapters/ReplicaNextScenarios}
+\include{chapters/ReplicaMaintenance}
+\include{chapters/ReplicaScenarios}
+\include{chapters/Marking}
+\include{chapters/Package}
+\include{chapters/Storage}
+
 \appendix
-\include{chapters_evo/LuaAPI}
+\include{chapters/Appendix}
+
+\backmatter
+\references
+
 \end{document}

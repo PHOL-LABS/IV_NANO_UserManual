@@ -22,32 +22,63 @@
 \CENSORtrue         % THIS IS A CENSORED VERSION
 
 %% Preamble - data, packages, macros, and more
-\def\IVEVO{1}
-\def\EVODraft{Entwurf}
-\def\EVOTitle{IV-Evo Benutzerhandbuch}
-\def\EVOProduct{IV-Evo für Golf/Jetta II}
 \input{preamble/main}
 
 %% Only uncommented files are included (faster compilation)
 %% NOTE: If no files are uncommented, all files are included
-\emergencystretch=2em
+\includeonlysmart{
+    % frontmatter_de/title,
+    % frontmatter_de/declaration,
+    % frontmatter_de/dedication,
+    % frontmatter_de/information,
+    % chapters_de/Precautions,
+    % chapters_de/Introduction,
+    % chapters_de/ProductDescription,
+    % chapters_de/OperatingPrinciple,
+    % chapters_de/TechnicalSpecifications,
+    % chapters_de/Safety,
+    % chapters_de/Preparation,
+    % chapters_de/ReplicaNextMaintenance,
+    % chapters_de/ReplicaNextScenarios,
+    % chapters_de/ReplicaMaintenance,
+    % chapters_de/ReplicaScenarios,
+    % chapters_de/Marking,
+    % chapters_de/Package,
+    % chapters_de/Storage,
+    % chapters_de/Appendix,
+}
+
 \begin{document}
 \selectlanguage{ngerman}
 
 \frontmatter
 \include{frontmatter_de/title}
-% \include{frontmatter/declaration}
-% \include{frontmatter/dedication}
-% \include{frontmatter/information}
+% \include{frontmatter_de/declaration}
+% \include{frontmatter_de/dedication}
+% \include{frontmatter_de/information}
 
 \contentsandlists
 
 \mainmatter
-\include{chapters_evo_de/Safety}
-\include{chapters_evo_de/Overview}
-\include{chapters_evo_de/Configuration}
-\include{chapters_evo_de/Connections}
-\include{chapters_evo_de/Applications}
+\include{chapters_de/Precautions}
+\include{chapters_de/Introduction}
+\include{chapters_de/ProductDescription}
+\include{chapters_de/OperatingPrinciple}
+\include{chapters_de/TechnicalSpecifications}
+\include{chapters_de/Safety}
+\include{chapters_de/Preparation}
+\include{chapters_de/ReplicaNextMaintenance}
+\include{chapters_de/ReplicaNextScenarios}
+\include{chapters_de/ReplicaMaintenance}
+\include{chapters_de/ReplicaScenarios}
+\include{chapters_de/Marking}
+\include{chapters_de/Package}
+\include{chapters_de/Storage}
+
 \appendix
-\include{chapters_evo_de/LuaAPI}
+\include{chapters_de/Appendix}
+
+\backmatter
+\references
+
 \end{document}
